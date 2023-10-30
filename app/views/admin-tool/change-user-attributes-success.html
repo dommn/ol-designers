@@ -1,0 +1,151 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Client details" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block govukSignInContent %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      You have changed your user attributes
+    </h3>
+  </div>
+</div>
+
+<h1 class="govuk-heading-l">
+  Client details
+</h1>
+
+<p>This page shows the information you need to make calls to the GOV.UK One Login API.</p>
+
+<p>To get started, follow the integration process in the <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/"> documentation (opens in new tab)</a>. It will help you to update the client details below and use them to integrate.</p>
+
+<h2 class="govuk-heading-m">
+  Integration client
+</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Client ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <span style="color:#A71D5D; font-family:'Monaco'">X8rnOEw0SqOdEAOnWyPQ6YsJugQ</span>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Redirect URIs
+    </dt>
+    <dd class="govuk-summary-list__value">
+      https://localhost/
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="change-redirect-uris">
+        Change<span class="govuk-visually-hidden"> redirect URIs</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      User attributes required
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Email address<br>Phone number
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="change-user-attributes">
+        Change<span class="govuk-visually-hidden"> user attributes</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Public key
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Not added yet</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="change-public-key">
+            Change<span class="govuk-visually-hidden"> public key</span>
+          </a></li>
+      </ul>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Post logout redirect URIs (optional)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Not added yet</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="change-post-logout-redirect-uris">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a></li>
+      </ul>
+    </dd>
+  </div>
+</dl>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What do these terms mean?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <h3 class="govuk-heading-s">
+      Client ID
+      </h3>
+      
+      <p>Our API uses this to uniquely identify your client when it makes requests. You cannot change this.</p>
+      
+      <h3 class="govuk-heading-s">
+      Redirect URIs
+      </h3>
+      <p>The page(s) you want your users to see after they sign in to your service.</p>
+      
+      <h3 class="govuk-heading-s">
+      User attributes required
+      </h3>
+      <p>The information about your users that we send back to your service.</p>
+      
+      <h3 class="govuk-heading-s">
+      Public key
+      </h3>
+      <p>This lets our services securely send messages to each other. You need to generate a key pair (opens in new tab) and add the public key.</p>
+      
+      <h3 class="govuk-heading-s">
+      Post logout redirect URIs (optional)
+      </h3>
+      <p>The page(s) you want your users to see after they sign out of your service.</p>
+  </div>
+</details>
+
+<h2 class="govuk-heading-m">
+  Details to view the end user journey in integration
+</h2>
+
+<p>During the integration process, you'll be prompted to enter the following details to see the end user journey. This is so the public do not confuse it with the live journey.</p>
+
+<p><b>Username:</b> integration-user<br>
+<b>Password:</b> winter2021</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Production client</h2>
+<p>You can add a production client if you <a href="">join our public beta</a>.</p>
+
+{% endblock %}

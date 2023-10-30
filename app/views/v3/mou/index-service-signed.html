@@ -1,0 +1,161 @@
+{% set pageTitle = "GOV.UK One Login Memorandum of Understanding (MoU) documents" %}
+{% set subMenuActive = "Memorandum of Understanding" %}
+
+{% extends folder + "/_base.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-third">
+  <nav class="sub-navigation">
+    <ul class="govuk-list sub_navigation_list_2">
+
+<li class="sub-navigation__item{% if subMenuActive == 'Client details' %} sub-navigation__item--active{% endif %}">
+  <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/service/index">Client details</a>
+</li>
+<li class="sub-navigation__item {% if subMenuActive == 'Team members' %} sub-navigation__item--active{% endif %}">
+  <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/team-members/index">Team members</a>
+</li>
+<li class="sub-navigation__item {% if subMenuActive == 'Memorandum of Understanding' %} sub-navigation__item--active{% endif %}">
+  <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/mou/index-service-signed">Memorandum of Understanding</a>
+</li>
+
+  </div>
+
+
+{% block govukSignInContent %}
+
+<div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+    {{pageTitle}}
+    </h1>
+
+      <p>You need to read the documents below before you can go live with GOV.UK One Login.</p>
+      <p>Your department has already signed the MoU for all its services, so these documents are for information only.</p>
+      <p>The documents contain commercially sensitive information. Do not share them outside of your department.</p>
+
+<!--
+<p>Downloads are in the <a href="https://www.gov.uk/guidance/using-open-document-formats-odf-in-your-organisation">Open Document</a> (.odt) format.</p>
+-->
+
+      <p><a href="{{asset_path}}files/mou/mou-files.zip" class="govuk-link govuk-link--no-visited-state" download >
+        Download all documents (Zip, 198KB)
+      </a></p>
+
+    <h2 name="mou" id="mou" class="govuk-heading-m">1. Memorandum of Understanding (MoU)</h2>
+
+      <p>
+        The agreement between your department and the Government Digital Service (GDS) on your use of GOV.UK One Login.
+      </p>
+
+      <p>
+        <a href="{{asset_path}}files/mou/1-Memorandum-of-Understanding_OneLogin_v1-1.html" class="govuk-link govuk-link--no-visited-state" >View <span class="govuk-visually-hidden">the memorandum of understanding</span>
+      </a></p>
+
+      <p>
+        <a href="{{asset_path}}files/mou/1-Memorandum-of-Understanding_OneLogin_v1-1.odt" class="govuk-link govuk-link--no-visited-state" download >Download <span class="govuk-visually-hidden">the memorandum of understanding </span>(ODT, 79KB)
+      </a></p>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <h2 name="incident-response" id="incident-response" class="govuk-heading-m">2. Incident response plan</h2>
+
+      <p>
+        How GDS will classify and deal with incidents.
+      </p>
+
+      <p>
+        <a href="{{asset_path}}files/mou/2-Incident-Response-Plan_OneLogin-v1-0.html" class="govuk-link govuk-link--no-visited-state" >View <span class="govuk-visually-hidden">the incident response plan</span>
+      </a></p>
+
+      <p>
+        <a href="{{asset_path}}files/2-Incident-Response-Plan_OneLogin-v1-0.odt" class="govuk-link govuk-link--no-visited-state" download >Download <span class="govuk-visually-hidden">the incident response plan </span>(ODT, 40KB)
+      </a></p>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <h2 name="counter-fraud" id="counter-fraud" class="govuk-heading-m">3. Counter-fraud process </h2>
+
+      <p>
+        How GDS and your department will share data to prevent, detect and take action in the event of fraud.
+      </p>
+
+      <p>
+        <a href="{{asset_path}}files/mou/3-Counter-Fraud-Process_OneLogin-v1-0.html" class="govuk-link govuk-link--no-visited-state" >View <span class="govuk-visually-hidden">the counter fraud process</span>
+      </a></p>
+
+      <p>
+        <a href="{{asset_path}}files/mou/3-Counter-Fraud-Process_OneLogin-v1-0.odt" class="govuk-link govuk-link--no-visited-state" download >Download <span class="govuk-visually-hidden">the counter fraud process </span>(ODT, 41KB)
+      </a></p>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <h2 name="what-to-do" id="what-to-do" class="govuk-heading-m">What to do once you've reviewed these documents</h2>
+
+      <p>
+        Once you’ve reviewed them, get in touch with us about next steps at <a href="mailto:govuk-sign-in@digital.cabinet-office.gov.uk">govuk-sign-in@digital.cabinet-office.gov.uk</a>
+      </p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+      <p>
+        We’re working on making our documents more accessible.
+        If you have any problems accessing these documents, please <a href="#">contact us.</a>
+
+{% if updated %}
+
+
+
+
+  <p>
+Updated 19 January 2023</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    View all updates
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+    <ol class="govuk-list">
+      <li>
+        19 January 2023<br>
+        Updated the Incident response process to version 1.1
+      </li>
+      <li>
+        23 November 2022<br>
+        Updated the MoU to version 1.2.
+      </li>
+      <li>
+        31 October 2022<br>
+        First published.
+      </li>
+
+    </ol>
+
+
+
+
+    </div>
+</details>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
+
+{% endblock %}

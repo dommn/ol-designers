@@ -1,0 +1,66 @@
+{% set pageTitle = "Change your service name" %}
+{% set notinService = true %}
+{% set changeServiceName = "true" %} {# this is the only page that doesn't have a menu at all, hence a quick override #}
+{% extends folder + "/_base.html" %}
+
+
+
+{% block govukSignInContent %}
+
+      {% if errorField %}
+      {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+      {
+      text: errorMessage,
+      href: errorElementId
+      }
+      ]
+      }) }}
+
+      {% endif %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <p>Your service name is shown to your users in the sign in journey. For example,
+        "Now continue to use the [service name] service".</p>
+
+      <p>It should be your service name as used on your service start page.</p>
+
+      <form class="form" action="/{{folder}}/change-service-name-v2-router" method="post">
+        {% set serviceNameValue = data['service-name-2'] or 'Get a juggling licence' %}
+        {% if errorField === 'service-name-2' %}
+
+        {{ govukInput({
+        name: "service-name-2",
+        id: "service-name-2",
+        value: data['service-name-2'],
+        errorMessage: {
+        text: errorMessage
+        }
+        }) }}
+
+        {% else %}
+
+        {{ govukInput({
+        name: "service-name-2",
+        value: data['service-name-2'] | default('Get a juggling licence')
+        }) }}
+
+        {% endif %}
+
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Confirm"
+          }) }}
+          <a class="govuk-link" href="client-details-v2">Cancel</a>
+        </div>
+
+
+      </form>
+
+
+
+{% endblock %}

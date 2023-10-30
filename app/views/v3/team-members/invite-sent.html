@@ -1,0 +1,16 @@
+{% set pageTitle = "Invitation email sent" %}
+{% set subMenuActive = "Team members" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <p>We have sent an invitation link to <strong>{{data['lastEmail'] or 'another.user@developer.gov.uk'}}</strong></p>
+      <p>It will expire in 1 week.</p>
+      <p class="govuk-body">Go back to <a href="/{{folder}}/team-members/index" class="govuk-link">team members</a>.</p>
+
+
+{% endblock %}

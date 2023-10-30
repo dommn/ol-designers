@@ -1,0 +1,18 @@
+{% set pageTitle = "Form submitted" %}
+{% set subMenuActive = "Joining private beta" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+      {{ govukPanel({
+      titleText: "Application submitted"
+      }) }}
+
+      <p>Thank you for applying to join the GOV.UK One Login private beta.</p>
+
+      <p>You’ll receive a confirmation email which includes a copy of the information you submitted.</p>
+
+      <p>We’ll review the information you provided and get back to you within 2 weeks.</p>
+
+{% endblock %}

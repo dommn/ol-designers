@@ -1,0 +1,71 @@
+{% set pageTitle = "Change permissions" %}
+{% set subMenuActive = "Team members" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      {% if errorField %}
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: errorMessage,
+        href: errorElementId
+        }
+        ]
+        }) }}
+
+      {% endif %}
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">Change permissions for {{data['existingUser'].name or "Bethany Walton"}}</h1>
+
+<!--  setting a flash notification here so that we see a success banner - look at routes.js to see how this works -->
+      <form class="form" action="change-permissions-router" method="post">
+
+<!--  existing data is set in data/defaults.js but we can override it -->
+        {{ govukCheckboxes({
+        name: "existingUserPermissionsList",
+        items: [
+        {
+        value: "Manage team members",
+        text: "Manage team members",
+        checked: true if ("Manage team members" in data['existingUserPermissionsList'])
+        },
+        {
+        value: "Change integration client details",
+        text: "Change integration client details",
+        checked: true if ( "Change integration client details" in data['existingUserPermissionsList'])
+        },
+        {
+        value: "Change service name",
+        text: "Change service name",
+        checked: true if ("Change service name" in data['existingUserPermissionsList'])
+        },
+        {
+        value: "Request to join private beta",
+        text: "Request to join private beta",
+        checked: true if  ("Request to join private beta" in data['existingUserPermissionsList'])
+        }
+
+        ]
+        }) }}
+
+
+
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Confirm"
+
+          }) }}
+          <a class="govuk-link" href="/{{folder}}/team-members/index">Cancel</a>
+        </div>
+
+
+      </form>
+
+
+
+{% endblock %}

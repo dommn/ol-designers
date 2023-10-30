@@ -1,0 +1,141 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set mainClasses = "govuk-!-padding-top-7" %}
+
+{% block pageTitle %}
+Find out more about private beta GOV.UK Sign In
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <span class="govuk-header__logotype">
+        <svg aria-hidden="true" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="30" width="36">
+        <path fill="currentColor" fill-rule="evenodd" d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+        </svg>
+        <span class="govuk-header__logotype-text">
+        GOV.UK
+        </span>
+      </span>
+        <span class="govuk-header__product-name">
+        Sign In
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+        </strong>
+      </span>
+      </a>
+    </div>
+    <div class="govuk-header__content">
+      <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation">Menu</button>
+      <nav class="govuk-header__navigation govuk-!-text-align-right">
+        <ul id="navigation" class="govuk-header__navigation-list" aria-label="Top Level Navigation">
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="/">
+              Documentation
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="/">
+              Support
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+            <a class="govuk-header__link" href="/">
+              Account home
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="/">
+              Sign out
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+
+{% block beforeContent %}
+<p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-3">{{ data['clientName'] or 'Get a juggling licence'}}</p>
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+        <ul class="govuk-list sub_navigation_list_2">
+          <li class="sub-navigation__item ">
+            <a class="govuk-link govuk-link--no-visited-state" href="/service-dashboard-updated-v1">Client details</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--active">
+            <a class="govuk-link govuk-link--no-visited-state" href="/find-out-more-about-private-beta-v1">Request to join private beta</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="/service-settings-page-v1">Settings</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-1">Find out more about private beta</h1>
+      <p>For private beta, we‘ll choose which services to onboard on a case-by-case basis.</p>
+      <p>We’ll invite services to partner with us that help us learn about the features we’ll need as we scale up. These services will go live with GOV.UK Sign In so we can learn how it works at scale.</p>
+      <p>This private beta is for authentication only. It does not include identity checks.</p>
+      <h2 class="govuk-heading-m">What to expect </h2>
+      <p>If you join the private beta, you’ll get:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>early access to GOV.UK Sign In for all your live traffic</li>
+        <li>the opportunity to feed into our plans and shape the future of our service</li>
+        <li>support from our team throughout</li>
+      </ul>
+      <p>We’ll need you to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>integrate with GOV.UK Sign In to allow your users to sign in to your service</li>
+        <li>provide regular feedback to us about your experiences of using and onboarding to GOV.UK Sign In - we’ll agree on the frequency and method of feedback with you to make sure it works for both of us</li>
+      </ul>
+      <h2 class="govuk-heading-m">Who can join</h2>
+      <p>To join the private beta, you need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>work in a central government department</li>
+        <li>have a service in beta or live</li>
+        <li>need to sign in your users only, not check their identity</li>
+        <li>be able to integrate with GOV.UK Sign In - this means you need access to developers who are comfortable working with the OpenID Connect (OIDC) protocol and the processes set out in our <a class="govuk-link" href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment">technical documentation</a></li>
+      </ul>
+      <h2 class="govuk-heading-m">The joining process</h2>
+      <p>Once you’ve requested to join the private beta, we’ll ask you to fill in a form and give us more information about your service. This will include things like your user volumes and timelines. </p>
+      <p>We’ll review the information you send and let you know within 2 weeks whether you can join the beta.</p>
+      <p>Once you’ve been accepted, you’ll need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>sign our memorandum of understanding</li>
+        <li>provide some details to help us prepare for you to go live - this includes contact details and user support information</li>
+      </ul>
+      <p>Then, we’ll give you access to our production environment so you can go live.</p>
+      <h2 class="govuk-heading-m">Request to join private beta</h2>
+      <p>If you meet the beta criteria and would like to take part, let us know.</p>
+      <div class="govuk-inset-text">
+        Please be aware that even if you meet the criteria, this does not guarantee that you’ll be able to take part. We need to choose services that we can learn the most from.
+      </div>
+      {{ govukButton({
+      text: "Request to join private beta",
+      href: "request-to-join-private-beta-v1"
+      }) }}
+
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+

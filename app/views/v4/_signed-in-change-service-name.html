@@ -1,0 +1,14 @@
+{% set pageTitle = "Change service name" %}
+{% set notinService = true %}
+{% set changeServiceName = "true" %} {# this is the only page that doesn't have a menu at all, hence a quick override #}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+<h1 class="govuk-heading-l">
+  Example
+</h1>
+
+<p>Stuff goes here </p>
+{% endblock %}

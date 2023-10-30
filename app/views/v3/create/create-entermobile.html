@@ -1,0 +1,28 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+
+{% set pageTitle = "Enter your mobile phone number" %}
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+    <h1 class="govuk-heading-l">
+    {{pageTitle}}
+    </h1>
+
+    <p>We will send a 6 digit security code to this number every time you sign in.</p>
+
+    <p>You must use a UK mobile phone number.</p>
+
+<form class="form" action="create-checkphone" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="mobile-number">UK mobile phone number</label>
+        <input class="govuk-input govuk-input--width-20" id="mobile-number-2" name="mobile-number-2" type="tel" spellcheck="false" autocomplete="tel">
+      </div>
+
+    {{ govukButton({
+    text: "Continue"
+    }) }}
+
+    </form>
+
+
+{% endblock %}

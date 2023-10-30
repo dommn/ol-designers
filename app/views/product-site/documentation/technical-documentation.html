@@ -1,0 +1,72 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Technical documentation - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Documentation" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+        <ul class="govuk-list">
+          <li class="sub-navigation__item sub-navigation__item--active">
+            <a class="govuk-link govuk-link--no-visited-state" href="technical-documentation.html">Technical documentation</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="user-journeys.html">User journey maps</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="design-documentation">Design recommendations</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state " href="save-progress">
+              Let users create a GOV.UK One Login to save progress</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-out-easily">
+              Let users navigate to their GOV.UK One Login and sign out easily</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+              Show users where to change their GOV.UK One Login credentials</a>
+          </li>
+        </ul>
+    
+    
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Technical documentation
+    </h1>
+
+      <p>Our technical documentation will help you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>understand how GOV.UK One Login works</li>
+        <li>integrate with GOV.UK One Login’s test environment for authentication</li>
+      </ul>
+
+      <p>The documentation covers both the authentication and identity checking parts of GOV.UK One Login.</p>
+
+      <p>Only the authentication part is available to all central government services now.</p>
+
+      <p>We’ve included information about identity checks because this feature is being tested by selected services. It will also let all services see how our identity checks work.</p>
+
+      <p><a href="https://docs.sign-in.service.gov.uk/" class="govuk-link">Read our technical documentation (opens in new tab)</a></p>
+
+   </div>
+   
+</div>
+</div>
+
+{% endblock %}

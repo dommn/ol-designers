@@ -1,0 +1,54 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Get started" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-l">Get started</h1>
+      <h2 class="govuk-heading-m">1. Check if GOV.UK One Login is right for you</h2>
+      <p class="govuk-body">
+        GOV.UK One Login is new. You can use it now if you’re from a central government service and you need to sign in your users. We’ll add more features over time.
+      </p>
+      <p class="govuk-body">
+        You can read:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>about <a class="govuk-link" href="about/about">the features GOV.UK One Login currently offers</a></li>
+        <li>our <a class="govuk-link" href="documentation/technical-documentation">documentation</a> on how to integrate GOV.UK One Login with your service</li>
+      </ul>
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">2. Register to get access</h2>
+      <p class="govuk-body">You’ll need to give us some information about your organisation and service.</p>
+      <p class="govuk-body govuk-!-padding-bottom-2">We’ll get in touch to talk more about your service’s needs and then give you access to our integration environment.</p>
+    
+    <a href="register" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Register
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+      </svg></a>
+    
+      <h2 class="govuk-heading-m govuk-!-padding-top-2">3. Test GOV.UK One Login</h2>
+      <p class="govuk-body">In the test environment, you can integrate your service with GOV.UK One Login to see for yourself how it works.</p>
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">4. Join public beta and go live</h2>
+      <p class="govuk-body">If you’ve tested GOV.UK One Login and you want to use it for your service, you can request to join our public beta.</p>
+      <p class="govuk-body">Once you’re in the beta, you can access the production environment and go live.</p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="misc/find-out-more">Read more about public beta</a> including the eligibility criteria and what to expect if you join.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-7 govuk-!-margin-bottom-4">
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">Contact us</h2>
+      <p class="govuk-body">
+        If you have questions or feedback, contact us using our <a class="govuk-link" href="support">support form</a>. You can also use our <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC">Slack channel</a> if you’re from a government service team.
+      </p>
+    
+      </div>
+
+{% endblock %}

@@ -1,0 +1,223 @@
+
+{% extends "layouts/main.html" %}
+{% set serviceName = "Round 2" %}
+{% block pageTitle %}
+  Prototype for user testing: Multi-user and multi-service functionality
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Prototype for user testing: Multi-user and multi-service functionality
+      </h1>
+
+        <p class="govuk-body-l">Sept–Oct 2022</p>
+
+      <h2 class="govuk-heading-m">Scenario 1</h2>
+
+      {{ govukButton({
+        href: "/" + folder + "/email-invite",
+        text: "Go to scenario 1"
+      }) }}
+
+      <!--  start of wrapper for summary component -->
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Screens if there’s a problem
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <!-- end start of wrapper for details component  -->
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/{{folder}}/email-invite">Email</a></li>
+                    <ul class="govuk-list govuk-list--bullet">
+
+                    <li><a href="/{{folder}}/create-email-v2">Enter your government email address</a></li>
+                    <li><a href="/{{folder}}/create-checkemail-v2">Check your email </a></li>
+                    <li>Email (not included in prototype)</li>
+                    <li><a href="/{{folder}}/create-password-v2">Create your password</a></li>
+                    <li><a href="/{{folder}}/create-entermobile-v2">Enter your mobile phone number</a></li>
+                    <li><a href="/{{folder}}/create-checkphone-v2">Check your phone</a></li>
+                    <li>SMS (not included in prototype)</li>
+                    <li><a href="/{{folder}}/create-name">Enter your name</a></li>
+                    <li>Service screen skipped for this journey - user goes straight to dashboard</li>
+                </ul>
+            </ul>
+
+          <!-- finish wrapper for details component -->
+          </div>
+          </details>
+          <!-- end of wrapper for details component -->
+
+      <h2 class="govuk-heading-m">Scenarios 2 and 3 (continues)</h2>
+
+      {{ govukButton({
+         classes: "govuk-button--secondary",
+        href: "/" + folder + "/client-details-v2",
+        text: "Go to scenario 2"
+      }) }}
+
+      <!--  start of wrapper for summary component -->
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Screens if there’s a problem
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <!-- end start of wrapper for details component  -->
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/{{folder}}/client-details-v2">Client details</a>
+                    <li><a href="/{{folder}}/team-members">Team details</a>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                    <li>Invite a team member:
+                      <ul>
+                      <li><a href="/{{folder}}/invite-team-member">Invite a team member</a></li>
+                    <li><a href="/{{folder}}/invite-sent">Invitation email sent</a></li>
+                    <li><a href="/{{folder}}/email-invite">Email</a></li>
+                    </ul></li>
+                    <li><a href="/{{folder}}/change-permissions">Change permissions for [team member]</a></li>
+                    <li>Remove [team member] (not included in prototype)</li>
+                    </ul>
+                    </li>
+                      <li><a href="/{{folder}}/change-service-name-v2">Change your service name</a></li>
+                    </ul>
+
+                <!-- finish wrapper for details component -->
+                </div>
+                </details>
+                <!-- end of wrapper for detailes component -->
+
+
+      <h2 class="govuk-heading-m">Scenario 4 (continues)</h2>
+
+      {{ govukButton({
+        classes: "govuk-button--secondary",
+        href: "/" + folder + "/your-services",
+        text: "Go to scenario 4"
+      }) }}
+
+      <!--  start of wrapper for summary component -->
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Screens if there’s a problem
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <!-- end start of wrapper for details component  -->
+                    <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/{{folder}}/your-services">Your services</a></li>
+                    <li><a href="/{{folder}}/create-service-name-v2">Create service name</a> (to link to from service page - does not continue)</li>
+                    </ul>
+
+                <!-- finish wrapper for details component -->
+                </div>
+                </details>
+                <!-- end of wrapper for detailes component -->
+
+      <h2 class="govuk-heading-m">All screens</h2>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                All screens
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Home (not in prototype - <a href="https://www.sign-in.service.gov.uk/">live link</a>)</li>
+                <li>Features (not in prototype - <a href="https://www.sign-in.service.gov.uk/features">live link</a>)
+                    <ul class="govuk-list govuk-list--bullet"><li>Roadmap (not in prototype - <a href="https://www.sign-in.service.gov.uk/features/roadmap">live link</a>)</li></ul>
+                    </li>
+                <li>Documentation/technical documentation (not in prototype - <a href="https://www.sign-in.service.gov.uk/documentation">live link</a>)
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>User journey maps (not in prototype - <a href="https://www.sign-in.service.gov.uk/documentation/user-journeys">live link</a>)</li>
+                        <li>Design recommendations: ‘create account to save progress’  (not in prototype - <a href="https://www.sign-in.service.gov.uk/documentation/design-recommendations">live link</a>)</li>
+                    </ul>
+                </li>
+
+            <li><a href="/{{folder}}/get-started-with-gov-uk-sign-in-v2">Get started</a>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><a href="/{{folder}}/create-email-v2">Enter your government email address</a></li>
+                    <li><a href="/{{folder}}/create-checkemail-v2">Check your email </a></li>
+                    <li>Email (not included in prototype)</li>
+                    <li><a href="/{{folder}}/create-password-v2">Create your password</a></li>
+                    <li><a href="/{{folder}}/create-entermobile-v2">Enter your mobile phone number</a></li>
+                    <li><a href="/{{folder}}/create-checkphone-v2">Check your phone</a></li>
+                    <li>SMS (not included in prototype)</li>
+                    <li><a href="/{{folder}}/create-name">Enter your name</a></li>
+                    <li><a href="/{{folder}}/create-service-name-v2">Create service name</a>? </li>
+                </ul></li>
+
+            <li><a href="/{{folder}}/sign-in-email-v2">Sign in to your GOV.UK Sign In account</a>
+                <ul>
+                    <li><a href="/{{folder}}/sign-in-password-v2">Enter your password</a></li>
+                    <li><a href="/{{folder}}/sign-in-checkphone-v2">Check your phone</a></li>
+                </ul></li>
+
+            <li><a href="/{{folder}}/your-account-v2">Your account</a><ul>
+                <li>Change name (page not in prototype)</li>
+                <li><a href="/{{folder}}/change-email-v2">Change your email address</a></li>
+                <li><a href="/{{folder}}/change-checkemail-v2">Check your email </a></li>
+                <li><a href="/{{folder}}/change-phone-v2">Change your mobile phone number</a></li>
+                <li><a href="/{{folder}}/change-checkphone-v2">Check your phone</a></li>
+                <li><a href="/{{folder}}/change-password-v2">Add your new password</a></li>
+                </ul></li>
+
+            <li><a href="/{{folder}}/your-services">Your services</a>
+                <ul>
+                <li> Service 1
+                    <ul>
+                    <li><a href="/{{folder}}/change-service-name-v2">Change your service name</a></li>
+                    <li><a href="/{{folder}}/client-details-v2">Client details</a>
+                        <ul>
+                            <li><a href="/{{folder}}/service-update-details-redirect-uris-v2">Change your redirect URIs</a></li>
+                            <li><a href="/{{folder}}/service-update-details-user-attributes-v2">Change the user attributes you get</a></li>
+                            <li><a href="/{{folder}}/service-update-details-public-key-v2">Change your public key</a></li>
+                            <li><a href="/{{folder}}/service-update-details-post-logout-redirect-uris-v2">Change your post logout redirect URIs</a></li>
+                        </ul></li>
+                <li><a href="/{{folder}}/team-members">Team details</a>
+                    <ul>
+                        <li>Invite a team member:
+                            <ul>
+                            <li><a href="/{{folder}}/invite-team-member">Invite a team member</a></li>
+                                <li><a href="/{{folder}}/invite-sent">Invitation email sent</a></li>
+                                <li><a href="/{{folder}}/email-invite">Email</a></li>
+                            </ul></li>
+                            <li><a href="/{{folder}}/change-permissions">Change permissions for [team member]</a></li>
+                            <li>Remove [team member] (not included in prototype)</li>
+                            </ul></li>
+                        <li><a href="/{{folder}}/private-beta/index">Joining private beta</a><ul>
+                            <li><a href="/{{folder}}/private-beta/submitted">Form submitted</a></li></ul>
+                            </li></ul>
+                        </ul></li>
+            <li>Support (not in prototype - <a href="https://www.sign-in.service.gov.uk/support">live link</a>)</li>
+            <li>Sign out (not in prototype)</li>
+            </ul>
+
+        </div>
+        </details>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Related docs and further reading</h2>
+
+    <p><a href="https://docs.google.com/presentation/d/1Mz_m0-FmVlt_8JYWXm8fsyKFm_4Yzuq55v6APS5jIo8/edit#slide=id.g1692418bb97_1_131">
+    User research findings</a></p>
+
+    <p><a href="https://www.figma.com/file/CWqXGg9hIIs5Bgv1OoQOO4/Design-for-Adoption?node-id=8003%3A80063">
+    Figma file</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

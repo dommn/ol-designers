@@ -1,0 +1,43 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Check your phone" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your account" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/_base.html" %}
+
+
+
+
+{% block govukSignInContent %}
+
+<a href="/{{folder}}/create-entermobile-v2" class="govuk-back-link">Back</a>
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <div class="govuk-inset-text">We sent a code to <strong> {{ data['mobileNumber'] or '07123456789' }}</strong></div>
+
+    <p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+
+
+
+<form action="change-checkphone-v2-router" method="post" >
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label" for="otp">Enter the 6 digit security code</label>
+
+        <input class="govuk-input govuk-input--width-5" id="otp" name="create-sms-otp" type="text" autocomplete="one-time-code" inputmode="numeric" spellcheck="false" >
+
+      </div>
+
+    {{ govukButton({
+    text: "Continue"
+    }) }}
+
+    <p><a href="/create-entermobile-v1">Not received a text message?</a></p>
+</form>
+
+{% endblock %}

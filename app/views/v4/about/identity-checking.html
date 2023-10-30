@@ -1,0 +1,168 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Checking users’ identities - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "About GOV.UK One Login" %} {# breadcrumb #}
+{% extends folder + "/_base.html" %}
+{% set headerNavigationActiveItem = "about" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state " href="/{{folder}}/about/about">About</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/letting-users-sign-in" style="margin-left: 20px;">Letting users sign in</a>
+    </li>
+    <li class="sub-navigation__item sub-navigation__item--active">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/identity-checking" style="margin-left: 20px;">Identity checks</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/signed-in-experience" style="margin-left: 20px;">The signed in experience</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/roadmap">Roadmap</a>
+    </li>
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Checking users’ identities
+    </h1>
+
+    <p>As well as <a href="/{{folder}}/about/letting-users-sign-in" class="govuk-link">letting users sign in</a>, you can use GOV.UK One Login to carry out identity checks on your users.</p>
+
+    <p>Users will prove their identity once. They can reuse this proof to access other services that use GOV.UK One Login - saving them time and reducing duplication of effort across government.</p>
+      
+    <p>We’ve designed the service following the government guidance on <a href="https://www.gov.uk/government/publications/identity-proofing-and-verification-of-an-individual/how-to-prove-and-verify-someones-identity" class="govuk-link">how to prove and verify someone’s identity (GPG 45)</a>.</p>
+      
+     <div class="govuk-inset-text">Identity is currently not available for services that are not already in our identity private beta. <a href="#" class="govuk-link">Join our mailing list</a> to be updated when it’s available for more services.</div>
+
+    <h2 class="govuk-heading-m">
+        The user experience 
+    </h2>
+
+      <p>There are multiple ways we can check a user’s identity. There are multiple ways we can check a user’s identity. This is because users will have different documentation, evidence and preferences.</p>
+       
+     <h3 class="govuk-heading-s">
+         Evidence users need to provide   
+    </h3>
+
+      <p>All users need to provide:</p>
+       
+       <ul class="govuk-list govuk-list--bullet">
+         <li>their name and date of birth</li>
+         <li>their address history for the last 3 years</li>
+         <li>a photo ID</li>
+      </ul>
+         
+       <p>The types of photo ID we currently accept are:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a passport from the UK</li>
+        <li>a passport with an NFC chip from another country</li>
+        <li>a driving licence from the UK or Northern Ireland</li>
+      </ul>
+         
+      <p>Some users will need to answer knowledge based verification questions (KBVs). These are security questions generated based on their credit record.</p>
+
+      <p>In future, we’ll expand the types of evidence we accept so people can prove their identity without needing a photo ID. This is to make the service more inclusive.</p>
+
+     <h3 class="govuk-heading-s">
+         Channels available   
+    </h3>
+         
+       <p>Users can use their web browser or the GOV.UK ID Check app.</p>
+       <p>We’re looking into other channels, for example, offline checks.</p>
+         
+    <h2 class="govuk-heading-m">
+      We currently provide a medium level of confidence 
+    </h2>
+
+      <p>Our current journeys will give you a medium level of confidence, as defined by GPG45. This means it will lower the risk of you accepting:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>completely made-up (’synthetic’) identities</li>
+        <li>impostors who do not have a relationship with the claimed identity - for example, someone who has found the claimed identity’s information on social media</li>
+        <li>impostors who have information about the claimed identity that’s not in the public domain - for example, someone who works for the claimed identity’s employer’s HR department using information they have to impersonate the claimed identity</li>
+      </ul>
+
+      <p>In future we will offer low and high confidence too.</p>
+         
+     <h3 class="govuk-heading-s">
+         Deciding if this level is right for your service
+    </h3>
+         
+     <p>To decide if this level of confidence is right for your service, you need to identify the risks to your service and see if the medium level of confidence mitigates them.</p>
+         
+     <p>If you’re not sure, we’ll be happy to discuss it with you. Get in touch through our <a href="#" class="govuk-link">support form</a> or <a href="#" class="govuk-link">Slack channel</a>.
+         
+    <h2 class="govuk-heading-m">
+      Identity data your service can get about your users 
+    </h2>
+
+      <h3 class="govuk-heading-s">
+        User attributes 
+      </h3>
+
+      <p>If a user successfully proves their identity, you will always receive some core identity information about them:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>their names</li>
+        <li>dates of birth</li>
+        <li>the level of identity confidence</li>
+      </ul>
+
+      <p>You can also ask for:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>postal addresses for the last 3 years (we check that addresses are genuine and if they’re associated with fraudulent activity)</li>
+        <li>passport details, if the user proved their identity using their passport</li>
+        <li>driving licence details, if the user proved their identity using their driving licence</li>
+      </ul>
+         
+      <p>We may ask you to provide a reason for requesting these pieces of information, so we can avoid unnecessary data sharing.</p>
+
+      <p>This is in addition to the data you’ll get if you also use the ‘sign in’ part of GOV.UK One Login, which is:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a unique identifier</li>
+        <li>an email address</li>
+        <li>a phone number, if the user set up two-factor authentication using their phone number</li>
+      </ul>
+
+      <p>If there’s any other data your service needs - <a href="#" class="govuk-link">get in touch</a> and ask us about it.</p>
+
+      <h3 class="govuk-heading-s">
+        Audit and fraud data 
+      </h3>
+
+      <p>If an account has shown evidence of being fraudulent, we can provide more information about that user.</p>        
+    
+
+    <h2 class="govuk-heading-m">
+      Find out more 
+    </h2>
+
+      <p>You can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>see the <a href="/{{folder}}/documentation/user-journey-maps" class="govuk-link">user journeys</a></li>
+        <li>read the <a href="#" class="govuk-link">technical documentation</a></li>
+      </ul>
+
+   </div>
+   
+</div>
+</div>
+
+{% endblock %}

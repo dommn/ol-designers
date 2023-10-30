@@ -1,0 +1,92 @@
+{% set pageTitle = "Invite a team member" %}
+{% set subMenuActive = "Team members" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      {% if errorField %}
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: errorMessage,
+        href: errorElementId
+        }
+        ]
+        }) }}
+
+      {% endif %}
+
+
+
+
+
+      <form class="form" action="/{{folder}}/team-members/invite-router" method="post">
+        <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+        <p>We will email them an invitation link to join the {{data['service-name-2'] or 'Get a juggling licence'}} service.</p>
+
+        <p class="govuk-body">They must have an email address that ends in:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>gov.uk</li>
+            <li>highwaysengland.co.uk</li>
+            <li>socialworkengland.org.uk</li>
+          </ul>
+
+        {{ govukInput({
+          label: {
+            text: "Government email address"
+          },
+          id: "inviteEmail",
+          name: "inviteEmail",
+          value: data["inviteEmail"]
+        }) }}
+
+        {{ govukCheckboxes({
+        name: "invitePermissions",
+        fieldset: {
+        legend: {
+        text: "Choose their permissions"
+        }
+        },
+        items: [
+        {
+        value: "Manage team members",
+        text: "Manage team members",
+        checked: checked("invitePermissions", "Manage team members")  if (data["invitePermissions"] and "Manage team members" in data["invitePermissions"])
+        },
+        {
+        value: "Change integration client details",
+        text: "Change integration client details",
+        checked: checked("invitePermissions", "Change integration client details") if (data["invitePermissions"] and "Change integration client details" in data["invitePermissions"])
+        },
+        {
+        value: "Change service name",
+        text: "Change service name",
+        checked: checked("invitePermissions", "Change service name")  if (data["invitePermissions"] and "Change service name" in data["invitePermissions"])
+        },
+        {
+        value: "Request to join private beta",
+        text: "Request to join private beta",
+        checked: checked("invitePermissions", "Request to join private beta")  if (data["invitePermissions"] and "Request to join private beta" in data["invitePermissions"])
+        }
+
+        ]
+        }) }}
+
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Confirm"
+          }) }}
+          <a class="govuk-link" href="/{{folder}}/team-members/index">Cancel</a>
+        </div>
+
+
+      </form>
+
+
+{% endblock %}

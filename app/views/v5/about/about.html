@@ -1,0 +1,116 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "About GOV.UK One Login" %} {# breadcrumb #}
+{% extends folder + "/_base.html" %}
+{% set headerNavigationActiveItem = "about" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+    <li class="sub-navigation__item sub-navigation__item--active">
+      <a class="govuk-link govuk-link--no-visited-state " href="/{{folder}}/about/about">About</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/letting-users-sign-in" style="margin-left: 20px;">Letting users sign in</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/identity-checking" style="margin-left: 20px;">Identity checks</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/signed-in-experience" style="margin-left: 20px;">The signed in experience</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/roadmap">Roadmap</a>
+    </li>
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      About GOV.UK One Login
+    </h1>
+
+    <p>GOV.UK One Login lets your users sign into your service quickly and easily.</p>
+
+    <p>It will ultimately allow users to access any government service using the same email address and password.</p>
+
+    <h2 class="govuk-heading-m">
+      The user-facing parts of GOV.UK One Login 
+    </h2>
+
+      <h3 class="govuk-heading-s">
+        Users can sign in 
+      </h3>
+
+      <p>Users can sign in to your service via GOV.UK One Login, with their username, passport and two-factor authentication.</p>
+      
+      <p>You can add this functionality into your service alone - you do not have to add the identity checks if you do not need them.</p>
+
+      <p><a href="/{{folder}}/about/letting-users-sign-in" class="govuk-link">Find out more about the sign in journey</a>.</p>
+
+      <h3 class="govuk-heading-s">
+        Users can prove their identity 
+      </h3>
+
+      <p>Users can prove their identity so you know they are who they say they are.</p>
+      
+      <p>If you want to add identity checks, you must also have the ‘sign in’ functionality.</p>
+
+      <p><a href="/{{folder}}/about/identity-checking" class="govuk-link">Find out more about identity checks</a>.</p>
+
+      <h3 class="govuk-heading-s">
+        Users create a reusable GOV.UK One Login
+      </h3>
+
+      <p>Users have a space where they can manage their GOV.UK One Login, among other things.</p>
+      
+      <p>This is created once a user first signs into a service with GOV.UK One Login.</p>
+
+      <p><a href="/{{folder}}/about/signed-in-experience" class="govuk-link">Find out more about users' signed in experience</a>.</p>
+      
+      <h3 class="govuk-heading-s">
+        User support
+      </h3>
+
+      <p>Support for your users is available during office hours via a <a href="#" class="govuk-link">support form</a>. 
+        We aim to reply within 2 working days.</p>
+
+    <h2 class="govuk-heading-m">
+      Features for your service team
+    </h2>
+
+      <h3 class="govuk-heading-s">
+        Documentation 
+      </h3>
+
+      <p>You can follow our <a href="#" class="govuk-link">documentation</a> to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>understand the OpenID Connect (OIDC) authentication protocol we're using</li>
+        <li>see how user data is shared</li>
+        <li>test GOV.UK One Login with your service in our integration environment</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        Support 
+      </h3>
+
+      <p>Support for your service is available during office hours via a <a href="#" class="govuk-link">support form</a> and
+        <a href="#" class="govuk-link">Slack channel</a>.
+        
+      <p>If you go live with GOV.UK One Login, our technical team is available 24/7 for urgent incidents.</p>
+   </div>
+   
+</div>
+</div>
+
+{% endblock %}

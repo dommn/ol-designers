@@ -1,0 +1,75 @@
+{% set pageTitle = "Change your post logout redirect URIs" %}
+{% set subMenuActive = "Client details" %}
+
+
+{{-" checked" if item.checked }}
+
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+      {% if errorField %}
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: errorMessage,
+        href: errorElementId
+        }
+        ]
+        }) }}
+
+      {% endif %}
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <p>Add the URI for the page you want your users to see after they sign out of your service.</p>
+      <p>You can add multiple post logout redirect URIs if you want different groups of users to see different pages once they sign out of your service. To do this, enter the URIs separated by a space.</p>
+      <p>If you do not specify one, your users will be redirected to the <a href="https://signin.account.gov.uk/signed-out" class="govuk-link" rel="noreferrer noopener" target="_blank">default GOV.UK sign out page</a>.</p>
+
+      <form class="form" action="/client-details-v1" method="post">
+
+        {% if errorField === 'postLogoutRedirectUrlEmpty' or errorField === 'postLogoutRedirectUrlInvalid' %}
+
+          {{ govukInput({
+          label: {
+           text: "Post logout redirect URIs"
+          },
+          hint: {
+            text: "Enter URIs starting with https://"
+          },
+          name: "postLogoutRedirectUrl",
+          id: "post-logout-redirect-url",
+          value: data['postLogoutRedirectUrl'],
+          errorMessage: {
+            text: errorMessage
+          }
+          }) }}
+
+        {% else %}
+
+          {{ govukInput({
+          label: {
+           text: "Post logout redirect URIs"
+          },
+          hint: {
+           text: "Enter URIs starting with https://"
+          },
+          name: "postLogoutRedirectUrl",
+          value: data['postLogoutRedirectUrl']
+          }) }}
+
+        {% endif %}
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Confirm"
+          }) }}
+          <a class="govuk-link" href="/{{folder}}/client-details-v2">Cancel</a>
+        </div>
+
+
+      </form>
+
+{% endblock %}

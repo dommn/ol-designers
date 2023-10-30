@@ -1,0 +1,44 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set pageTitle = "Add your service name" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set notinService = true %}
+{% set changeServiceName = "true" %} {# this is the only page that doesn't have a menu at all, hence a quick override #}
+
+{% set subMenuActive = "Your services" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+<h1 class="govuk-heading-l">
+  {{pageTitle}}
+</h1>
+
+<p>Add your service name as used on your start page.</p>
+
+<p>Your service name is shown to your users in the sign in journey. For example
+  "Now continue to use the [service name]."</p>
+
+<p>You can change it later.</p>
+
+<form class="form" action="#" method="post">
+
+
+  {{ govukInput({
+    id: "service-name-3",
+    name: "service-name-3",
+    label: {
+      text: "Service name",
+      isPageHeading: true
+    }
+  }) }}
+
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+    text: "Continue"
+    }) }}
+    <a class="govuk-link" href="your-services">Cancel</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Account area" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your account" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+<h1 class="govuk-heading-l">
+  Example
+</h1>
+
+<p>Stuff goes here </p>
+{% endblock %}

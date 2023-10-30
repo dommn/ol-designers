@@ -1,0 +1,42 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Client details" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block govukSignInContent %}
+
+<form class="form" method="post" action="change-public-key-success">
+
+<h1 class="govuk-heading-l">
+  Change your public key
+</h1>
+
+<p>You need to <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/generate-a-key/#generate-a-key-pair" target="_blank">generate a key pair (opens in new tab)</a> and add the public key. This is so our services can securely send messages to each other.</p>
+
+<div class="govuk-inset-text">
+  <h3 class="govuk-heading-m">
+    Current public key
+  </h3>
+  <p>gkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAozeSawLorZg<br> EDia67XkRn61xmh/NyaI+lXxEDpip713csnGBWPGR dePw7/a/nGoLbOFC37rmEA05e7pKaklLT<br> uceDaeTe/KPDorZcdnn8HO8HBVe8bgpsu Nnf6QpWERPKHn78WNeA50apBkkB2GafqFn7tVr<br>4HxwTwCaPuAtBhb+MBWz02OzA1g4XBPApXS+CZs7j3aU<br>pSOYBUMshIAbQAlqwp+TfXDnnBS73w+IrbOhWhnPn<br>Z7zVz8QqKt00FAqhvUInDQQFpNS9a0O2aHND<br>2X3Nw7717yZdthjXWiMTj5DSJF4kd6QD6WITUqqhmarhO1qyM9<br>uxKr7W9mteU+7wIDAQABMIIBIjANB</p>
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="more-detail">
+    Public key
+  </label>
+  <div id="more-detail-hint" class="govuk-hint">
+    Paste in the entire public key in PEM format, including the headers
+  </div>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Confirm
+  </button>
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
+
+</form>
+
+{% endblock %}

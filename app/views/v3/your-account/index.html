@@ -1,0 +1,50 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your account" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your account" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      {# flash banner if details changed #}
+
+      {% if sessionFlash %} {# this is done using javascript to show only once - look at routes.js to see how it's done #}
+
+      {{ govukNotificationBanner({
+        text: sessionFlash + ' changed',
+        type: 'success'
+      }) }}
+
+      {% endif %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <table class="govuk-table govuk-!-margin-top-6">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name</th>
+            <td class="govuk-table__cell">{{ data['name'] or data['defaultUser'].name}}</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="change-name">Change</a></td>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email address</th>
+            <td class="govuk-table__cell">{{ data['email-address-2'] or data['defaultUser'].email}}</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="change-email">Change</a></td>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Phone number</th>
+              <td class="govuk-table__cell">{{ data['mobile-number-2'] or '07123456789'}}</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="change-phone">Change</a></td>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Password</th>
+                <td class="govuk-table__cell">Last changed {% if data['create-password-1']%}1 minute{% else %}5 minutes{% endif %} ago</td>
+                <td class="govuk-table__cell"><a class="govuk-link" href="change-password">Change</a></td>
+
+        </tr>
+        </tbody>
+      </table>
+
+{% endblock %}

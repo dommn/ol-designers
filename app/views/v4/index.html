@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+{% set serviceName = "Round 4" %}
+{% block pageTitle %}
+  Prototype for user testing: Identity concepts - user journey maps
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Prototype for user testing: March 2023
+      </h1>
+          <!-- <p class="govuk-body-l">Testing booked for Nov/Dec 2022</p> -->
+
+
+  <h2 class="govuk-heading-m">Scenario</h2>
+      <!-- <p>Make a request for your service to join private beta</p> -->
+
+      <!--  Need to update /email-invite to first page of scenario -->
+      {{ govukButton({
+        href: "/" + folder + "/product-site/index",
+        text: "Go to scenario"
+      }) }}
+
+
+      <h2 class="govuk-heading-m">All screens</h2>
+
+      <!--  start of wrapper for summary component -->
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              All screens
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+      <!-- end start of wrapper for details component - need to update w/ correct page links  -->
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/product-site/index">Homepage</a></li>
+            <li><a href="/{{folder}}/about/about">About GOV.UK One Login</a></li>
+            <li><a href="/{{folder}}/about/letting-users-sign-in">Letting users sign in</a></li>
+            <li><a href="/{{folder}}/about/identity-checking">Identity checking</a></li>
+            <li><a href="/{{folder}}/about/signed-in-experience">The signed in experience</a></li>
+            <li><a href="/{{folder}}/about/roadmap">Roadmap</a></li>
+            <li><a href="/{{folder}}/documentation/tech-docs">Technical documentation</a></li>
+            <li><a href="/{{folder}}/documentation/user-journey-maps">High level diagrams of GOV.UK One Login</a></li>
+            <li><a href="https://govuk-one-login-user-journeys.herokuapp.com/" class="govuk-link" rel="noreferrer noopener" target="_blank">GOV.UK One Login prototype (opens in a new tab)</a></li>
+          </ul>
+
+          <p><strong><a class="govuk-link" href="/manage-prototype/clear-data">Clear session data</a></strong></p>
+
+      <!-- finish wrapper for details component -->
+          </div>
+        </details>
+      <!-- end of wrapper for details component -->
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Related docs and further reading</h2>
+
+    <p><a href="https://docs.google.com/presentation/d/1SQiSijgyGnpkpkRiMLid4zpYM1dcrMvl8147KbEFwE4/edit#slide=id.g10d42026b8_2_0">
+    User research findings</a></p>
+
+    <p><a href="https://www.figma.com/file/CWqXGg9hIIs5Bgv1OoQOO4/Design-for-Adoption?node-id=8003%3A80063">
+    Figma file</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

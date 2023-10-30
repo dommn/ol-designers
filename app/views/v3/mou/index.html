@@ -1,0 +1,157 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+
+{% set pageTitle = "GOV.UK Sign In Memorandum of Understanding documents" %}
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+
+    <h1 class="govuk-heading-l">
+    {{pageTitle}}
+    </h1>
+
+
+<P>
+    You need to review the documents below before you can access GOV.UK Sign In’s production environment.
+    Your department needs to read the first 3 documents and sign a form to accept the terms set out in them.
+
+</p>
+  <p>These documents contain commercially sensitive information. Do not share them outside of your department.
+</p>
+
+<!--
+<p>Downloads are in the <a href="https://www.gov.uk/guidance/using-open-document-formats-odf-in-your-organisation">Open Document</a> (.odt) format.</p>
+-->
+
+
+
+<p><a href="{{asset_path}}files/mou/MoUdocs.zip" class="govuk-link govuk-link--no-visited-state" download >
+    Download all documents (Zip, 198KB)</a></p>
+
+
+    <h2 name="mou" id="mou" class="govuk-heading-m">1. Memorandum of Understanding (MoU)</h2>
+
+
+
+<P>
+    The agreement between your department and the Government Digital Service (GDS) on your use of GOV.UK Sign In.
+
+Read it and share it with your department’s legal team.
+    </p>
+
+    {{ govukInsetText({
+      text: "The provisions in schedule 4 do not apply to you because you have been invited to the authentication private beta only."
+    }) }}
+
+
+
+
+<p><a href="{{asset_path}}files/mou/1.MemorandumofUnderstandingGOV.UKSignIn (v1.0).html" class="govuk-link govuk-link--no-visited-state" >View <span class="govuk-visually-hidden">the memorandum of understanding</span></a></p>
+
+  <p>
+    <a href="{{asset_path}}files/mou/1. Memorandum of Understanding - GOV.UK Sign In (v1.0).odt" class="govuk-link govuk-link--no-visited-state" download >Download <span class="govuk-visually-hidden">the memorandum of understanding</span> (ODT, 79KB)</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 name="incident-response" id="incident-response" class="govuk-heading-m">2. Incident response plan</h2>
+
+
+
+<p>
+    How GDS will classify and deal with incidents. Read it and share with your department's security experts.
+    </p>
+
+    <p><a href="{{asset_path}}files/mou/2.IncidentResponsePlanGOV.UKSignIn.html" class="govuk-link govuk-link--no-visited-state" >View <span class="govuk-visually-hidden">the incident response plan</span></a></p>
+
+    <p>
+<a href="{{asset_path}}files/mou/2. Incident Response Plan - GOV.UK Sign In .odt" class="govuk-link govuk-link--no-visited-state" download >Download <span class="govuk-visually-hidden">the incident response plan </span>(ODT, 40KB) </a>
+</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 name="counter-fraud" id="counter-fraud" class="govuk-heading-m">  3. Counter-fraud process </h2>
+
+
+    <p>
+    How GDS and your department will share data to prevent, detect and take action in the event of fraud.
+<!--    </p><p> -->
+    Read it and share with your department’s fraud experts.
+    </p>
+
+
+
+    <p><a href="{{asset_path}}files/mou/3.CounterFraudProcessGOV.UKSignIn.html" class="govuk-link govuk-link--no-visited-state" >View <span class="govuk-visually-hidden">the counter fraud process</span></a></p>
+
+    <p>
+<a href="{{asset_path}}files/mou/3. Counter Fraud Process - GOV.UK Sign In.odt" class="govuk-link govuk-link--no-visited-state" download >
+      Download <span class="govuk-visually-hidden">the counter fraud process </span>(ODT, 41KB)
+    </a>
+</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+    <h2 name="acceptance-form" id="acceptance-form" class="govuk-heading-m">  4. Acceptance form (to sign and return)</h2>
+
+
+<p>   Sign and return this form to accept the terms set out in the other documents. Your department must do this before any service in your department can access GOV.UK Sign In's production environment.
+
+</p><p>
+
+The form must be signed by someone Deputy Director level or above, on behalf of the department. Your department only needs to do this once.
+
+</p>
+
+
+<p><a href="{{asset_path}}files/mou/4.MemorandumofUnderstandingacceptanceformGOV..html" class="govuk-link govuk-link--no-visited-state" >View <span class="govuk-visually-hidden">the acceptance form</span></a></p>
+
+
+<p><a href="{{asset_path}}files/mou/4. Memorandum of Understanding acceptance form - GOV.UK Sign In.odt" class="govuk-link govuk-link--no-visited-state" download >Download <span class="govuk-visually-hidden">the acceptance form </span>(ODT, 21KB)</a>
+</p>
+
+<p>
+    Email your signed form to <a href="mailto:govuk-sign-in@digital.cabinet-office.gov.uk">govuk-sign-in@digital.cabinet-office.gov.uk</a> and we’ll return a countersigned copy to you.
+</p>
+
+
+
+{% if updated %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+  <p>
+Updated 19 January 2023</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    View all updates
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+    <ol class="govuk-list">
+      <li>
+        19 January 2023<br>
+        Updated the Incident response process to version 1.1
+      </li>
+      <li>
+        23 November 2022<br>
+        Updated the MoU to version 1.2.
+      </li>
+      <li>
+        31 October 2022<br>
+        First published.
+      </li>
+
+    </ol>
+
+
+
+
+    </div>
+</details>
+
+{% endif %}
+
+
+
+{% endblock %}

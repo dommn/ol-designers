@@ -1,0 +1,43 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "GOV.UK One Login - Enter your email address" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "Sign in" %}
+{% set back = true %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" action="check-your-phone">
+      
+      <h1 class="govuk-heading-l">Enter your mobile phone number</h1>
+
+    <p>We will send a 6 digit security code to this number every time you sign in.</p>
+    <p>You must use a UK mobile phone number.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="mobile-number">
+          UK mobile phone number
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="mobile-number" name="mobileNumber" type="text" spellcheck="false" aria-describedby="mobile-number-hint">
+      </div>
+
+        <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Continue
+    </button>
+          
+        </div>
+      </form>
+    
+    
+        </div>
+
+
+{% endblock %}

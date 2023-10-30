@@ -1,0 +1,41 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set back = "/" + folder + "/create-entermobile" %}
+
+{% set pageTitle = "Check your phone" %}
+{% extends folder + "/_base.html" %}
+
+
+
+
+
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <div class="govuk-inset-text">We sent a code to <strong> {{ data['mobile-number-2'] or '07123 456789' }}</strong></div>
+
+    <p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+
+
+
+
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label" for="otp">Enter the 6 digit security code</label>
+
+        <input class="govuk-input govuk-input--width-5" id="otp" name="create-sms-otp" type="text" autocomplete="one-time-code" inputmode="numeric" spellcheck="false" >
+
+      </div>
+
+    {{ govukButton({
+    text: "Continue",
+    href: "/" + folder + "/create/create-name"
+    }) }}
+
+    <p><a href="{{folder}}/create/create-entermobile-v1">Not received a text message?</a></p>
+
+{% endblock %}

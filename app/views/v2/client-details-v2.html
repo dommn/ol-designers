@@ -1,0 +1,142 @@
+{% set pageTitle = "Client details" %}
+{% set subMenuActive = "Client details" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      {# flash banner if details changed #}
+
+      {% if sessionFlash %} {# this is done using javascript to show only once - look at routes.js to see how it's done #}
+
+{% if (sessionFlash == "Redirect URI") or (sessionFlash == "User attributes") %}
+
+{{ govukNotificationBanner({
+  text:  sessionFlash +  ' changed' ,
+  type: 'success'
+}) }}
+
+{% else %}
+
+      {{ govukNotificationBanner({
+        text:  'Service name changed to ‘' + data['service-name-2'] + '’' if (sessionFlash == "service name") else 'You have joined ‘' + ( data['service-name-2'] or "Get a juggling licence" )  + '’',
+        type: 'success'
+      }) }}
+{% endif %}
+
+
+
+      {% endif %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+        <p>This page shows the information you need to make calls to the GOV.UK Sign In API.</p>
+
+        <p>To get started, follow the integration process in the <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/" class="govuk-link" rel="noreferrer noopener" target="_blank">technical documentation (opens in new tab)</a>. It will help you to update the client details below and use them to integrate.</p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">Integration client</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              X8rnOEw0SqOdEAOnWyPQ6YsJugQ
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Redirect URIs
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['redirectUrl'] or 'None selected'}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/{{folder}}/service-update-details-redirect-uris-v2">
+                Change<span class="govuk-visually-hidden"> redirect URIs</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              User attributes required
+            </dt>
+            <dd class="govuk-summary-list__value">
+{% if data['optionalScopes'] %}<ul class="govuk-list">
+  {% for item in data['optionalScopes'] %}<li>{{item}}{% endfor %}
+    </ul>
+ {% else %}None selected{% endif%}
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/{{folder}}/service-update-details-user-attributes-v2">
+                Change<span class="govuk-visually-hidden"> user attributes</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Public key
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Not yet added</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/{{folder}}/service-update-details-public-key-v2">
+                Change<span class="govuk-visually-hidden"> public key</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Post logout redirect URIs (optional)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Not yet added</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/{{folder}}/service-update-details-post-logout-redirect-uris-v2">
+                  Change<span class="govuk-visually-hidden"> post logout redirect URIs</span>
+                </a>
+              </dd>
+          </div>
+        </dl>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What do these terms mean?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <p><strong>Client ID</strong></p>
+            <p>Our API uses this to uniquely identify your client when it makes requests. You cannot change this.</p>
+
+            <p><strong>Redirect URIs</strong></p>
+            <p>The page(s) you want your users to see after they sign in to your service.</p>
+
+            <p><strong>User attributes required</strong></p>
+            <p>The information about your users that we send back to your service.</p>
+
+            <p><strong>Public key</strong></p>
+            <p>This lets our services securely send messages to each other. You need to <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/generate-a-key/" class="govuk-link" rel="noreferrer noopener" target="_blank">generate a key pair (opens in new tab)</a> and add the public key.</p>
+
+            <p><strong>Post logout redirect URIs</strong></p>
+            <p>The page(s) you want your users to see after they sign out of your service. These are optional.</p>
+
+          </div>
+        </details>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">Production client</h2>
+
+        <p>You can add a production client if you <a href="/{{folder}}/private-beta/index" class= govuk-link>join our private beta</a>.</p>
+
+
+{% endblock %}

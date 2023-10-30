@@ -1,0 +1,212 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "User journeys - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Documentation" %} {# breadcrumb #}
+{% extends folder + "/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row" style="position: relative;">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation side-navigation">
+        <ul class="govuk-list">
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/documentation/tech-docs">Technical documentation</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/documentation/user-journey-maps">User journeys</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--active sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/documentation/top-level-linear-journeys">Top level linear journeys</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Design recommendations</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="#" >
+              Let users create a GOV.UK One Login to save progress</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">
+              Let users navigate to their GOV.UK One Login and sign out easily</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">
+              Show users where to change their GOV.UK One Login credentials</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Top level linear journeys
+    </h1>
+
+    <p>We have basic journey diagrams and descriptions which explain the relationship and journey interactions between your service and GOV.UK One Login.</p>
+    <p>These visuals cover common user goals. We will add new ones as we develop additional user journeys.</p>
+
+        <h2 class="govuk-heading-m">Contents</h2>
+
+        <h3 class="govuk-heading-s">Sign in journeys</h3>
+
+          <ul class="documentation-contents govuk-body">
+            <li class="documentation-contents-item">
+              <a class="govuk-link" href="#create-journey-start">Create a GOV.UK One Login or let your user sign in with an existing one at the start of your service journey</a>
+            </li>
+            <li class="documentation-contents-item">
+              <a class="govuk-link" href="#create-save-progress">Create a GOV.UK One Login or let your user sign in with an existing one to save their progress and continue later</a>
+            </li>
+          </ul>
+        
+        <h3 class="govuk-heading-s">Sign in and identity checking journeys</h3>
+
+          <ul class="documentation-contents govuk-body">
+            <li class="documentation-contents-item">
+              <a class="govuk-link" href="#id-passport-app">Check the identity of your user who has a passport with an NFC chip and is using the GOV.UK ID Check app</a>
+            </li>
+            <li class="documentation-contents-item">
+              <a class="govuk-link" href="#id-passport-kbv">Check the identity of your user who has a passport without an NFC chip and is answering security questions</a>
+            </li>
+          </ul>
+
+        <h3 class="govuk-heading-s">The signed in experience</h3>
+
+          <ul class="documentation-contents govuk-body">
+            <li class="documentation-contents-item">
+              <a class="govuk-link" href="#one-login-space">Sign in to see your GOV.UK One Login space</a>
+            </li>
+            <li class="documentation-contents-item">
+              <a class="govuk-link" href="#one-login-change-credentials">Sign in to change your email address and security details</a>
+            </li>
+          </ul>
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    
+
+      <h2 class="govuk-heading-m">Sign in journeys</h2>
+
+
+      <h3 class="govuk-heading-s" id="create-journey-start">Create a GOV.UK One Login or let your user sign in with an existing one at the start of your service journey</h3>
+
+          <p>This journey shows your user creating a GOV.UK One Login at the start of your service journey.</p>
+
+          <img src="/public/images/User-creates-account-upfront.svg" alt=" " style="width: 100%; height: auto;">
+
+          <p class="govuk-body govuk-!-margin-top-4">Your user begins their journey on your service’s start page, usually on GOV.UK. They create a GOV.UK One Login using their email address, a password and two-factor authentication. 
+            Then, they’re sent to your service to complete their journey.</p>
+
+          <p>This option is usually best for your service, if you need all your users to create a GOV.UK One Login before they can do anything.</p>
+
+
+      <h3 class="govuk-heading-s" id="create-save-progress">Create a GOV.UK One Login or let your user sign in with an existing one to save their progress</h3>
+
+          <p>This journey shows a user creating a GOV.UK One Login in the middle of your service journey. This allows them to save and continue later.</p>
+
+          <img src="/public/images/User-creates-account-to-save-progress.svg" alt=" " style="width: 100%; height: auto;">
+
+          <p class="govuk-body govuk-!-margin-top-4">Users start at your service’s start page, usually on GOV.UK. They complete part of your journey, then decide they want to finish it later.</p>
+
+          <p>To save their progress, they create a GOV.UK One Login using their email address, a password and two-factor authentication.</p>
+
+          <p>Later, they return to your service and resume their journey by signing in to their GOV.UK One Login.</p>
+
+          <p>This option is usually best for your service if you do not need all your users to create a GOV.UK One Login, but want to give them the option of saving their progress.</p>
+   
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+      <h2 class="govuk-heading-m">Sign in and identity checking journeys</h2>
+
+
+      <h3 class="govuk-heading-s" id="id-passport-app">Check the identity of your user who has a passport with an NFC chip and is using the GOV.UK ID Check app</h3>
+
+          <p>This journey shows your user completing the whole journey in their web browser and also using the GOV.UK ID Check app. 
+            They have a passport with an NFC chip in it and are sent to prove their identity using the GOV.UK ID Check app.</p>
+
+          <img src="/public/images/NFC-chipped-passport-ID-check-app.svg" alt=" " style="width: 100%; height: auto;">
+
+          <p class="govuk-body govuk-!-margin-top-4">Your user begins their journey in your service, where they’re asked to prove their identity.</p>
+
+          <p>They sign in or create a GOV.UK One Login, then answer some questions about their device and type of document.</p>
+          
+          <p>Then they’re sent to the GOV.UK ID check app. They do a biometric identity document check then a biometric face check.</p>
+
+          <p>Afterwards, they return to GOV.UK One Login to complete an address and fraud check. They have now completed the process of proving their identity.</p>
+
+          <p>Then, they’re sent back to your service and continue the rest of their journey.</p>
+
+
+      <h3 class="govuk-heading-s" id="id-passport-kbv">Check the identity of your user who has a passport without an NFC chip and is answering security questions</h3>
+
+          <p>This journey shows your user completing the whole journey in their web browser. They have a passport without an NFC chip and are prompted to answer security questions.</p>
+
+          <img src="/public/images/Passport-KBV-web-browser.svg" alt=" " style="width: 100%; height: auto;">
+
+          <p class="govuk-body govuk-!-margin-top-4">Your user begins their journey in your service, where they’re asked to prove their identity.</p>
+
+          <p>They sign in or create a GOV.UK One Login, then answer some questions about their device and type of document.</p>
+          
+          <p>They’re asked to enter their passport details and then complete an address and fraud check. Then they answer some security questions which only they will know the answer to.</p>
+
+          <p>They have now completed the process of proving their identity.</p>
+
+          <p>Then, they’re sent back to your service and continue the rest of their journey.</p>
+
+      
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+      <h2 class="govuk-heading-m">The signed in experience</h2>
+
+
+      <h3 class="govuk-heading-s" id="one-login-space">Sign in to see your GOV.UK One Login</h3>
+
+          <p>Your user’s GOV.UK One Login includes an area where they can change their sign in details. They can also see which services they’ve accessed with their GOV.UK One Login.</p>
+
+          <img src="/public/images/One-Login-space.svg" alt=" " style="width: 75%; height: auto;">
+
+          <p class="govuk-body govuk-!-margin-top-4">Your user begins their journey in your service and are then sent to their GOV.UK One Login.</p>
+
+          <p>They sign into their GOV.UK One Login. In one central area, they can see and access links to all the services that they’ve previously used.</p>
+          
+          <p>They can choose the service link to take them to the service they want to use.</p>
+
+          <p>Once they have completed their journey or transaction, they can sign out of your service, or can choose to return back to their GOV.UK One Login.</p>
+
+
+      <h3 class="govuk-heading-s" id="one-login-change-credentials">Sign in to change your email address and security details</h3>
+
+          <p>Your user can navigate from your service to their GOV.UK One Login to change their sign in details.</p>
+
+          <img src="/public/images/Change-credentials.svg" alt=" " style="width: 75%; height: auto;">
+
+          <p class="govuk-body govuk-!-margin-top-4">Your user begins their journey in your service and are then sent to their GOV.UK One Login.</p>
+
+          <p>They sign into their GOV.UK One Login. They choose the Change credentials link. This takes them to a screen where they can update their email address and security details.</p>
+          
+          <p>Once they’ve done this, they can sign out of their GOV.UK One Login.</p>
+
+  </div>
+
+    <div class="app-back-to-top app-back-to-top--hidden" data-module="app-back-to-top">
+      <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+        <svg aria-hidden="true" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"/>
+        </svg>Back to top
+      </a>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/back-to-top.js"></script>
+{% endblock %}

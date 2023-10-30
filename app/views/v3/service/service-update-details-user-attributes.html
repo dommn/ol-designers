@@ -1,0 +1,74 @@
+{% set pageTitle = "Change the user attributes you get" %}
+{% set subMenuActive = "Client details" %}
+
+
+{{-" checked" if item.checked }}
+
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+
+
+      {% if errorField %}
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: errorMessage,
+        href: errorElementId
+        }
+        ]
+        }) }}
+
+      {% endif %}
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <p>Select the <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/choose-which-user-attributes-your-service-can-request/" class="govuk-link" rel="noreferrer noopener" target="_blank">user attributes (opens in new tab)</a> you would like your service to receive. These are also known as ‘scopes’ in the OpenID Connect (OIDC) specification.</p>
+
+      <form class="form" action="/{{folder}}/service-update-details-user-attributes-router" method="post">
+
+        {{ govukCheckboxes({
+        name: "optionalScopes",
+        fieldset: {
+        legend: {
+        text: "User attributes"
+        }
+        },
+        items: [
+        {
+        value: "Email",
+        text: "Email",
+        checked: checked("optionalScopes", "Email")
+        },
+        {
+        value: "Phone",
+        text: "Phone",
+        checked: checked("optionalScopes", "Phone")
+        },
+        {
+        value: "Offline access",
+        text: "Offline access",
+        hint: {
+        text: "This gives you a refresh token so you can access the /userinfo endpoint for longer than 3 minutes"
+        },
+        checked: checked("optionalScopes", "Offline access")
+        }
+
+        ]
+        }) }}
+
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Confirm"
+          }) }}
+          <a class="govuk-link" href="/{{folder}}/client-details">Cancel</a>
+        </div>
+
+
+      </form>
+
+
+
+{% endblock %}

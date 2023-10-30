@@ -1,0 +1,15 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Not signed in" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Test" %} {# breadcrumb #}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+<h1 class="govuk-heading-l">
+  Example
+</h1>
+
+<p>Stuff goes here </p>
+{% endblock %}

@@ -1,0 +1,202 @@
+{% extends "layouts/main.html" %}
+{% set serviceName = "Round 3" %}
+{% block pageTitle %}
+  Prototype for user testing: Private beta and MoU processes
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Prototype for user testing: December 2022
+      </h1>
+          <!-- <p class="govuk-body-l">Testing booked for Nov/Dec 2022</p> -->
+
+
+  <h2 class="govuk-heading-m">Scenario 1</h2>
+      <!-- <p>Make a request for your service to join private beta</p> -->
+
+      <!--  Need to update /email-invite to first page of scenario -->
+      {{ govukButton({
+        href: "/" + folder + "/private-beta/index?scenario=1",
+        text: "Go to scenario 1"
+      }) }}
+
+      <!--  start of wrapper for summary component -->
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Screens if there's a problem
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+      <!-- end start of wrapper for details component - need to update w/ correct page links  -->
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/private-beta/index">Joining private beta</a></li>
+            <li><a href="/{{folder}}/private-beta/how-to-join">How to join</a></li>
+            <li><a href="/{{folder}}/private-beta/apply">Apply to join private beta</a></li>
+            <li><a href="/{{folder}}/private-beta/apply-check-answers">Check your answers</a></li>
+            <li><a href="/{{folder}}/private-beta/submitted">Application submitted</a></li>
+            <li><a href="/{{folder}}/private-beta/index-pending">Joining private beta - Pending request</a></li>
+          </ul>
+
+          <p><strong><a class="govuk-link" href="/manage-prototype/clear-data">Clear session data</a></strong></p>
+
+      <!-- finish wrapper for details component -->
+          </div>
+        </details>
+      <!-- end of wrapper for details component -->
+
+
+  <h2 class="govuk-heading-m">Scenario 2</h2>
+
+      <!-- <p>Private beta acceptance - next steps including the Memorandum of Understanding</p> -->
+
+      <!--  Need to update /email-invite to first page of scenario -->
+      {{ govukButton({
+        classes: "govuk-button--secondary",
+        href: "/" + folder + "/sign-in/sign-in-email?scenario=2",
+        text: "Go to scenario 2"
+      }) }}
+
+      <!--  start of wrapper for summary component -->
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Screens if there's a problem
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+      <!-- end start of wrapper for details component - need to update w/ correct page links  -->
+          <p><strong>Sign in to the GOV.UK One Login admin tool:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/{{folder}}/sign-in/sign-in-email">Email address</a>
+              <li><a href="/{{folder}}/sign-in/sign-in-password">Enter your password</a></li>
+              <li><a href="/{{folder}}/sign-in/sign-in-checkphone">Check your phone</a></li>
+            </ul>
+
+          <p><strong>Memorandum of Understanding:</strong></p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="/{{folder}}/mou/index-service-to-sign">Service needs to sign</a></li>
+                <li><a href="/{{folder}}/mou/index-service-signed">Department has already signed</a></li>
+              </ul>
+
+          <p><strong><a class="govuk-link" href="/manage-prototype/clear-data">Clear session data</a></strong></p>
+      <!-- finish wrapper for details component -->
+          </div>
+        </details>
+      <!-- end of wrapper for detailes component -->
+
+
+  <h2 class="govuk-heading-m">All screens</h2>
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        All screens
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+
+      <p><strong>GOV.UK One Login product site (not in prototype):</strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Home - <a href="https://www.sign-in.service.gov.uk/">live link</a></li>
+            <li>Current features - <a href="https://www.sign-in.service.gov.uk/features">live link</a></li>
+            <li>Roadmap - <a href="https://www.sign-in.service.gov.uk/features/roadmap">live link</a></li>
+            <li>Technical documentation - <a href="https://www.sign-in.service.gov.uk/documentation">live link</a></li>
+            <li>User journey maps - <a href="https://www.sign-in.service.gov.uk/documentation/user-journeys">live link</a></li>
+            <li>Design recommendations: ‘create account to save progress’ - <a href="https://www.sign-in.service.gov.uk/documentation/design-recommendations">live link</a></li>
+            <li>Support - <a href="https://www.sign-in.service.gov.uk/support">live link</a></li>
+          </ul>
+
+      <p><strong>Create a GOV.UK admin tool account:</strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/get-started-with-gov-uk-sign-in">Get started</a>
+            <li><a href="/{{folder}}/create/create-email">Enter your government email address</a></li>
+            <li><a href="/{{folder}}/create/create-checkemail">Check your email </a></li>
+            <li>Email (not included in prototype)</li>
+            <li><a href="/{{folder}}/create/create-password">Create your password</a></li>
+            <li><a href="/{{folder}}/create/create-entermobile">Enter your mobile phone number</a></li>
+            <li><a href="/{{folder}}/create/create-checkphone">Check your phone</a></li>
+            <li>SMS (not included in prototype)</li>
+            <li><a href="/{{folder}}/create/create-name">Enter your name</a></li>
+            <li><a href="/{{folder}}/create/create-service-name">Create service name</a></li>
+          </ul>
+
+      <p><strong>Sign in to the GOV.UK One Login admin tool:</strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/sign-in/sign-in-email">Email address</a>
+            <li><a href="/{{folder}}/sign-in/sign-in-password">Enter your password</a></li>
+            <li><a href="/{{folder}}/sign-in/sign-in-checkphone">Check your phone</a></li>
+          </ul>
+
+      <p><strong><a href="/{{folder}}/your-account/index">Your account:</a></strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/your-account/change-name">Change name</a></li>
+            <li><a href="/{{folder}}/your-account/change-email">Change your email address</a></li>
+            <li><a href="/{{folder}}/your-account/change-checkemail">Check your email </a></li>
+            <li><a href="/{{folder}}/your-account/change-phone">Change your mobile phone number</a></li>
+            <li><a href="/{{folder}}/your-account/change-checkphone">Check your phone</a></li>
+            <li><a href="/{{folder}}/your-account/change-password">Add your new password</a></li>
+          </ul>
+
+      <p><strong><a href="/{{folder}}/your-services">Your services:</a></strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/change-service-name">Change your service name</a></li>
+          </ul>
+
+      <p><strong><a href="/{{folder}}/service/index">Client details:</a></strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/service/service-update-details-redirect-uris">Change your redirect URIs</a></li>
+            <li><a href="/{{folder}}/service/service-update-details-user-attributes">Change the user attributes you get</a></li>
+            <li><a href="/{{folder}}/service/service-update-details-public-key">Change your public key</a></li>
+            <li><a href="/{{folder}}/service/service-update-details-post-logout-redirect-uris">Change your post logout redirect URIs</a></li>
+          </ul>
+
+      <p><strong><a href="/{{folder}}/team-members/index">Team members:</a></strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/team-members/invite-team-member">Invite a team member</a></li>
+            <li><a href="/{{folder}}/team-members/invite-sent">Invitation email sent</a></li>
+            <li><a href="/{{folder}}/team-members/email-invite">Email</a></li>
+            <li><a href="/{{folder}}/team-members/change-permissions">Change permissions for [team member]</a></li>
+            <li>Remove [team member] (not included in prototype)</li>
+          </ul>
+
+      <p><strong>Private beta:</strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/private-beta/index">Joining private beta</a></li>
+            <li><a href="/{{folder}}/private-beta/how-to-join">How to join</a></li>
+            <li><a href="/{{folder}}/private-beta/apply">Apply to join private beta</a></li>
+            <li><a href="/{{folder}}/private-beta/apply-check-answers">Check your answers</a></li>
+            <li><a href="/{{folder}}/private-beta/submitted">Application submitted</a></li>
+            <li><a href="/{{folder}}/private-beta/index-pending">Joining private beta - Pending request</a></li>
+          </ul>
+
+      <p><strong>Memorandum of Understanding:</strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{folder}}/mou/index-service-to-sign">Service needs to sign</a></li>
+            <li><a href="/{{folder}}/mou/index-service-signed">Department has already signed</a></li>
+          </ul>
+
+      <p><strong><a class="govuk-link" href="/manage-prototype/clear-data">Clear session data</a></strong></p>
+
+           <!-- finish wrapper for details component -->
+          </div>
+        </details>
+      <!-- end of wrapper for detailes component -->
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Related docs and further reading</h2>
+
+    <p><a href="https://docs.google.com/presentation/d/1Gw8blShrscbhfwYdrL1_7M31pR65TSKqWCiW5krXegc/edit#slide=id.g1692418bb97_1_131">
+    User research findings</a></p>
+
+    <p><a href="https://www.figma.com/file/CWqXGg9hIIs5Bgv1OoQOO4/Design-for-Adoption?node-id=8003%3A80063">
+    Figma file</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

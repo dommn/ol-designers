@@ -1,0 +1,194 @@
+{% set pageTitle = "Team members" %}
+{% set subMenuActive = "Team members" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      {# flash banner if details changed #}
+
+      {% if sessionFlash %} {# this is done using javascript to show only once - look at routes.js to see how it's done #}
+
+      {{ govukNotificationBanner({
+        text: 'You have changed permissions for Beth Walton',
+        type: 'success'
+      }) }}
+
+      {% endif %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Invite a team member",
+          href: "/" + folder + "/team-members/invite-team-member"
+          }) }}
+        </div>
+
+{# let's build a macro of the permissions #}
+{# this macro spits out the list, with the default that they're set to cannot. Changing a variable will make it different  #}
+{% macro permissionsList(hideHeader="", manage="cannot", integration="cannot", serviceName="cannot", privateBeta="cannot" ) %}
+
+{# when the list is shown for pending permissions, we don't need the header. Let's create an option to hide it #}
+{% if not hideHeader  %}
+<p class="govuk-body govuk-!-font-weight-bold">Permissions</p>
+{% endif %}
+<ul class="govuk-list">
+<li>
+
+    <span class="tick-cross-{% if manage == 'cannot' %}cross{% else %}tick{% endif %}">
+      <span class="govuk-visually-hidden">Can{% if manage == 'cannot' %}ot{% endif %}</span>
+      Manage team members
+    </span>
+
+</li>
+
+<li>
+
+    <span class="tick-cross-{% if integration == 'cannot' %}cross{% else %}tick{% endif %}">
+      <span class="govuk-visually-hidden">Can{% if integration == 'cannot' %}ot{% endif %}</span>
+      Change integration client details
+    </span>
+
+</li>
+
+<li>
+
+    <span class="tick-cross-{% if serviceName == 'cannot' %}cross{% else %}tick{% endif %}">
+      <span class="govuk-visually-hidden">Can{% if serviceName == 'cannot' %}ot{% endif %}</span>
+      Change service name
+    </span>
+
+</li>
+
+<li>
+
+    <span class="tick-cross-{% if privateBeta == 'cannot' %}cross{% else %}tick{% endif %}">
+      <span class="govuk-visually-hidden">Can{% if privateBeta == 'cannot' %}ot{% endif %}</span>
+      Request to join private beta
+    </span>
+
+</li>
+
+
+</ul>
+
+{% endmacro %}
+{# the macro is now initialised, ready for use #}
+
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">{{data['name'] or data['defaultUser'].name}} <span class="govuk-!-font-weight-regular"">(you)</span></h2>
+
+        <p>{{data['email'] or data['defaultUser'].email}}</p>
+
+{# now we can use the macro to make a customised version of the list - yay! #}
+{{ permissionsList(manage="can", integration="can", serviceName="can", privateBeta="can") }}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">{{ data['existingUser'].name or "Bethany Walton"}}</h2>
+
+        <p>{{data['existingUser'].email or "bethany.walton@digital.cabinet-office.gov.uk"}}</p>
+
+        {# if no permissions are chosen it's easiest to just check for no variable #}
+        {% if not data['existingUserPermissionsList'] %}
+        {{ permissionsList(manage="cannot" , integration="cannot", serviceName="cannot", privateBeta="cannot", hideHeader="true") }}
+
+        {# at least one permissions has been chosen #}
+
+        {% else %}
+
+        {{ permissionsList(
+        manage="cannot" if not ("Manage team members" in data['existingUserPermissionsList']),
+        integration="cannot" if not ("Change integration client details" in data['existingUserPermissionsList']),
+        serviceName="cannot" if not ("Change service name" in data['existingUserPermissionsList']),
+        privateBeta="cannot" if not ("Request to join private beta" in data['existingUserPermissionsList']),
+        hideHeader="true") }}
+
+        {% endif %}
+
+<ul class="govuk-list">
+  <li><a href="change-permissions" class="govuk-link">Change permissions</a></li>
+<li><a href="#" class="govuk-link govuk-link--no-visited-state remove-color">Remove team member</a></li>
+</ul>
+
+
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<h2 class="govuk-heading-m govuk-!-margin-top-3">Pending invitations</h2>
+
+  <!--      <h3 class="govuk-heading-s govuk-!-margin-top-3">James Pirot</h3> -->
+
+
+
+{% if data['newUser'] %}
+
+{% for i in data['newUser'] | reverse %} {# if we have new invites, loop through them… backwards #}
+
+<p>{{i['inviteEmail']}}</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View permissions
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+   {{ permissionsList(
+    manage= "can" if ("Manage team members" in i['invitePermissions'])  else  "cannot",
+    integration= "can" if ("Change integration client details" in i['invitePermissions'])  else  "cannot",
+    serviceName= "can" if ("Change service name" in i['invitePermissions'])  else  "cannot",
+    privateBeta= "can" if ("Request to join private beta" in i['invitePermissions']) else "cannot" ,
+    hideHeader="true") }}
+
+
+
+
+
+  </div>
+</details>
+{% endfor %} {# end loop #}
+
+{% endif %} {# end check for new users #}
+
+        <p>james.piorot@developer.gov.uk</p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              View permissions
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            {{ permissionsList(manage="can", integration="can", serviceName="cannot", privateBeta="can", hideHeader="true") }}
+
+
+          </div>
+        </details>
+
+
+  <!--      <h3 class="govuk-heading-s govuk-!-margin-top-3">Leighton Brey</h3> -->
+
+        <p>leighton.brey@developer.gov.uk</p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              View permissions
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            {{ permissionsList(manage="cannot", integration="cannot", serviceName="can", privateBeta="cannot", hideHeader="true") }}
+
+          </div>
+        </details>
+
+
+
+{% endblock %}

@@ -1,0 +1,278 @@
+{% set pageTitle = "Apply to join private beta" %}
+{% set subMenuActive = "Joining private beta" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "how-to-join"
+}) }}
+
+
+<h1 class="govuk-heading-l govuk-!-margin-top-1">{{pageTitle}}</h1>
+
+    <p>If you do not know how to answer any of the questions, you can give your best guess.</p>
+
+
+<form action="apply-check-answers" method="post">
+    <h2 class="govuk-heading-m govuk-!-margin-top-1">About your service</h2>
+
+        {{ govukInput({
+          name: "department",
+          id: "department",
+          label: {
+            text: "Department"
+          },
+          value: data['department']
+
+        }) }}
+
+        {{ govukTextarea({
+          name: "service-description",
+          id: "service-description",
+          label: {
+            text: "Provide a brief description of what your service does and who your users are"
+          },
+          value: data['service-description'],
+        hint: {
+          text: "A couple of sentences is fine"
+        }
+        }) }}
+
+        {{ govukTextarea({
+          name: "service-url",
+          id: "service-url",
+          label: {
+            text: "Link to your service (optional)"
+          },
+          value: data['service-url'],
+        hint: {
+          text: "If you have one, link to your service start page on GOV.UK.
+          If not, you could link to a prototype or user journey map - include any passwords if needed."
+        }
+        }) }}
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-1">Going live</h2>
+
+        {{ govukInput({
+          name: "live-date",
+          id: "live-date",
+          classes: "govuk-input--width-10",
+          label: {
+            text: "Estimated date you would like to go live with GOV.UK One Login"
+          },
+          value: data['live-date']
+        }) }}
+
+        {{ govukInput({
+          name: "new-user-accounts",
+          id: "new-user-accounts",
+          classes: "govuk-input--width-10",
+          label: {
+            text: "Estimated number of new user accounts during your busiest month"
+          },
+          value: data['new-user-accounts']
+        }) }}
+
+        {{ govukInput({
+          name: "number-signins",
+          id: "number-signins",
+          classes: "govuk-input--width-10",
+          label: {
+            text: "Estimated number of sign ins during your busiest month"
+          },
+          value: data['number-signins']
+        }) }}
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-1">Your authentication needs</h2>
+
+        {{ govukRadios({
+          name: "two-factor-auth",
+          fieldset: {
+            legend: {
+              text: "Will you be using two-factor authentication (2FA) as recommended?"
+            }
+          },
+          hint: {
+            html: '2FA is the ‘medium’ <a class="govuk-link"
+            href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/choose-the-level-of-authentication/">
+            level of authentication (opens in new tab)</a>'
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("two-factor-auth", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("two-factor-auth", "No")
+            },
+            {
+              value: "For some parts of the service but not others",
+              text: "For some parts of the service but not others",
+              checked: checked("two-factor-auth", "For some parts of the service but not others")
+            },
+            {
+              value: "Not sure",
+              text: "Not sure",
+              checked: checked("two-factor-auth", "Not sure")
+            }
+          ]
+        }) }}
+
+
+        {{ govukRadios({
+          name: "share-user-data",
+          fieldset: {
+            legend: {
+              text: "Do you need to share user data from your sign in solution with other services in your department?"
+            }
+          },
+          hint: {
+            text: "For example, if users can use a single ID to access multiple related services "
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("share-user-data", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("share-user-data", "No")
+            },
+            {
+              value: "Not sure",
+              text: "Not sure",
+              checked: checked("share-user-data", "Not sure")
+            }
+          ]
+        }) }}
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-1">Account migration</h2>
+
+        {% set migrationHtml %}
+        {{ govukInput({
+          id: "migration-numbers",
+          name: "migration-numbers",
+          classes: "govuk-input--width-10",
+          label: {
+            text: "How many accounts?"
+          },
+          value: data['migration-numbers'],
+          hint : {
+            text: "This can be an estimate"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "migration",
+          fieldset: {
+            legend: {
+              text: "Are you planning to migrate user accounts from an existing sign in system to GOV.UK One Login?"
+            }
+          },
+
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: migrationHtml
+              },
+              checked: checked("migration", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("migration", "No")
+            },
+            {
+              value: "Not sure",
+              text: "Not sure",
+              checked: checked("migration", "Not sure")
+            }
+          ]
+        }) }}
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-1">End-user support</h2>
+
+        {{ govukTextarea({
+          name: "end-user-support",
+          id: "end-user-support",
+          label: {
+            text: "Explain how you currently provide end-user support"
+          },
+          value: data['end-user-support']
+        }) }}
+
+        {{ govukInput({
+          name: "end-user-support-hours",
+          id: "end-user-support-hours",
+          label: {
+            text: "Your end-user support hours"
+          },
+          value: data['end-user-support-hours'],
+          hint : {
+            text: "For example, Monday to Friday, 9 to 5"
+          }
+        }) }}
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-1">Identity checks</h2>
+
+        {{ govukRadios({
+          name: "identity-checks",
+          fieldset: {
+            legend: {
+              text: "Will you need to add identity checks in future? (optional)"
+            }
+          },
+          hint: {
+            text: "Identity checks will become available next year"
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("identity-checks", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("identity-checks", "No")
+            },
+            {
+              value: "Not sure",
+              text: "Not sure",
+              checked: checked("identity-checks", "Not sure")
+            }
+          ]
+        }) }}
+
+
+    <div class="govuk-button-group">
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <a class="govuk-link" href="/{{folder}}/private-beta/index.html">Cancel</a>
+
+    </div>
+
+</form>
+
+
+
+{% endblock %}

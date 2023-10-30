@@ -1,0 +1,45 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your services" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+
+      {% if serviceNameUpdated === 'yes' %}
+
+      {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        You have changed your service name
+      </h3>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+      }) }}
+
+      {% endif %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">Your services</h1>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-3">
+          <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/service/index"> {{data['service-name-2'] or 'Get a juggling licence'}}</a>
+      </h2>
+
+<!--       <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-3">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Making a unicycle licence request and it’s a very very long service name</a>
+      </h2> -->
+
+      {{ govukButton({
+        text: "Add a new service",
+        href: "add-another-service-name"
+      }) }}
+
+
+{% endblock %}

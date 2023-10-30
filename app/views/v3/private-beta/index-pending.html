@@ -1,0 +1,78 @@
+{% set pageTitle = "Joining private beta" %}
+{% set subMenuActive = "Joining private beta" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-1">{{pageTitle}}</h1>
+
+      <p>
+
+      If you want to access the production environment and go live with GOV.UK One Login, you need to join our private beta. </p>
+
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+      {{ govukInsetText({
+        text: "You requested to join the beta on 8 November 2022. We’ll get back to you within 2 weeks."
+      }) }}
+
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-1">About private beta</h2>
+
+<p>
+
+      Private beta means we’re making GOV.UK One Login available to a selection of service teams. This will help us learn how it works on a larger scale, with real users.
+</p><p>
+      This private beta is for the part of the service that lets users create accounts and sign in. It does not include identity checks.
+</p><p>
+      We‘ll choose which services to work with on a case-by-case basis. We’ll invite services that help us learn about the features we’ll need as we scale up.
+</p>
+
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-1">
+      What to expect
+</h2>
+<p>
+      If you join the private beta, you’ll get:
+      <ul class="govuk-list govuk-list--bullet">
+<li>
+      early access to GOV.UK One Login for all your live traffic
+</li><li>
+      the opportunity to feed into our plans and shape the future of our service
+</li><li>
+      support from our team throughout
+</li></ul>
+</p><P>
+      We’ll need you to:
+
+      <ul class="govuk-list govuk-list--bullet">
+    <li>
+
+      integrate with GOV.UK One Login to allow your users to sign in to your service
+</li><li>
+      give us regular feedback about your experiences of using and onboarding to GOV.UK One Login - we’ll agree on how and how often you give feedback to make sure it works for both of us
+</li></ul>
+</p>
+
+<h2 class="govuk-heading-m govuk-!-margin-top-1">
+    Who can join
+</h2>
+  <p>
+      To join the private beta, you need to:
+      <ul class="govuk-list govuk-list--bullet">
+    <li>
+      work in a central government department
+</li><li>
+      have a service in beta or live
+</li><li>
+      need to sign in your users only, not check their identity
+</li><li>
+      be able to integrate with GOV.UK One Login - this means you need access to developers who are comfortable working with the OpenID Connect (OIDC) protocol and the processes set out in our technical documentation
+</li><li>
+      have tested the journey in our integration environment
+    </li></ul>
+</p>
+
+{% endblock %}

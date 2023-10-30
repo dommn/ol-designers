@@ -1,0 +1,67 @@
+{% set notSignedIn = false %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+{% set headerNavigationActiveItem = "Support" %}
+{% set notinService = "true" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Support</h1>      
+      <form class="form" method="post" action="/support-request">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend">
+        What do you need help with?
+      </legend>
+      
+      <div class="govuk-radios" id="support-req" data-module="govuk-radios">
+  
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="support" name="support-req" type="radio" value="gov-service-start-using-sign-in">
+              <label class="govuk-label govuk-radios__label" for="support">
+            I work in a government service team and we want to start using GOV.UK One Login
+          </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="support-2" name="support-req" type="radio" value="gov-service-uses-sign-in">
+              <label class="govuk-label govuk-radios__label" for="support-2">
+            I work in a government service team that is setting up or already using GOV.UK One Login
+          </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="support-3" name="support-req" type="radio" value="gov-service-is-public">
+              <label class="govuk-label govuk-radios__label" for="support-3">
+            I’m a member of the public
+          </label>
+            </div>
+      </div>
+    </fieldset>
+    </div>
+    
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Continue
+    </button>
+
+      </form>
+
+      <h2 class="govuk-heading-m">Office hours</h2>
+      <p class="govuk-body">We can only respond to your support queries during office hours. Our office hours are 9:30am to 5:30pm, Monday to Friday.</p>
+      <p class="govuk-body">When you get in touch during office hours, we’ll try to reply within 2 working days.</p>
+    
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

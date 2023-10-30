@@ -1,0 +1,51 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "GOV.UK One Login - Enter your email address" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "Sign in" %}
+{% set back = true %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" action="../create-service/enter-service-name">
+      
+      <h1 class="govuk-heading-l">Check your mobile phone</h1>
+      <div class="govuk-inset-text">
+        We have sent a code to: <span class="govuk-!-font-weight-bold">{{ data['mobileNumber'] }}</span>
+      </div>
+      <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="securityCode">
+        Enter the 6 digit security code
+      </label>
+    
+    <input class="govuk-input govuk-input--width-5" id="securityCode" name="securityCode" type="text" spellcheck="false" autocomplete="one-time-code" inputmode="numeric">
+    
+    </div>
+
+        <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Continue
+    </button>
+          
+        </div>
+    
+      <p class="govuk-body">
+        <a id="resend-code-page" class="govuk-link" href="resend-security-code-phone">Problems receiving a text message?</a>
+      </p>
+
+    </form>
+    
+    
+        </div>
+
+
+{% endblock %}

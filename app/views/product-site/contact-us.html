@@ -1,0 +1,174 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Contact us" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+  
+  
+  
+
+  
+
+
+  
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Contact us</h1>
+    
+      <p class="govuk-body">Use this form to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>report a problem</li>
+        <li>ask questions</li>
+        <li>suggest improvements</li>
+      </ul>
+    
+    
+      
+      <form class="form" method="post" novalidate="novalidate">
+        
+        
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="name">
+        Name
+      </label>
+    
+      
+      
+      <div id="name-hint" class="govuk-hint">
+        
+      </div>
+    
+    <input class="govuk-input govuk-!-width-one-half" id="name" name="name" type="text" spellcheck="false" aria-describedby="name-hint">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="email">
+        Email address
+      </label>
+    
+      
+      
+      <div id="email-hint" class="govuk-hint">
+        You must enter a government email address
+      </div>
+    
+    <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="role">
+        Role
+      </label>
+    
+      
+      
+      <div id="role-hint" class="govuk-hint">
+        
+      </div>
+    
+    <input class="govuk-input govuk-!-width-one-half" id="role" name="role" type="text" spellcheck="false" aria-describedby="role-hint">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="organisation-name">
+        Organisation name
+      </label>
+    
+      
+      
+      <div id="organisation-name-hint" class="govuk-hint">
+        
+      </div>
+    
+    <input class="govuk-input govuk-!-width-one-half" id="organisation-name" name="organisation-name" type="text" spellcheck="false" aria-describedby="organisation-name-hint">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="service-name">
+        Service name
+      </label>
+    
+      
+      
+      <div id="service-name-hint" class="govuk-hint">
+        
+      </div>
+    
+    <input class="govuk-input govuk-!-width-one-half" id="service-name" name="service-name" type="text" spellcheck="false" aria-describedby="service-name-hint">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="how-can-we-help">
+        How can we help?
+      </label>
+    
+      
+      
+      <div id="how-can-we-help-hint" class="govuk-hint">
+        
+      </div>
+    
+    
+      <textarea class="govuk-textarea" id="how-can-we-help" name="how-can-we-help" rows="5" aria-describedby="how-can-we-help-hint"></textarea>
+    </div>
+    
+    
+    
+      
+    
+        
+    
+      
+        
+      
+    
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Submit form
+    </button>
+    
+      </form>
+    
+    
+      
+    
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Joining public beta" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block govukSignInContent %}
+
+<h1 class="govuk-heading-l">
+  Joining public beta
+</h1>
+
+<p>If you want to go live with GOV.UK One Login and offer it to your users, you need to join our public beta.</p>
+
+<h2 class="govuk-heading-m">
+  Speak to us about joining public beta
+</h2>
+
+<p>Submit your details and we'll get in touch with you about joining the public beta.</p>
+
+<p>We'll arrange to talk more with your team about your service and what the public beta involves. </p>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+    Your name
+  </label>
+  <input class="govuk-input" id="event-name" name="eventName" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="event-name">
+    Department
+  </label>
+  <input class="govuk-input" id="event-name" name="eventName" type="text">
+</div>
+
+<h3 class="govuk-heading-s">
+  Information we currently have
+</h3>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      your.email@digital.cabinet-office.gov.uk
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Service name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Get a juggling licence
+    </dd>
+  </div>
+</dl>
+
+{{ govukButton({
+  text: "Submit",
+  href: "joining-public-beta-success"
+}) }}
+
+
+{% endblock %}

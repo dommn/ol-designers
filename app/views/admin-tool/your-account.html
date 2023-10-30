@@ -1,0 +1,67 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your account" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your account" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+{% block govukSignInContent %}
+
+      {% if serviceNameUpdated === 'yes' %}
+
+      {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        You have changed your service name
+      </h3>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+      }) }}
+
+      {% endif %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">Your account</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            your.email@digital.cabinet-office.gov.uk
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mobile phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            07123456789
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Password
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Last changed 1 month ago
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+{% endblock %}

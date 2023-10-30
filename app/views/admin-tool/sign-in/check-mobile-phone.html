@@ -1,0 +1,57 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "GOV.UK One Login - Check your mobile phone" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "Sign in" %}
+{% set back = true %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+  
+      <h1 class="govuk-heading-l">Check your mobile phone</h1>
+    
+        
+      <form class="form" method="post" action="../your-services">
+
+        <div class="govuk-inset-text">
+          We sent a code to: <b>*******6789</b>
+        </div>
+
+        <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+        
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="emailAddress">
+        Enter the 6 digit security code 
+      </label>
+    
+    <input class="govuk-input govuk-input--width-5" id="password" name="password" type="email" spellcheck="false" autocomplete="email">
+    
+    </div>
+    
+        <div class="govuk-button-group">
+          
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Continue
+    </button>
+    
+          
+        </div>
+
+        <p><a class="govuk-link" href="register">Problems receiving a text message?</a></p>
+      </form>
+    
+      
+    
+      
+    
+        </div>
+    </div>
+  </div>
+
+
+{% endblock %}

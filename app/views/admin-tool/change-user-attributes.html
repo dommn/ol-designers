@@ -1,0 +1,56 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Client details" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block govukSignInContent %}
+
+<form class="form" method="post" action="change-user-attributes-success">
+
+<h1 class="govuk-heading-l">
+  Change the user attributes you get
+</h1>
+
+<p>Select the <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/choose-which-user-attributes-your-service-can-request/" target="_blank">user attributes (opens in new tab)</a> you would like your service to receive. These are also known as 'scopes' in the OpenID Connect (OIDC) specification.</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend">
+      User attributes
+    </legend>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="attribute" name="email" type="checkbox" value="email address">
+        <label class="govuk-label govuk-checkboxes__label" for="attribute">
+          Email address
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="attribute-2" name="phone-number" type="checkbox" value="phone number">
+        <label class="govuk-label govuk-checkboxes__label" for="attribute-2">
+          Phone number
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="attribute-3" name="offline-access" type="checkbox" value="offline access">
+        <label class="govuk-label govuk-checkboxes__label" for="attribute-3">
+          Offline access
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          This gives you a refresh token so you can access the <span style="color:#A71D5D; font-family:'Monaco'">/userinfo</span> endpoint for longer than 3 minutes
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Confirm
+  </button>
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
+
+</form>
+
+{% endblock %}

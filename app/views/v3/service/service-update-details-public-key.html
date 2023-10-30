@@ -1,0 +1,96 @@
+{% set pageTitle = "Change your public key" %}
+{% set subMenuActive = "Client details" %}
+
+
+{{-" checked" if item.checked }}
+
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+
+      {% if errorField %}
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: errorMessage,
+        href: errorElementId
+        }
+        ]
+        }) }}
+
+      {% endif %}
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <p>You need to <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/generate-a-key/" class="govuk-link" rel="noreferrer noopener" target="_blank">generate a key pair (opens in new tab)</a> and add the public key. This is so our services can securely send messages to each other.</p>
+
+      <form class="form" action="/amend-details-v1" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "publicKeyOptions",
+          name: "publicKeyOptions",
+          fieldset: {
+            legend: {
+              text: "Choose how to change your public key",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "paste-in-your-public-key",
+              text: "Paste in your public key"
+            },
+            {
+              value: "upload-your-public-key-as-a-file",
+              text: "Upload your public key as a file"
+            }
+
+            ]
+            }) }}
+
+
+        {% if errorField === 'userPublicKeyEmpty' %}
+
+          {{ govukTextarea({
+          name: "userPublicKey",
+          id: "public-key",
+          label: {
+            text: "Public key"
+          },
+          value: data['userPublicKey'],
+          errorMessage: {
+            text: errorMessage
+          }
+          }) }}
+
+        {% else %}
+
+          {{ govukTextarea({
+          name: "userPublicKey",
+          label: {
+          text: "Public key"
+          },
+          value: data['userPublicKey']
+          }) }}
+
+        {% endif %}
+
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Confirm",
+          href: "/" + folder + "/client-details"
+          }) }}
+          <a class="govuk-link" href="/{{folder}}/client-details">Cancel</a>
+        </div>
+
+
+      </form>
+
+
+
+{% endblock %}

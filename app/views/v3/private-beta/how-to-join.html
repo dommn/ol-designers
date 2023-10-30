@@ -1,0 +1,68 @@
+{% set pageTitle = "How to join" %}
+{% set subMenuActive = "Joining private beta" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }}
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-1">{{pageTitle}}</h1>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-1">
+
+      1. Provide information about your service
+      </h2>
+      <p>
+      To join the beta, you’ll need to give us some information about your service. This includes:
+      <ul class="govuk-list govuk-list--bullet">
+    <li>
+      your user volumes
+      </li><li>
+      your timelines for going live
+      </li><li>
+      what level of authentication you need
+      </li><li>
+      Information about your end-user support model
+            </li><li>
+      whether you want to migrate existing user accounts to GOV.UK One Login
+            </li></ul>
+      </p><p>
+      We’ll review the information you send and let you know within 2 weeks whether you can join the beta.
+      </p><p>
+      Meeting the criteria does not guarantee that you’ll be able to take part. We need to choose services that we can learn the most from and can realistically support at this early stage.
+</p>
+  <h2 class="govuk-heading-m govuk-!-margin-top-1">
+      2. Prepare to go live
+      </h2>
+      <p>
+      Once you’ve been accepted, you’ll need to:
+      <ul class="govuk-list govuk-list--bullet">
+    <li>
+      sign our <a href="/{{folder}}/mou/index-self-service">memorandum of understanding</a> (if your department has not done so already)
+      </li><li>
+      provide some details to help us prepare for you to go live
+</li></ul>
+</p><p>
+      Then, we’ll give you access to our production environment so you can go live.
+
+      </p>
+
+
+        <div class="govuk-button-group">
+
+          {{ govukButton({
+          text: "Apply",
+          href: "apply",
+          isStartButton: true
+          }) }}
+<!--
+    <a class="govuk-link" href="/{{folder}}/joining-private-beta">Cancel</a>
+-->
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Add your service name
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if errorField %}
+    {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+    {
+    text: errorMessage,
+    href: errorElementId
+    }
+    ]
+    }) }}
+
+    {% endif %}
+    <form class="form" action="create-service-name-validation-v1" method="post">
+
+      {% if errorField === 'serviceName' %}
+
+      {{ govukInput({
+      label: {
+      text: "Add your service name",
+      isPageHeading: true,
+      classes: "govuk-label--l"
+      },
+      hint: {
+      text: "You can change this later"
+      },
+      name: "clientName",
+      id: "create-service-name",
+      classes: "govuk-input--width-20",
+      value: data['clientName'],
+      errorMessage: {
+      text: errorMessage
+      }
+      }) }}
+
+      {% else %}
+
+      {{ govukInput({
+      label: {
+      text: "Add your service name",
+      isPageHeading: true,
+      classes: "govuk-label--l"
+      },
+      hint: {
+      text: "You can change this later"
+      },
+      name: "clientName",
+      classes: "govuk-input--width-20",
+      value: data['clientName']
+      }) }}
+
+      {% endif %}
+
+
+
+    {{ govukButton({
+    text: "Continue"
+    }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% set pageTitle = "Form submitted" %}
+{% set subMenuActive = "Joining private beta" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+      {{ govukPanel({
+      titleText: "Form submitted"
+      }) }}
+
+      <p>Thank you for requesting to talk to us about joining the private beta. We’ll be in touch within 5 working days.</p>
+
+      <p>If you have any questions in the meantime, contact us using our <a class="govuk-link" href="#">support form</a> or via our <a class="govuk-link" href="#">Slack channel</a>.</p>
+
+{% endblock %}

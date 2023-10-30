@@ -1,0 +1,54 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "GOV.UK One Login - Enter your email address" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "Sign in" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    
+      <form class="form" method="post" action="enter-password">
+
+      <h1 class="govuk-heading-l">Sign in to the GOV.UK One Login admin tool</h1>
+      <p class="govuk-body">If you do not have an account, you can
+        <a class="govuk-link" href="../create-account/enter-email-address">create one now</a>.</p>
+      <p class="govuk-body">Enter your email address to sign in.</p>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="emailAddress">
+        Email address
+      </label>
+    
+    <input class="govuk-input govuk-!-width-three-quarters" id="emailAddress" name="emailAddress" type="email" spellcheck="false" autocomplete="email">
+    
+    </div>
+    
+        <div class="govuk-button-group">
+          
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Continue
+    </button>
+    
+    
+          
+        </div>
+    
+      
+    
+      
+    
+        </div>
+    </div>
+    </div>
+  </form>
+  </div>
+
+
+{% endblock %}

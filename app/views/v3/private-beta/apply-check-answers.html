@@ -1,0 +1,172 @@
+{% set pageTitle = "Check your answers" %}
+{% set subMenuActive = "Joining private beta" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-1">{{pageTitle}}</h1>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-1">About your service</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Department
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['department'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Provide a brief description of what your service does and who your users are
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['service-description'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Link to your service (optional)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['service-url'] }}
+              </dd>
+            </div>
+          </dl>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-1">Going live</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Estimated date you would like to go live with GOV.UK One Login
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['live-date'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Estimated number of new user accounts during your busiest month
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['new-user-accounts'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Estimated number of sign ins during your busiest month
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['number-signins'] }}
+              </dd>
+            </div>
+          </dl>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-1">Your authentication needs</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Will you be using two-factor authentication (2FA) as recommended?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['two-factor-auth'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you need to share user data from your sign in solution with other services in your department?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['share-user-data'] }}
+              </dd>
+            </div>
+          </dl>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-1">Account migration</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you planning to migrate user accounts from an existing sign in system to GOV.UK One Login?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['migration'] }}
+              </dd>
+            </div>
+            {% if data['migration'] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How many accounts?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['migration-numbers'] }}
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-1">End-user support</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Explain how you currently provide end-user support
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['end-user-support'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Your end-user support hours
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['end-user-support-hours'] }}
+              </dd>
+            </div>
+          </dl>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-1">Identity checks</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Will you need to add identity checks in future? (optional)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['identity-checks'] }}
+              </dd>
+            </div>
+          </dl>
+
+
+      <div class="govuk-button-group">
+
+            {{ govukButton({
+              href: "submitted?submitted=true",
+              text: "Submit"
+          }) }}
+
+            {{ govukButton({
+              href: "apply",
+              text: "Edit answers",
+              classes: "govuk-button--secondary"
+          }) }}
+
+      </div>
+
+
+      <p><a class="govuk-link" href="/{{folder}}/private-beta/index.html">Cancel</a></p>
+
+
+{% endblock %}

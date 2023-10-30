@@ -1,0 +1,117 @@
+{% set pageTitle = "Joining private beta" %}
+{% set subMenuActive = "Joining private beta" %}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+
+      {% if errorField %}
+      {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+      {
+      text: errorMessage,
+      href: errorElementId
+      }
+      ]
+      }) }}
+
+      {% endif %}
+      <h1 class="govuk-heading-l govuk-!-margin-top-1">{{pageTitle}}</h1>
+
+      <p>If you want to go live with GOV.UK Sign In and offer it to your users, you need to join our private beta.</p>
+
+      <p>Discuss our <a class="govuk-link" href="https://www.sign-in.service.gov.uk/getting-started/private-beta" rel="noreferrer noopener" target="_blank">private beta guidance (opens in new tab)</a> with your team to see if it’s right for you. </p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-1">Speak to us about joining private beta</h2>
+
+      <p>Submit your details and we’ll get in touch with you about joining private beta.</p>
+
+      <p>We’ll arrange a call to talk more with your team about your service and what the private beta involves.</p>
+
+
+      <form class="form" action="submitted" method="post">
+
+        {% if errorField === 'userHumanName' %}
+
+        {{ govukInput({
+        name: "userHumanName",
+        classes: "govuk-input--width-20",
+        id: "userHumanName",
+        label: {
+        text: "Your name"
+        },
+        errorMessage: {
+        text: errorMessage
+        }
+        }) }}
+
+        {% else %}
+
+        {{ govukInput({
+        name: "userHumanName",
+        classes: "govuk-input--width-20",
+        id: "userHumanName",
+        value: data['userHumanName'],
+        label: {
+        text: "Your name"
+        }
+        }) }}
+
+        {% endif %}
+
+        {% if errorField === 'userDepartment' %}
+
+        {{ govukInput({
+        name: "userDepartment",
+        classes: "govuk-input--width-20",
+        id: "userDepartment",
+        label: {
+        text: "Department"
+        },
+        errorMessage: {
+        text: errorMessage
+        }
+        }) }}
+
+        {% else %}
+
+        {{ govukInput({
+        name: "userDepartment",
+        classes: "govuk-input--width-20",
+        value: data['userDepartment'],
+        id: "userDepartment",
+        label: {
+        text: "Department"
+        }
+        }) }}
+
+        {% endif %}
+
+
+        <table class="govuk-table govuk-!-margin-top-8">
+          <caption class="govuk-table__caption govuk-table__caption--m">Information we already have</caption>
+          <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email address</th>
+            <td class="govuk-table__cell">{{ data['emailAddress'] or 'your.email@digital.cabinet-office.gov.uk'}}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Service name</th>
+            <td class="govuk-table__cell">{{ data['clientName'] or 'Get a juggling licence'}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Submit"
+          }) }}
+        </div>
+
+
+      </form>
+
+
+{% endblock %}

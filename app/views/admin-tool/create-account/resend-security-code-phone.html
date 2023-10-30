@@ -1,0 +1,71 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "GOV.UK One Login - Enter your email address" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "Sign in" %}
+{% set back = true %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      
+  
+  
+  
+
+  
+
+
+  
+      <h1 class="govuk-heading-l">
+        Resend security code to your mobile phone
+      </h1>
+    
+      <p class="govuk-body">
+        If you did not receive a code, we can send you a new one.
+      </p>
+    
+    
+      
+        
+      <form class="form" method="post" novalidate="novalidate">
+        
+          
+          
+        
+    
+        <div class="govuk-button-group">
+          
+    
+      
+        
+      
+    
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Resend security code
+    </button>
+    
+    
+          
+        </div>
+      </form>
+    
+      
+    
+      
+      <p class="govuk-body">
+        If you no longer have access to the mobile phone you used to set up your account, let us know through our
+        <a class="govuk-link" id="support-form" href="https://www.sign-in.service.gov.uk/contact-us">support form</a> or
+        <a class="govuk-link" id="slack-channel" href="https://ukgovernmentdigital.slack.com/?redir=%2Farchives%2FC02AQUJ6WTC">Slack channel</a>.
+      </p>
+    
+    
+        </div>
+
+
+{% endblock %}

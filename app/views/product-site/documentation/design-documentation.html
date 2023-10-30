@@ -1,0 +1,82 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Technical documentation - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Documentation" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+        <ul class="govuk-list">
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="technical-documentation.html">Technical documentation</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="user-journeys.html">User journey maps</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--active">
+            <a class="govuk-link govuk-link--no-visited-state" href="design-documentation">Design recommendations</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state " href="save-progress">
+              Let users create a GOV.UK One Login to save progress</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-out-easily">
+              Let users navigate to their GOV.UK One Login and sign out easily</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+              Show users where to change their GOV.UK One Login credentials</a>
+          </li>
+        </ul>
+    
+    
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Design recommendations</h1>
+      <p class="govuk-body">We’ve created designs to help you incorporate GOV.UK One Login into your service.</p>
+      <p class="govuk-body">The aim is to provide a consistent experience for users across all services that use GOV.UK One Login, and reduce duplication of effort by services.</p>
+      <p class="govuk-body">However, you’ll need to tailor them to your service. You do not have to use them at all if research shows something else works better for you.</p>
+      <h2 class="govuk-heading-m">How we created our recommendations</h2>
+      <p class="govuk-body">The designs all use existing components from the <a class="govuk-link" href="https://design-system.service.gov.uk">GOV.UK Design System</a>.</p>
+      <p class="govuk-body">As this is a new type of journey, we’ve combined those components in new ways. We’ll be sharing our findings with the GOV.UK Design System team.</p>
+      <p class="govuk-body">The designs have all been tested with users. Contact us if you’d like more details on the research.</p>
+      <h2 class="govuk-heading-m">List of recommendations</h2>
+      <p class="govuk-body">
+        <a class="govuk-link" href="save-progress">Let users create a GOV.UK One Login to save progress</a><br>
+        How to let users complete part of your journey, then create an account so they can come back and finish it later. Includes page screenshots and confirmation email content.
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="sign-out-easily.html">Let users navigate to their GOV.UK One Login and sign out easily</a><br>
+        How to let users go to their GOV.UK One Login from within your service and give them a consistent way to sign out.
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="change-credentials">Show users where to change their GOV.UK One Login credentials</a><br>
+        How to link users to their GOV.UK One Login from within your service. There are 2 options to choose from, depending on how your service is structured.
+      </p>
+      <div class="gray-background-container">
+        <h2 class="govuk-heading-m">Help improve our recommendations</h2>
+        <p class="govuk-body">Our design recommendations have all been tested with users, but we would love to know how they work in your service.</p>
+        <p class="govuk-body">If you have user insights that would help us improve our recommendations or develop new ones, you can share them through
+          our <a class="govuk-link" href="../support">support form</a> or <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC">Slack channel</a>.
+        </p>
+      </div>
+    
+        </div>
+   
+</div>
+</div>
+
+{% endblock %}

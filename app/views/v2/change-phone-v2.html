@@ -1,0 +1,38 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Change your mobile phone number" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your account" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+
+    <p>We will send a 6 digit security code to this number every time you sign in.</p>
+
+    <p>You must use a UK mobile phone number.</p>
+
+<form method="post" action="change-checkphone-v2" >
+      <div class="govuk-form-group">
+
+        <label class="govuk-label" for="mobile-number">UK mobile phone number</label>
+
+        <input class="govuk-input govuk-input--width-20" id="mobile-number-2" name="mobile-number-2" type="tel" spellcheck="false" autocomplete="tel">
+
+      </div>
+
+      <div class="govuk-button-group">
+      {{ govukButton({
+      text: "Confirm"
+    }) }}
+      <a class="govuk-link" href="your-account-v2">Cancel</a>
+      </div>
+</form>
+
+{% endblock %}

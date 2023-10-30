@@ -1,0 +1,41 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set back = "/" + folder + "/create-email" %}
+
+{% set pageTitle = "Check your email" %}
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <div class="govuk-inset-text">
+      <p>We have sent an email to: <strong>{{ data['email-address-2'] or data['defaultUser'].email}}</strong> </p>
+    </div>
+
+    <p>The email contains a 6 digit security code.</p>
+
+    <p>Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
+
+    <p>The code will expire after 15 minutes.</p>
+
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label" for="otp">Enter the 6 digit security code</label>
+
+        <input class="govuk-input govuk-input--width-5" id="otp" name="create-email-otp" type="text" autocomplete="one-time-code" inputmode="numeric" spellcheck="false" >
+
+      </div>
+
+    {{ govukButton({
+    text: "Continue",
+    href: "create-password"
+    }) }}
+
+      <p><a href="create-email">Problems receiving an email?</a></p>
+
+
+{% endblock %}

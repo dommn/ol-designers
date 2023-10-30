@@ -1,0 +1,67 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "User journeys - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "About GOV.UK One Login" %} {# breadcrumb #}
+{% extends folder + "/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/documentation/tech-docs">Technical documentation</a>
+    </li>
+    <li class="sub-navigation__item sub-navigation__item--active">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/documentation/user-journey-maps">User journeys</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Design recommendations</a>
+    </li>
+    <!---<li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="#" style="margin-left: 20px;">Let users create an account to show progress</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="#" style="margin-left: 20px;">Show users where to change their GOV.UK One Login credentials</a>
+    </li>--->
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      User journeys
+    </h1>
+
+      <p>This information about the user journeys should help you integrate GOV.UK One Login with your service.</p>
+     
+    <h2 class="govuk-heading-m">
+      High level diagram: the sign in and identity checking journey
+    </h2>
+
+      <p>This diagram shows the user-facing parts of GOV.UK One Login.</p>
+      
+      <p>Users will take different journeys through it depending on the evidence they have and whether they want to use their browser or an app.</p>
+
+      <div class="govuk-!-margin-bottom-5">
+        <img src="/public/images/Identity-diagram-blank.png" alt=" " style="width: 100%; height: auto;">
+      </div>
+
+      <h2 class="govuk-heading-m">
+        View detailed user journeys
+      </h2>
+  
+        <p>Use our <a href="https://govuk-one-login-user-journeys.herokuapp.com/" class="govuk-link" rel="noreferrer noopener" target="_blank">GOV.UK One Login prototype (opens in a new tab)</a> to see the user-facing screens in more detail.</p>  
+
+   </div>
+   
+</div>
+</div>
+
+{% endblock %}

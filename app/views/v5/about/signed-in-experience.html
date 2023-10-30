@@ -1,0 +1,88 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "The signed in experience - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "About GOV.UK One Login" %} {# breadcrumb #}
+{% extends folder + "/_base.html" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state " href="/{{folder}}/about/about">About</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/letting-users-sign-in" style="margin-left: 20px;">Letting users sign in</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/identity-checking" style="margin-left: 20px;">Identity checks</a>
+    </li>
+    <li class="sub-navigation__item sub-navigation__item--active">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/signed-in-experience" style="margin-left: 20px;">The signed in experience</a>
+    </li>
+    <li class="sub-navigation__item">
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{folder}}/about/roadmap">Roadmap</a>
+    </li>
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      The signed in experience
+    </h1>
+
+    <p>There’s a user-facing area of GOV.UK One Login. Users can be signed in to it, and access it whether they’re signed in to your service or not.</p>
+
+    <h2 class="govuk-heading-m">
+      What users can do in their GOV.UK One Login 
+    </h2>
+
+      <h3 class="govuk-heading-s">
+        Update credentials 
+      </h3>
+
+      <p>Users can change their:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>email address</li>
+        <li>password</li>
+        <li>phone number</li>
+      </ul>
+
+      <p>We’ve got some recommended content to help you <a href="#" class="govuk-link">show users where to change their GOV.UK One Login credentials</a>.</p>
+
+      <h3 class="govuk-heading-s">
+        Delete their GOV.UK One Login 
+      </h3>
+
+      <p>Users can delete their GOV.UK One Login. If they do this [explain what it means for a service].</p>
+
+      <h3 class="govuk-heading-s">
+        See and access their services in one place 
+      </h3>
+
+      <p>When a user signs in to your service with their GOV.UK One Login a link to your service, or to your GOV.UK start page, appears in the 'Your services' section.</p>
+
+      <p>This means they can easily access all the services they’ve used with their GOV.UK One Login from one place.</p>
+
+      <p>Users can continue to access your service through familiar routes, like landing on a GOV.UK start page.</p>
+
+    <h2 class="govuk-heading-m">
+      See what the user-facing area looks like 
+    </h2>
+
+      <p><a href="/{{folder}}/documentation/user-journey-maps" class="govuk-link">See journey maps</a> that include a user’s GOV.UK One Login settings and services list.</p>
+
+   </div>
+   
+</div>
+</div>
+
+{% endblock %}

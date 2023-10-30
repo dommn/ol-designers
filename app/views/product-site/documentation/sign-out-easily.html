@@ -1,0 +1,130 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Technical documentation - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Documentation" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+        <ul class="govuk-list">
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="technical-documentation.html">Technical documentation</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="user-journeys.html">User journey maps</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="design-documentation">Design recommendations</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state " href="save-progress">
+              Let users create a GOV.UK One Login to save progress</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child sub-navigation__item--active">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-out-easily">
+              Let users navigate to their GOV.UK One Login and sign out easily</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+              Show users where to change their GOV.UK One Login credentials</a>
+          </li>
+        </ul>
+    
+    
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Let users navigate to their GOV.UK One Login and sign out easily</h1>
+      <h2 class="govuk-heading-m">What is it?</h2>
+      <p class="govuk-body">The GOV.UK One Login service header is a new version of the <a class="govuk-link" href="https://design-system.service.gov.uk/components/header/">GOV.UK header</a>. It’s for services using GOV.UK One Login.</p>
+      <p class="govuk-body">The header gives users an easy, consistent route from your service to their GOV.UK One Login and a way to sign out.</p>
+      <p class="govuk-body">When signed in, users can navigate to their GOV.UK One Login easily so they can access the services they use with it and also change their sign in details.</p>
+      <h2 class="govuk-heading-m">When to use it</h2>
+      <p class="govuk-body">You should use this pattern if your service is using GOV.UK One Login.</p>
+      <h2 class="govuk-heading-m">When not to use it</h2>
+      <p class="govuk-body">The GOV.UK One Login service header might not be right for your service if it does not use GOV.UK branding. For example, <a class="govuk-link" href="https://www.socialworkengland.org.uk/registration/apply-for-registration/">Apply to become a registered social worker in England</a>.</p>
+      <h2 class="govuk-heading-m">How it works</h2>
+      <p class="govuk-body">The GOV.UK One Login service header provides consistent navigation for users. It has 2 sections.</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>A top level black section that allows your users to:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>navigate from your service to their GOV.UK One Login</li>
+            <li>sign out of both your service and their GOV.UK One Login</li>
+          </ul>
+        </li>
+        <li>A service level grey section for your service name and navigation menu.</li>
+      </ol>
+      <p class="govuk-body">Our research shows that using the top black section of the header for the GOV.UK One Login menu and then displaying the service name and menu on the grey level below, clearly shows these are 2 different spaces.</p>
+      <h2 class="govuk-heading-m">Choose an option for the header</h2>
+      <p class="govuk-body">You can choose one of 3 options of the header to suit your service:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Option 1: Default header</li>
+        <li>Option 2: Header with no service menu</li>
+        <li>Option 3: Header with a long service name or menu</li>
+      </ul>
+      <h3 class="govuk-heading-s">Option 1: Default header</h3>
+      <p class="govuk-body">Use this if your service name and menu links fit on one level.</p>
+      <div class="desktop-image-container govuk-!-margin-bottom-5">
+        <img src="/public/images/2023-06_Option-1_Desktop.svg" alt="For option 1, this is a banner image showing the GOV.UK logo on left and GOV.UK One login with user roundel on right, then “Sign out”. All appearing within a black banner. Under this is a light grey banner with the words “Service name”. On the right are placeholder words showing indicative service link 1, service link 2 and so on.">
+        <div class="govuk-body govuk-!-font-weight-bold desktop-image-description">Desktop example</div> 
+      </div>
+      <div class="govuk-!-margin-bottom-6 labeled-images-container">
+        <div>
+          <img src="/public/images/2023-06_Option-1_Mobile-collapsed.svg" alt="For option 1, this is a mobile phone header image showing the GOV.UK logo on left and GOV.UK One login with user roundel on right. All appearing within a black banner. Under this is a light grey banner with the words “Service name” with “menu” underneath.">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-padding-top-2">Mobile menus closed</p>
+        </div>
+        <div class="labeled-images-container-right">
+          <img src="/public/images/2023-06_Option-1_Mobile-expanded.svg" alt="For option 1, this is a mobile phone header image showing the GOV.UK logo on left and GOV.UK One login with user roundel on right with “GOV.UK One Login” underneath and under that “signout”.  All displayed within a black banner. Under this is a light grey banner with the words “Service name” with the words “Close, Service link 1 and Service link 2” underneath.">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-padding-top-2">Mobile menus open</p>
+        </div>
+      </div>
+      <h3 class="govuk-heading-s govuk-!-padding-top-2 clear-float">Option 2: Header with no service menu</h3>
+      <p class="govuk-body">Use this if your service has no navigation menu.</p>
+      <div class="desktop-image-container govuk-!-margin-bottom-5">
+        <img src="/public/images/2023-06_Option-2_Desktop.svg" alt="For option 2, this is a banner image showing the GOV.UK logo on left and GOV.UK One Login with user roundel on right, then “Sign out”. All appearing within a black banner. Under this is a light grey banner with the words “Service name”.">
+        <div class="govuk-body govuk-!-font-weight-bold desktop-image-description">Desktop example</div>
+      </div>
+      <h3 class="govuk-heading-s">Option 3: Header with a long service name or menu</h3>
+      <p class="govuk-body">Use this if your service name and menu links do not fit on one level.</p>
+      <div class="desktop-image-container govuk-!-margin-bottom-5">
+        <img class="desktop-image-high" src="/public/images/2023-06_Option-3_Desktop.svg" alt="For option 3, this is an image of the same banner as previously described. Underneath is a light grey banner with placeholder words “Service that has a really long name that stretches far across”. Underneath are seven hyperlinks to indicate the positioning of seven indicative service names, “service link 1, service link 2, service link 3 and so on.">
+        <div class="govuk-body govuk-!-font-weight-bold desktop-image-description">Desktop example</div>
+      </div>
+      <h2 class="govuk-heading-m">How to use the header</h2>
+      <h3 class="govuk-heading-s">Show the header on every page in your service</h3>
+      <p class="govuk-body">Use the header at the top of every page in your service when a user is signed in.</p>
+      <p class="govuk-body">This gives your users a consistent way of signing out. It also helps increase their awareness of GOV.UK One Login.</p>
+      <p class="govuk-body">Our research shows no evidence that the header distracts users in a service journey.</p>
+      <h3 class="govuk-heading-s">Use specific menu labels</h3>
+      <p class="govuk-body">Avoid generic menu labels in your service navigation as users might think they link to their GOV.UK One Login.</p>
+      <p class="govuk-body">For example, do not use labels such as ‘account’ or ‘home’ on their own. Instead, name the account or home it refers to such as ‘Your childcare account’ or ‘Dart charge home’.</p>
+      <p class="govuk-body">Our research shows that replacing generic service menu labels with service-specific ones helps users understand that the menu links go directly to pages within the service, not their GOV.UK One Login.</p>
+      <h3 class="govuk-heading-s">Use complementary patterns when needed</h3>
+      <p class="govuk-body">Consider giving your users additional ways to change their sign in details, if your research or data suggests they are not sure where to go. This might be suitable if your service has a separate section for user details like email address and phone number.</p>
+      <h2 class="govuk-heading-m">If you cannot use this header</h2>
+      <p class="govuk-body">You must give your users a way to navigate from your service to their GOV.UK One Login sign in details. See <a class="govuk-link" href="change-credentials">additional ways or patterns to show users where to change their GOV.UK One Login credentials</a>.</p>
+      <p class="govuk-body">You must provide a sign out link that signs users out of both their GOV.UK One Login and your service. <a class="govuk-link" href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/log-your-users-out/#log-your-users-out-of-gov-uk-one-login">Read the technical documentation on signing your users out</a>.</p>
+      <p class="govuk-body">If you have any questions or need support, you can contact us using our <a class="govuk-link" href="../support">support form</a>. We aim to reply within 2 working days.</p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+      <h2 class="govuk-heading-m">Help improve this header</h2>
+      <p class="govuk-body">If you would like to help us test the new header, or have any user insights to share, please get in touch through our <a class="govuk-link" href="../support">support form</a> or <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC">Slack channel</a>.</p>
+      <h2 class="govuk-heading-m">Get started</h2>
+      <p class="govuk-body">You can <a class="govuk-link" href="https://github.com/alphagov/di-govuk-one-login-service-header">get the code for the header and read the guidance on Github</a>.</p>
+    
+        </div>
+   
+</div>
+</div>
+
+{% endblock %}

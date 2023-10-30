@@ -1,0 +1,37 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Client details" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block govukSignInContent %}
+
+<form class="form" method="post" action="change-redirect-uris-success">
+
+<h1 class="govuk-heading-l">
+  Change your redirect URIs
+</h1>
+
+<p>Add the URI for the page you want your users to see after they sign in to your service.</p>
+
+<p>You can add multiple redirect URIs if you want different groups of users to see different pages once they sign in to your service. To do this, enter the URIs separated by a space.</p>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="redirect-uri">
+    Redirect URIs
+  </label>
+  <div id="redirect-uri-hint" class="govuk-hint">
+    Enter a URL starting with https:// or a localhost URL starting with http://
+  </div>
+  <input class="govuk-input govuk-input" id="redirect-uri" name="redirectURI" type="text" spellcheck="false" aria-describedby="redirect-uri-hint" value="http://localhost/">
+</div>
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Confirm
+  </button>
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
+
+</form>
+
+{% endblock %}

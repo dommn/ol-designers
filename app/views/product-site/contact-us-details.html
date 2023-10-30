@@ -1,0 +1,40 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Contact us" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+
+{% block beforeContent %}
+<a href="support" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-l">
+        Contact us
+      </h1>
+    
+      <p class="govuk-body">
+        You can find out how to:
+      </p>
+    
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="getting-started">get started</a> with GOV.UK One Login</li>
+        <li><a class="govuk-link" href="register">register your interest</a> in using GOV.UK One Login</li>
+      </ul>
+    
+      <p class="govuk-body">
+        Or if you still have questions, you can contact us using our <a class="govuk-link" href="contact-us ">support form</a> or via our <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC">Slack channel</a>.
+      </p>
+    
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

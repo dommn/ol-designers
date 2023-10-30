@@ -1,0 +1,75 @@
+{% set pageTitle = "Change your redirect URIs" %}
+{% set subMenuActive = "Client details" %}
+
+
+{{-" checked" if item.checked }}
+
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+
+      {% if errorField %}
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: errorMessage,
+        href: errorElementId
+        }
+        ]
+        }) }}
+
+      {% endif %}
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">{{pageTitle}}</h1>
+
+      <p>Add the URI for the page you want your users to see after they sign in to your service.</p>
+      <p>You can add multiple redirect URIs if you want different groups of users to see different pages once they sign in to your service. To do this, enter the URIs separated by a space.</p>
+
+      <form class="form" action="/{{folder}}/service-update-details-redirect-uris-router" method="post">
+
+        {% if errorField === 'redirectUrlEmpty' or errorField === 'redirectUrlInvalid' %}
+
+          {{ govukInput({
+          label: {
+          text: "Redirect URIs"
+          },
+          hint: {
+          text: "Enter URIs starting with https://"
+          },
+          name: "redirectUrl",
+          id: "redirect-url",
+          value: data['redirectUrl'],
+          errorMessage: {
+          text: errorMessage
+          }
+          }) }}
+
+
+        {% else %}
+
+          {{ govukInput({
+          label: {
+          text: "Redirect URIs"
+          },
+          hint: {
+          text: "Enter URIs starting with https://"
+          },
+          name: "redirectUrl",
+          value: data['redirectUrl']
+          }) }}
+
+        {% endif %}
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Confirm"
+          }) }}
+          <a class="govuk-link" href="/{{folder}}/client-details">Cancel</a>
+        </div>
+
+
+      </form>
+
+
+{% endblock %}

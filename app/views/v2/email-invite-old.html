@@ -1,0 +1,21 @@
+{% set subjectLine = data['existingUser'].name + " has invited you to join ‘" + data['service-name-2'] | default("Get a juggling licence") + "’ on GOV.UK Sign In" %}
+
+{% extends "includes/email.html" %}
+
+{% block emailBody %}
+
+
+<p>{{data['existingUser'].name}} has invited you to join the ‘{{data['service-name-2'] or "Get a juggling licence"}}’ team on GOV.​UK Sign In.</p>
+
+<p>Use this link to join the team:</p>
+
+<p><a class="govuk-link" href="/{{folder}}/create-email-v2">https://admin.sign-in.service.gov.uk/email-address</a></p>
+
+<p>This invitation will expire in 1 week.</p>
+
+<p>Thanks
+
+<p>The GOV.​UK Sign In team</p>
+<p><a class="govuk-link" href="https://www.sign-in.service.gov.uk" >https://www.sign-in.service.gov.uk/</a></p>
+
+{% endblock %}

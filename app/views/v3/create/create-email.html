@@ -1,0 +1,45 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+
+{% set pageTitle = "Enter your government email address" %}
+{% extends folder + "/_base.html" %}
+
+{% block govukSignInContent %}
+
+    <h1 class="govuk-heading-l">
+    {{pageTitle}}
+    </h1>
+
+    <p class="govuk-body">You can only use this service if you have an email address that ends in:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>gov.uk</li>
+        <li>highwaysengland.co.uk</li>
+        <li>socialworkengland.org.uk</li>
+      </ul>
+
+    <p>
+      <a href="javascript:void(0)">Contact us</a> if you have a government email address that is not covered by this list.
+    </p>
+
+    <form class="form" action="create-checkemail" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          Government email address
+        </label>
+        <input class="govuk-input" id="email-address-2" name="email-address-2" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Read our privacy notice
+      </h2>
+
+      <p>
+        By continuing, you confirm that you agree to our <a href="javascript:void(0)">privacy notice</a>. It sets out how we use your personal information.
+      </p>
+
+    {{ govukButton({
+    text: "Continue"
+    }) }}
+    </form>
+
+
+{% endblock %}

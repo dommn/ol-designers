@@ -1,0 +1,211 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Contact us" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+
+{% block beforeContent %}
+<a href="support" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds ">
+              
+
+    
+
+
+
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">
+        GOV.UK One Login: report a problem or give feedback
+      </h1>
+      
+      <p class="govuk-body">Use this form to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+       <li>tell us about a problem you’re having with your GOV.UK One Login</li>
+       <li>suggest improvements or give feedback about your experience using your GOV.UK One Login</li>
+      </ul>
+      
+      <p class="govuk-body">Our office hours are 9:30am to 5:30pm, Monday to Friday. We’ll respond to you by email in 2 working days.</p>
+      
+      <form action="/contact-us" method="post" novalidate="">
+      
+      <input type="hidden" name="_csrf" value="ucoTeUjU-35nFO_mhorpxttK7btTFePgWjTA">
+      <input type="hidden" name="referer" value="">
+      <input type="hidden" name="fromURL" value="">
+          
+      
+          
+      
+          
+      
+      <div class="govuk-form-group">
+      
+        <fieldset class="govuk-fieldset">
+        
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        
+          What are you contacting us about?
+        
+        </legend>
+        
+      
+        <div class="govuk-radios" data-module="govuk-radios">
+          
+            
+                
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme" name="theme" type="radio" value="account_creation">
+                <label class="govuk-label govuk-radios__label" for="theme">
+              A problem creating a GOV.UK One Login
+            </label>
+                
+              </div>
+              
+              
+            
+          
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme-2" name="theme" type="radio" value="signing_in">
+                <label class="govuk-label govuk-radios__label" for="theme-2">
+              A problem signing in to your GOV.UK One Login
+            </label>
+                
+              </div>
+              
+              
+            
+          
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme-3" name="theme" type="radio" value="something_else">
+                <label class="govuk-label govuk-radios__label" for="theme-3">
+              Another problem using your GOV.UK One Login
+            </label>
+                
+              </div>
+              
+              
+            
+          
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme-4" name="theme" type="radio" value="id_check_app">
+                <label class="govuk-label govuk-radios__label" for="theme-4">
+              A problem proving your identity using the GOV.UK ID Check app
+            </label>
+                
+              </div>
+              
+              
+            
+          
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme-5" name="theme" type="radio" value="id_face_to_face">
+                <label class="govuk-label govuk-radios__label" for="theme-5">
+              A problem proving your identity with the Post Office
+            </label>
+                
+              </div>
+              
+              
+            
+          
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme-6" name="theme" type="radio" value="proving_identity">
+                <label class="govuk-label govuk-radios__label" for="theme-6">
+              A problem proving your identity
+            </label>
+                
+              </div>
+              
+              
+            
+          
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme-7" name="theme" type="radio" value="email_subscriptions">
+                <label class="govuk-label govuk-radios__label" for="theme-7">
+              GOV.UK email subscriptions
+            </label>
+                
+              </div>
+              
+              
+            
+          
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="theme-8" name="theme" type="radio" value="suggestions_feedback">
+                <label class="govuk-label govuk-radios__label" for="theme-8">
+              A suggestion or feedback about using your GOV.UK One Login
+            </label>
+                
+              </div>
+              
+              
+            
+          
+        </div>
+        
+      
+      </fieldset>
+      
+      
+      </div>
+      
+      
+      
+      
+      
+        
+          
+        
+      
+      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+      
+      </form>
+      
+      
+                  </div>
+    </div>
+  </div>
+
+
+{% endblock %}

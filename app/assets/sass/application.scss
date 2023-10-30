@@ -1,0 +1,273 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/header";
+@import "patterns/hero";
+@import "patterns/product-pages";
+@import "patterns/inverted-button";
+@import "patterns/email-prototype-rig";
+@import "patterns/details-banner";
+@import "patterns/code-snippet";
+
+.govuk-header__content{
+  @include govuk-media-query($from: desktop) {
+    width: 64%;
+  }
+}
+
+.govuk-header__logo {
+  @include govuk-media-query($from: desktop) {
+    width: 36%;
+  }
+}
+
+.sub-navigation {
+  margin-bottom: govuk-spacing(6);
+
+  ol,
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    @include govuk-font($size: 16);
+
+    border-bottom: 1px $govuk-border-colour solid;
+    display: block;
+    padding: govuk-spacing(1) 0;
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:active {
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__item--active {
+    @include govuk-font($size: 16, $weight: bold);
+
+    a:link,
+    a:visited {
+      color: $govuk-text-colour;
+    }
+  }
+
+  &__item--child {
+    padding-left: 20px;
+  }
+}
+
+// navigation for switcher
+
+.navigation-service {
+  font-family: nta,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  border-bottom: 1px solid #bfc1c3;
+  margin: 0 0 10px;
+  position: relative;
+}
+
+.navigation-organisation-link, .navigation-service-name {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 420px) { /* make service switcher right align when screen is large enough to allow for it  */
+  .navigation-service-switch {
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*     padding: 14px 0 11px 15px; */
+  } }
+
+
+// permissions
+.tick-cross-list-permissions li {
+  display: block;
+  margin-right: 0.5em;
+}
+
+.tick-cross-tick {
+  background-image: url(../images/tick.svg);
+}
+
+.tick-cross-cross {
+  background-image: url(../images/cross.svg);
+}
+
+@media (min-width: 641px) {
+  .tick-cross-cross, .tick-cross-tick {
+    /*   font-size: 19px; */
+    line-height: 1.3157894737;
+  }}
+
+.tick-cross-cross, .tick-cross-tick {
+  /*     font-family: nta,Arial,sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 16px; */
+  line-height: 1.25;
+  display: inline-block;
+  background-size: 19px 19px;
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  padding: 6px 0 5px 25px;
+}
+/* make link red for destructive actions  */
+.remove-color, .remove-color:link {
+  color: govuk-colour("red") !important;
+}
+
+$email-width: 650px;
+
+.app-email,
+.app-email__body {
+  background-color: govuk-colour("light-grey");
+}
+
+.app-email__metadata-container,
+.app-email__header-and-message-container {
+  max-width: $email-width;
+  margin: govuk-spacing(6) auto;
+}
+
+.app-email__header-and-message-container {
+
+  background-color: govuk-colour("white");
+  border: 1px solid #b1b4b6;
+  border-top: govuk-spacing(4) solid #b1b4b6;
+  border-radius: 10px 10px 0 0;
+}
+
+.app-email__header,
+.app-email__message {
+  max-width: $email-width - 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include govuk-media-query($until: tablet) {
+    margin-left: govuk-spacing(3);
+    margin-right: govuk-spacing(3);
+  }
+}
+
+.app-email__message {
+  * {
+    font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.app-email__metadata {
+  font: caption;
+  margin: 0;
+
+  @include govuk-media-query($until: desktop) {
+    margin-left: govuk-spacing(3);
+    margin-right: govuk-spacing(3);
+  }
+
+  div {
+    display: block;
+    margin-bottom: govuk-spacing(1);
+  }
+
+  dt {
+    display: inline-block;
+    margin-right: govuk-spacing(1);
+  }
+
+  dd {
+    display: inline-block;
+    margin-left: 0;
+  }
+}
+
+.app-back-to-top {
+  margin-top: govuk-spacing(4);
+  margin-bottom: govuk-spacing(6);
+  margin-left: 15px;
+}
+
+@include govuk-media-query($from: tablet) {
+  .app-back-to-top {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+    margin-bottom: govuk-spacing(8);
+  }
+
+  .js-enabled .app-back-to-top--fixed {
+    position: fixed;
+    top: calc(100% - #{govuk-spacing(8)});
+    bottom: auto;
+    left: auto;
+  }
+
+  .js-enabled .app-back-to-top--hidden .app-back-to-top__link {
+    @include govuk-visually-hidden-focusable;
+  }
+}
+
+.app-back-to-top__icon {
+  display: inline-block;
+  width: .8em;
+  height: 1em;
+  margin-top: -(govuk-spacing(1));
+  margin-right: govuk-spacing(2);
+  vertical-align: middle;
+}
+
+.documentation-contents {
+  list-style-type: none;
+}
+
+.documentation-contents-item {
+  &:before {
+    content: "—";
+    margin-left: -20px;
+    color: #505a5f;
+    float: left;
+  }
+
+  margin-bottom: 5px;
+
+  a {
+    display: inline-block;
+    margin-left: 8px;
+  }
+}
+
+.sub-navigation__item:last-child {
+  border-bottom: 1px $govuk-border-colour solid;
+}

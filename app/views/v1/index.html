@@ -1,0 +1,68 @@
+
+{% extends "layouts/main.html" %}
+{% set serviceName = "Round 1" %}
+{% block pageTitle %}
+  Prototype for user testing: Create account and client details
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Prototype for user testing: Create account and client details
+      </h1>
+
+      <h2 class="govuk-heading-m">Scenario 1</h2>
+
+      <p>Create a GOV.UK Sign In account</p>
+
+      {{ govukButton({
+        href: "/" + folder + "/get-started-with-gov-uk-sign-in-v1",
+        text: "Go to scenario 1"
+      }) }}
+
+      <h2 class="govuk-heading-m">Scenario 2 (continues)</h2>
+
+      <p>View the client details for your new service</p>
+
+      {{ govukButton({
+         classes: "govuk-button--secondary",
+        href: "/" + folder + "/service-dashboard-v1",
+        text: "Go to scenario 2"
+      }) }}
+
+      <h2 class="govuk-heading-m">Scenario 3 (continues)</h2>
+
+      <p>View your account settings</p>
+
+      {{ govukButton({
+         classes: "govuk-button--secondary",
+        href: "/" + folder + "/service-settings-page-v1",
+        text: "Go to scenario 3"
+      }) }}
+
+      <h2 class="govuk-heading-m">Scenario 4</h2>
+
+      <p>Make a request to join private beta</p>
+
+      {{ govukButton({
+         classes: "govuk-button--secondary",
+        href: "/" + folder + "/find-out-more-about-private-beta-v1",
+        text: "Go to scenario 4"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Related docs and further reading</h2>
+
+      <p><a href="https://docs.google.com/presentation/d/1Z4zkoDdmhaiJx3Ik2GSI78--lrq1_mRsCBksur4i8eA/edit#slide=id.gf4efaeeb4d_0_202">
+      User research findings</a></p>
+
+      <p><a href="https://www.figma.com/file/CWqXGg9hIIs5Bgv1OoQOO4/Design-for-Adoption?node-id=4130%3A26219">
+      Figma file</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

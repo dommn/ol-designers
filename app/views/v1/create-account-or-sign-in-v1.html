@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create a GOV.UK account or sign in
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Create a GOV.UK account or sign in</h1>
+
+      <p>You’ll need an email address and a UK mobile phone number. It will take about 2 minutes.<p>
+
+    {{ govukButton({
+    text: "Create a GOV.UK account",
+    href: "create-email-v1"
+    }) }}
+
+      <p class="govuk-body">If you already have a GOV.UK account you can <a href="https://gds-id-auth.herokuapp.com/create-account-through-service/v6/sign-in#" class="govuk-link">sign in</a>.</p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">About GOV.UK accounts</span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>The GOV.UK account is new. It’s separate from other government accounts, such as Government Gateway or your personal tax account.</p>
+
+          <p>In the future, you’ll be able to use your GOV.UK account to sign in to all government services. For now, you need different accounts to access different government services.</p>
+
+          <p>We’re still building GOV.UK accounts and adding more features and services.</p>
+        </div>
+      </details>
+
+
+  </div>
+</div>
+
+{% endblock %}

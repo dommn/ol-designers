@@ -1,0 +1,36 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Change your email address" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your account" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/_base.html" %}
+
+
+{% block govukSignInContent %}
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <form class="form" action="change-email-router" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          Email address
+        </label>
+        <span id="password-hint" class="govuk-hint">
+         Must be a government email address
+        </span>
+        <input class="govuk-input govuk-input--width-20" id="email-address-2" value="{{data['email-address-2'] or data['defaultUser'].email}}" name="email-address-2" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+      </div>
+
+    <div class="govuk-button-group">
+    {{ govukButton({
+    text: "Confirm"
+    }) }}
+    <a class="govuk-link" href="your-account/index">Cancel</a>
+    </div>
+
+    </form>
+
+{% endblock %}

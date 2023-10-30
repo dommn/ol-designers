@@ -1,0 +1,134 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Join our mailing list" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+  
+  
+  
+
+  
+
+
+  
+      <h1 class="govuk-heading-l">Join our mailing list</h1>
+      <p class="govuk-body">Complete this form to stay up to date with our progress on GOV.UK One Login.</p>
+      <p class="govuk-body">
+        Once you’ve submitted the form, we’ll add you to our mailing list. You’ll get emails with updates about our work.
+        We’ll also invite you to our cross-government show and tells.
+      </p>
+    
+    
+      
+      <form class="form" method="post" action="/mailing-list" novalidate="novalidate">
+        
+        
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="personalName">
+        Name
+      </label>
+    
+      
+      
+      <div id="personalName-hint" class="govuk-hint">
+        
+      </div>
+    
+    <input class="govuk-input govuk-input--width-20" id="personalName" name="personalName" type="text" spellcheck="false" aria-describedby="personalName-hint">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="organisationName">
+        Organisation name
+      </label>
+    
+      
+      
+      <div id="organisationName-hint" class="govuk-hint">
+        
+      </div>
+    
+    <input class="govuk-input govuk-input--width-20" id="organisationName" name="organisationName" type="text" spellcheck="false" aria-describedby="organisationName-hint">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="contactEmail">
+        Email address
+      </label>
+    
+      
+      
+      <div id="contactEmail-hint" class="govuk-hint">
+        You must enter a government email address
+      </div>
+    
+    <input class="govuk-input govuk-input--width-20" id="contactEmail" name="contactEmail" type="contactEmail" spellcheck="false" aria-describedby="contactEmail-hint" autocomplete="contactEmail">
+    
+    </div>
+    
+    
+      
+      
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="serviceName">
+        Service name
+      </label>
+    
+      
+      
+      <div id="serviceName-hint" class="govuk-hint">
+        
+      </div>
+    
+    <input class="govuk-input govuk-input--width-30" id="serviceName" name="serviceName" type="text" spellcheck="false" aria-describedby="serviceName-hint">
+    
+    </div>
+    
+    
+    
+      
+    
+        
+    
+      
+        
+      
+    
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Submit
+    </button>
+    
+      </form>
+    
+    
+      
+    
+      </div>
+    </div>
+    </div>
+
+{% endblock %}
