@@ -1,4 +1,4 @@
-{% extends "product-site/layouts/base-product.html" %}
+{% extends "v4/product-site/base-product.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% set bodyClasses = "product-home-page-wrapper" %}
@@ -41,14 +41,14 @@
           Try GOV.UK One Login if you work on a central government service.
         </p>
 
-        <a href="get-started" role="button" draggable="false" class="govuk-button govuk-button--start app-button--inverted">
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start app-button--inverted">
           Get started
           <svg aria-hidden="true" class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" focusable="false">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
           </svg>
         </a>
         <span class="hero-alternative-action">
-    or &nbsp;<a class="govuk-link" href="about/about" data-click-events data-click-category="Hero" data-click-action="Internal link clicked">find out more</a>
+    or &nbsp;<a class="govuk-link" href="/{{folder}}/about/about" data-click-events data-click-category="Hero" data-click-action="Internal link clicked">find out more</a>
     </span>
       </div>
       <div class="hero__aside-image">
@@ -72,6 +72,10 @@
         <p class="govuk-body">
           They can use these details to access all services that use GOV.UK One Login. They can also see the services they've used in one place.
         </p>
+        <p class="govuk-body">
+
+         <a href="/design-sandbox/user-journey-maps/documentation/sign-in-journeys.html">Explore sign in and authentication journey maps</a>
+        </p>
       </div>
       </div>
       <div class="govuk-grid-column-one-half feature-column home-feature-column-padding-left-10">
@@ -94,8 +98,9 @@
           Users will be able to reuse these checks to access other government services.
         </p>
         <p class="govuk-body">
-          <a class="govuk-link" href="about/checking-users-identities">Read more about identity checks</a>.
-        </p>
+
+          <a href="/design-sandbox/user-journey-maps/documentation/identity-journeys.html">Explore identity checking journey maps</a>
+         </p>
       </div>
       </div>
       <div class=" govuk-grid-column-one-half feature-column home-feature-column-padding-left-10">
@@ -112,7 +117,7 @@
           Get set up quickly and easily
         </h2>
         <p class="govuk-body">
-          Try out GOV.UK One Login in our test environment with no obligations. Integrate at your own pace by following our <a class="govuk-link" href="https://docs.sign-in.service.gov.uk/" target="_blank">technical documentation (opens in new tab)</a>.
+          Try out GOV.UK One Login in our test environment with no obligations. Integrate at your own pace by following our <a class="govuk-link" href="#" target="_blank">technical documentation (opens in new tab)</a>.
         </p>
         <div class="govuk-!-padding-right-3 govuk-!-margin-bottom-5 govuk-!-padding-top-2 get-sign-up-quickly-img1"><img src="/public/images/Technical-documentation.svg" alt="" style="width: 100%; height: auto;"></div>
       </div>
@@ -120,7 +125,7 @@
       <div class=" govuk-grid-column-one-half feature-column">
       <div class="govuk-panel feature-panel govuk-!-padding-left-3">
         <div class="govuk-body govuk-!-padding-top-8 govuk-!-padding-bottom-5 incorporate-mobile-view">
-          Incorporate our extensively researched, accessible <a class="govuk-link" href="documentation/user-journeys">user journeys</a> into your existing service journey.
+          Incorporate our extensively researched, accessible <a class="govuk-link" href="/documentation/user-journey-maps">user journeys</a> into your existing service journey.
         </div>
         <div class="govuk-!-margin-bottom-5 govuk-!-padding-top-2"><img src="/public/images/User-journeys.svg" alt="" style="width: 100%; height: auto;"></div>
       </div>
@@ -140,7 +145,7 @@
 
       {{ govukButton({
         text: "Get started",
-        href: "get-started",
+        href: "/getting-started",
         isStartButton: true
       }) }}
 
@@ -148,10 +153,18 @@
         Join our mailing list
       </h2>
       <p class="govuk-body">
-        If you have a public sector email address, <a class="govuk-link" href="misc/mailing-list.html">join our mailing list</a> to stay up to date with our progress.
+        If you have a public sector email address, <a class="govuk-link" href="#">join our mailing list</a> to stay up to date with our progress.
       </p>
       <p class="govuk-body">
         You’ll get updates on our work and invitations to our regular cross-government show and tells.
+      </p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">
+        Get in touch
+      </h2>
+
+      <p class="govuk-body">
+        Use our <a class="govuk-link" href="#">support form</a> if you have any questions. We’d also love to hear your feedback or suggestions for improvements.
       </p>
 
     </div>

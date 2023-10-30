@@ -39,27 +39,27 @@
 
           {% if notSignedIn %}
           <li class="govuk-header__navigation-item{% if headerNavigationActiveItem == "about" %} govuk-header__navigation-item--active{% endif %}">
-            <a class="govuk-header__link" href="../../product-site/about/about"><!--https://www.sign-in.service.gov.uk/documentation-->
+            <a class="govuk-header__link" href="/{{folder}}/about/about"><!--https://www.sign-in.service.gov.uk/documentation-->
               About
             </a>
           </li>
 {% endif %}
 
           <li class="govuk-header__navigation-item{% if headerNavigationActiveItem == "documentation" %} govuk-header__navigation-item--active{% endif %}">
-            <a class="govuk-header__link" href="../../product-site/documentation/technical-documentation"><!--https://www.sign-in.service.gov.uk/documentation-->
+            <a class="govuk-header__link" href="/{{folder}}/documentation/technical-documentation"><!--https://www.sign-in.service.gov.uk/documentation-->
               Documentation
             </a>
           </li>
 
           {% if notSignedIn %}
-          <li class="govuk-header__navigation-item  {% if headerActive == "get-started" %}govuk-header__navigation-item--active{% endif %}">
-            <a class="govuk-header__link" href="../../product-site/get-started.html">
+          <li class="govuk-header__navigation-item  {% if headerNavigationActiveItem == "get-started" %}govuk-header__navigation-item--active{% endif %}">
+            <a class="govuk-header__link" href="get-started.html">
               Get started
             </a>
           </li>
 
-          <li class="govuk-header__navigation-item  {% if headerActive == "support" %}govuk-header__navigation-item--active{% endif %}">
-            <a class="govuk-header__link" href="../support.html">
+          <li class="govuk-header__navigation-item  {% if headerNavigationActiveItem == "support" %}govuk-header__navigation-item--active{% endif %}">
+            <a class="govuk-header__link" href="support.html">
               Support
             </a>
           </li>
@@ -68,8 +68,8 @@
 
 {% if notSignedIn %}
 
-          <li class="govuk-header__navigation-item  {% if headerNavigationActiveItem == 'Sign in' %}govuk-header__navigation-item--active{% endif %}">
-            <a class="govuk-header__link" href="#">
+          <li class="govuk-header__navigation-item  {% if headerActive == 'Sign in' %}govuk-header__navigation-item--active{% endif %}">
+            <a class="govuk-header__link" href="../../admin-tool/sign-in/enter-email-address">
             Sign in
             </a>
           </li>
@@ -107,6 +107,7 @@ text: "beta"
 html: 'This is a new service – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.'
 }) }}
 
+
 {% if notSignedIn %}
 
 {%  if showBreadcrumbs  %} {# on a few screens we show breadscrumbs, but more for the product site #}
@@ -118,7 +119,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback (o
     },
     {
       text: "GOV.UK One Login",
-      href: "../index"
+      href: "index"
     },
     {
       text: breadcrumb or 'Test',
@@ -137,7 +138,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback (o
 {% endif %}
 
 {% if back %}{# show back button #}
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<a href="{{back}}" class="govuk-back-link">Back</a>
 {% endif  %}
 
 {% endblock %}
