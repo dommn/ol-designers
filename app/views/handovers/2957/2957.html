@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "",
+  serviceUrl: "#"
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">SSE-2957</h1>
+
+      <p><a href="">View the story on Jira (opens in a new tab)</a>.</p>
+
+
+      <h2 class="govuk-heading-m">How it currently works</h2>
+
+      <p>Morbi aliquet leo nec magna accumsan, a luctus elit congue. Mauris eros lectus, ultricies eget dignissim a, semper eu dolor. Donec id magna tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+      <h2 class="govuk-heading-m">What we've done</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget vestibulum diam. Vivamus et nisi quis justo iaculis placerat sit amet ac turpis.</p> 
+      <p>Sed feugiat urna et lorem aliquet, a convallis dui efficitur. Aliquam erat volutpat. Nam id risus at velit dignissim hendrerit sit amet id est. Integer vehicula ipsum in neque pretium, a mollis neque aliquet. </p>
+      <p>In mollis leo non auctor egestas. Duis sit amet arcu ac mauris tristique dignissim.</p>
+
+      <h2 class="govuk-heading-m">What's changed</h2>
+
+      <p>Morbi aliquet leo nec magna accumsan, a luctus elit congue. Mauris eros lectus, ultricies eget dignissim a, semper eu dolor. Donec id magna tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+      
+      <h2 class="govuk-heading-m">Notes</h2>
+
+      <p>Nullam cursus purus in accumsan fringilla. Sed quis aliquet diam, quis pulvinar elit. Vivamus venenatis magna quis turpis imperdiet, a ultrices risus hendrerit. </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+      
+      {{ govukButton({
+        text: "View the prototype"
+      }) }}
+
+
+
+  </div>
+</div>
+
+{% endblock %}
