@@ -52,37 +52,11 @@
 
   <div class="govuk-form-group">
     <label class="govuk-label" for="firstName">
-      First name
+      Your full name
     </label>
 
-
-
-    <div id="firstName-hint" class="govuk-hint">
-
-    </div>
-
-    <input class="govuk-input govuk-!-width-two-thirds" id="firstName" name="firstName" type="text"
+    <input class="govuk-input govuk-!-width-full" id="firstName" name="firstName" type="text"
       spellcheck="false" aria-describedby="firstName-hint">
-
-  </div>
-
-
-
-
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="lastName">
-      Last name
-    </label>
-
-
-
-    <div id="lastName-hint" class="govuk-hint">
-
-    </div>
-
-    <input class="govuk-input govuk-!-width-two-thirds" id="lastName" name="lastName" type="text"
-      spellcheck="false" aria-describedby="lastName-hint">
 
   </div>
 
@@ -91,18 +65,10 @@
       Role
     </label>
 
-
-
-    <div id="role-hint" class="govuk-hint">
-      Tell us your role within the service team, for example delivery or project manager, technical architect or
-      test engineer
-    </div>
-
-    <input class="govuk-input govuk-!-width-full" id="role" name="role" type="text" spellcheck="false"
+    <input class="govuk-input govuk-!-width-two-thirds" id="role" name="role" type="text" spellcheck="false"
       aria-describedby="role-hint">
 
   </div>
-
 
   <div class="govuk-form-group">
     <label class="govuk-label" for="organisationName">
@@ -110,17 +76,12 @@
     </label>
 
 
-    <div id="organisationName-hint" class="govuk-hint">
-      Enter the name of your government department, agency or other public body and also the name of your sponsor
-      department
-    </div>
-
-    <input class="govuk-input govuk-!-width-full" id="organisationName" name="organisationName" type="text"
+    <input class="govuk-input govuk-!-width-two-thirds"id="organisationName" name="organisationName" type="text"
       spellcheck="false" aria-describedby="organisationName-hint">
 
   </div>
 
-
+<!-- 
   <div class="govuk-form-group">
 
     <fieldset class="govuk-fieldset">
@@ -198,28 +159,19 @@
 
 
   </div>
+-->
 
-
-  <h2 class="govuk-heading-m">About your service</h2>
-
-
-
- 
-
-
-
-
+  
 
   <div class="govuk-form-group">
     <label class="govuk-label" for="serviceDescription">
-      Service description
+      About your service
     </label>
 
 
 
     <div id="serviceDescription-hint" class="govuk-hint">
-      Describe your service, what it does, who it helps and why? Also tell us if it’s a new service that has not
-      launched yet
+     Include who uses it and what they use it for
     </div>
 
 
@@ -227,26 +179,55 @@
       aria-describedby="serviceDescription-hint"></textarea>
   </div>
 
-
-
-
-
   <div class="govuk-form-group">
-    <label class="govuk-label" for="linkToYourService">
-      Link to your service (optional)
-    </label>
-
-
-
-    <div id="linkToYourService-hint" class="govuk-hint">
-      If you have one, enter the URL to your service start page or a link to a prototype or user journey map -
-      including any passwords
-    </div>
-
-    <input class="govuk-input govuk-!-width-full" id="linkToYourService" name="linkToYourService" type="text"
-      spellcheck="false" aria-describedby="linkToYourService-hint">
-
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <label class="govuk-label" for="serviceDescription">
+          Which best describes your service
+        </label>
+      </legend>
+  
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-checkboxes__label" for="contact">
+            It's live - and users need to sign in 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact-by-email">
+              Add the url
+            </label>
+            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+          </div>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+          <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+            It's live - users do not need to sign in
+          </label>
+        </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact-by-phone">
+              Add the url
+            </label>
+            <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+          <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+            It's not yet live
+          </label>
+        </div>
+      
+      </div>
+    </fieldset>
   </div>
+
+
 
 
 
@@ -258,17 +239,12 @@
 
       <legend class="govuk-fieldset__legend">
 
-        Total annual number of users of your service
+       Number of users 
 
       </legend>
 
 
       <div class="govuk-radios" id="totalAnnualNumberOfUsersOfYourService-options" data-module="govuk-radios">
-
-
-
-
-
 
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService"
@@ -355,25 +331,43 @@
   </div>
 
 
-
-
-
   <div class="govuk-form-group">
-    <label class="govuk-label" for="estimatedServiceGoLiveDate">
-      Proposed date for your service to go live with GOV.UK One Login
-    </label>
-
-
-
-    <div id="estimatedServiceGoLiveDate-hint" class="govuk-hint">
-      Give us your proposed month and year - for example June 2025
-    </div>
-
-    <input class="govuk-input govuk-!-width-one-third" id="estimatedServiceGoLiveDate"
-      name="estimatedServiceGoLiveDate" type="text" spellcheck="false"
-      aria-describedby="estimatedServiceGoLiveDate-hint">
-
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <label class="govuk-label" for="serviceDescription">When would you like to go live with GOV.UK One Login?
+        </label>
+      <div id="passport-issued-hint" class="govuk-hint">
+        For example, 27 3 2007
+      </div>
+      <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Day
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+          </div>
+        </div>
+      </div>
+    </fieldset>
   </div>
+
 
 
 
