@@ -1,0 +1,153 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Roadmap - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "About GOV.UK One Login" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+        <li class="sub-navigation__item">
+          <a class="govuk-link govuk-link--no-visited-state " href="about">About GOV.UK One Login</a>
+        </li>
+        <li class="sub-navigation__item">
+          <a class="govuk-link govuk-link--no-visited-state" href="signing-users-in" style="margin-left: 20px;">Signing users in</a>
+
+        <li class="sub-navigation__item">
+          <a class="govuk-link govuk-link--no-visited-state" href="signed-in-experience" style="margin-left: 20px;">The signed in experience</a>
+        </li>
+        </li>
+        <li class="sub-navigation__item">
+          <a class="govuk-link govuk-link--no-visited-state" href="checking-users-identities" style="margin-left: 20px;">Checking users' identities</a>
+        </li>
+        <li class="sub-navigation__item">
+          <a class="govuk-link govuk-link--no-visited-state" href="how-users-prove-identity.html" style="margin-left: 20px;">How users can prove their identity</a>
+        </li>
+        <li class="sub-navigation__item sub-navigation__item--active">
+          <a class="govuk-link govuk-link--no-visited-state" href="roadmap">Roadmap</a>
+        </li>
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Roadmap</h1>
+      <p class="govuk-body">Last updated: August 2023</p>
+    
+      <h2 class="govuk-heading-m">What we're working on now</h2>
+    
+      <h3 class="govuk-heading-s">GOV.UK One Login user activity history
+        <strong class="govuk-tag govuk-tag--blue">
+          SIGNED IN EXPERIENCE
+        </strong>
+      </h3>
+      <p class="govuk-body">Users will be able to view their GOV.UK One Login account activity history.</p>
+    
+      <h3 class="govuk-heading-s">Two-factor authentication recovery
+        <strong class="govuk-tag govuk-tag--purple">
+          SIGN IN
+        </strong>
+      </h3>
+      <p class="govuk-body">If users lose access to their two-factor authentication method, we’ll help them get back into their GOV.UK One Login.</p>
+    
+      <h3 class="govuk-heading-s">An admin tool for self-service testing
+        <strong class="govuk-tag govuk-tag--turquoise">
+          SERVICE TEAM ONBOARDING
+        </strong>
+      </h3>
+      <p class="govuk-body">Service teams will be able to test GOV.UK One Login in our integration environment using our admin tool.</p>
+    
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    
+      <h2 class="govuk-heading-m">Recently released</h2>
+    
+      <h3 class="govuk-heading-s">Proving a user’s identity at a Post Office
+        <strong class="govuk-tag govuk-tag--yellow">
+          IDENTITY
+        </strong>
+      </h3>
+      <p class="govuk-body">Users who cannot finish proving their identity online can complete the process in person by taking their photo ID to a Post Office that offers ‘in-branch verification’.</p>
+    
+      <h3 class="govuk-heading-s">Browser-based UK driving licence checks
+        <strong class="govuk-tag govuk-tag--yellow">
+          IDENTITY
+        </strong>
+      </h3>
+      <p class="govuk-body">Users will be able to enter details from their valid UK driving licence as part of proving their identity. This includes full and provisional photocard licences.</p>
+    
+      <h3 class="govuk-heading-s">Common navigation header for services connected to GOV.UK One Login
+        <strong class="govuk-tag govuk-tag--turquoise">
+          SERVICE TEAM ONBOARDING
+        </strong>
+      </h3>
+      <p class="govuk-body">Services using GOV.UK One Login will be able to use a common navigation header.</p>
+    
+      <h3 class="govuk-heading-s">More documents accepted by the GOV.UK  ID Check app
+        <strong class="govuk-tag govuk-tag--yellow">
+          IDENTITY
+        </strong>
+      </h3>
+      <p class="govuk-body">Users can now use any of the following in the GOV.UK ID Check app as part of proving their identity:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>UK biometric residence permits (BRP)</li>
+        <li>UK biometric residence cards (BRC), also known as UK residence cards</li>
+        <li>UK Frontier Worker permits (FWP)</li>
+      </ul>
+    
+      <h3 class="govuk-heading-s">Identity checks will be saved for reuse
+        <strong class="govuk-tag govuk-tag--blue">
+          SIGNED IN EXPERIENCE
+        </strong>
+      </h3>
+      <p class="govuk-body">Users' identity checks can automatically be saved to their GOV.UK One Login so they can be reused with other services.</p>
+    
+      <h3 class="govuk-heading-s">Non-UK mobile numbers
+           <strong class="govuk-tag govuk-tag--purple">
+             Sign in
+           </strong>
+         </h3>
+           <p class="govuk-body">Users can create their GOV.UK One Login using an international mobile phone number.</p>
+    
+      <h3 class="govuk-heading-s">App-based identity checks for NFC-chipped passports
+        <strong class="govuk-tag govuk-tag--yellow">
+          IDENTITY
+        </strong>
+      </h3>
+      <p class="govuk-body">In the ‘GOV.UK ID Check’ app, users will be able to provide their passport details by scanning its chip using NFC. This includes UK and non-UK passports.</p>
+    
+      <h3 class="govuk-heading-s">Services are shown in a user's GOV.UK One Login
+        <strong class="govuk-tag govuk-tag--blue">
+          Signed in experience
+        </strong>
+      </h3>
+      <p class="govuk-body">Users can see and access all the services they’ve used with their GOV.UK One Login.</p>
+    
+      <h3 class="govuk-heading-s">Welsh
+        <strong class="govuk-tag govuk-tag--purple">
+          Sign in
+        </strong>
+        <strong class="govuk-tag govuk-tag--yellow">
+          Identity
+        </strong>
+      </h3>
+        <p class="govuk-body">At the start of their journey, users can select to view it in English or Welsh.</p>
+    
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    
+      <h2 class="govuk-heading-m">Updates</h2>
+      <p class="govuk-body">As we’re still at an early stage, our plans may shift. We’ll update this page when this happens and add more detail when we can.</p>
+      <p class="govuk-body">We’ll keep sharing in blog posts and at our regular cross-government show and tells too.</p>
+      <p class="govuk-body"><a class="govuk-link" href="../misc/mailing-list">Join our mailing list</a> to stay up to date.</p>
+    
+        </div>
+   
+</div>
+</div>
+
+{% endblock %}

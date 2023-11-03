@@ -1,0 +1,396 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Joining public beta" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block govukSignInContent %}
+
+<h1 class="govuk-heading-l">Register to join public beta</h1>
+
+
+<p>There are a few steps to getting your service live with GOV.UK One Login.</p>
+<p class="govuk-body">These include:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>reading and agreeing to the Memorandum of understanding </li>
+  <li>setting up in our production environment</li>
+  <li>agreeing a go-live date with us</li>
+  <li>giving us more information about your service, using the form below</li>
+</ul>
+
+<p>We'll then arrange to talk more with your team about getting ready to join public beta. </p>
+
+
+
+<h3 class="govuk-heading-s">
+  Information we currently have
+</h3>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      your.email@digital.cabinet-office.gov.uk
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Service name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Get a juggling licence
+    </dd>
+  </div>
+</dl>
+
+<form class="form" method="post" novalidate="novalidate">
+
+
+
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="firstName">
+      First name
+    </label>
+
+
+
+    <div id="firstName-hint" class="govuk-hint">
+
+    </div>
+
+    <input class="govuk-input govuk-!-width-two-thirds" id="firstName" name="firstName" type="text"
+      spellcheck="false" aria-describedby="firstName-hint">
+
+  </div>
+
+
+
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="lastName">
+      Last name
+    </label>
+
+
+
+    <div id="lastName-hint" class="govuk-hint">
+
+    </div>
+
+    <input class="govuk-input govuk-!-width-two-thirds" id="lastName" name="lastName" type="text"
+      spellcheck="false" aria-describedby="lastName-hint">
+
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="role">
+      Role
+    </label>
+
+
+
+    <div id="role-hint" class="govuk-hint">
+      Tell us your role within the service team, for example delivery or project manager, technical architect or
+      test engineer
+    </div>
+
+    <input class="govuk-input govuk-!-width-full" id="role" name="role" type="text" spellcheck="false"
+      aria-describedby="role-hint">
+
+  </div>
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="organisationName">
+      Organisation name
+    </label>
+
+
+    <div id="organisationName-hint" class="govuk-hint">
+      Enter the name of your government department, agency or other public body and also the name of your sponsor
+      department
+    </div>
+
+    <input class="govuk-input govuk-!-width-full" id="organisationName" name="organisationName" type="text"
+      spellcheck="false" aria-describedby="organisationName-hint">
+
+  </div>
+
+
+  <div class="govuk-form-group">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend">
+
+        Organisation type
+
+      </legend>
+
+
+      <div class="govuk-radios" id="organisationType-options" data-module="govuk-radios">
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="organisationType" name="organisationType" type="radio"
+            value="governmentDepartmentOrMinistry">
+          <label class="govuk-label govuk-radios__label" for="organisationType">
+            Government department or Ministry
+          </label>
+
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="organisationType-2" name="organisationType" type="radio"
+            value="executiveAgency">
+          <label class="govuk-label govuk-radios__label" for="organisationType-2">
+            Executive Agency
+          </label>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="organisationType-3" name="organisationType" type="radio"
+            value="armsLengthBody">
+          <label class="govuk-label govuk-radios__label" for="organisationType-3">
+            Arms length body
+          </label>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="organisationType-4" name="organisationType" type="radio"
+            value="other">
+          <label class="govuk-label govuk-radios__label" for="organisationType-4">
+            Other
+          </label>
+
+        </div>
+
+
+
+
+      </div>
+
+
+    </fieldset>
+
+
+  </div>
+
+
+  <h2 class="govuk-heading-m">About your service</h2>
+
+
+
+ 
+
+
+
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="serviceDescription">
+      Service description
+    </label>
+
+
+
+    <div id="serviceDescription-hint" class="govuk-hint">
+      Describe your service, what it does, who it helps and why? Also tell us if it’s a new service that has not
+      launched yet
+    </div>
+
+
+    <textarea class="govuk-textarea" id="serviceDescription" name="serviceDescription" rows="5"
+      aria-describedby="serviceDescription-hint"></textarea>
+  </div>
+
+
+
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="linkToYourService">
+      Link to your service (optional)
+    </label>
+
+
+
+    <div id="linkToYourService-hint" class="govuk-hint">
+      If you have one, enter the URL to your service start page or a link to a prototype or user journey map -
+      including any passwords
+    </div>
+
+    <input class="govuk-input govuk-!-width-full" id="linkToYourService" name="linkToYourService" type="text"
+      spellcheck="false" aria-describedby="linkToYourService-hint">
+
+  </div>
+
+
+
+
+
+  <div class="govuk-form-group">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend">
+
+        Total annual number of users of your service
+
+      </legend>
+
+
+      <div class="govuk-radios" id="totalAnnualNumberOfUsersOfYourService-options" data-module="govuk-radios">
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService"
+            name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range1To1000">
+          <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService">
+            1 to 1,000
+          </label>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-2"
+            name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range1001To50000">
+          <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-2">
+            1,001 to 50,000
+          </label>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-3"
+            name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range50001To250000">
+          <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-3">
+            50,001 to 250,000
+          </label>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-4"
+            name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range250001To1Million">
+          <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-4">
+            250,001 to 1 million
+          </label>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-5"
+            name="totalAnnualNumberOfUsersOfYourService" type="radio" value="rangeOver1Million">
+          <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-5">
+            Over 1 million users
+          </label>
+
+        </div>
+
+
+
+
+      </div>
+
+
+    </fieldset>
+
+
+  </div>
+
+
+
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="estimatedServiceGoLiveDate">
+      Proposed date for your service to go live with GOV.UK One Login
+    </label>
+
+
+
+    <div id="estimatedServiceGoLiveDate-hint" class="govuk-hint">
+      Give us your proposed month and year - for example June 2025
+    </div>
+
+    <input class="govuk-input govuk-!-width-one-third" id="estimatedServiceGoLiveDate"
+      name="estimatedServiceGoLiveDate" type="text" spellcheck="false"
+      aria-describedby="estimatedServiceGoLiveDate-hint">
+
+  </div>
+
+
+
+
+
+
+  
+
+ 
+
+
+  
+
+{{ govukButton({
+  text: "Submit",
+  href: "joining-public-beta-success"
+}) }}
+
+
+{% endblock %}

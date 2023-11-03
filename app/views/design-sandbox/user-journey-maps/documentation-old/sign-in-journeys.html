@@ -1,0 +1,141 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Technical documentation - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Documentation" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+        <ul class="govuk-list">
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="technical-documentation">Technical documentation</a>
+          </li>
+          <!-- <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="user-journeys">User journey maps</a>
+          </li> -->
+          <li class="sub-navigation__item sub-navigation__item--active">
+            <a class="govuk-link govuk-link--no-visited-state " href="sign-in-journeys">
+              Sign in journey maps</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="identity-journeys">
+              Proving identity journey maps</a>
+          </li>
+        
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="design-documentation">Design recommendations</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state " href="save-progress">
+              Let users create a GOV.UK One Login to save progress</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-out-easily">
+              Let users navigate to their GOV.UK One Login and sign out easily</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+              Show users where to change their GOV.UK One Login credentials</a>
+          </li>
+        </ul>
+    
+    
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Sign in journey maps</h1>
+      <p class="govuk-body">Using GOV.UK One Login gives you a simpler way to let your users sign in.</p>
+        
+      <p class="govuk-body">Once integrated with GOV.UK One Login, your service will then have a 3 step process to signing users in.</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>User enters their email address.</li>
+        <li>They then create or enter their password.</li>
+        <li>We'll then send an authentication code to their phone, for them to enter on the final sign in page.</li>
+      </ol>
+
+      <p>They can use these details to access all services they have with you and other government departments.</p>
+
+    <!--<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">--> 
+    
+      <h2 class="govuk-heading-m">Ways to use sign in</h2>
+      <p class="govuk-body">There are 2 ways of using GOV.UK One Login sign in. You can see a user journey map for both options.</p>
+      <p class="govuk-body">Both options have been through multiple rounds of user testing.</p>
+      <div class="govuk-inset-text">
+        We’re working on making our documentation more accessible. If you have any problems accessing these journey maps, please <a class="govuk-link" href="../contact-us">contact us</a>.
+      </div>
+
+      <h2 class="govuk-heading-m">Option 1: users create a GOV.UK One Login upfront</h2>
+      <p class="govuk-body">This journey map shows a user creating a GOV.UK One Login at the start of your service journey.</p>
+      <div class="govuk-!-margin-bottom-5"><img src="/public/images/User-creates-account-upfront.svg" alt="" style="width: 100%; height: auto;"></div>
+      <p class="govuk-body">Users start at your service’s start page, usually on GOV.UK. They create a GOV.UK One Login using their email address, a password and two-factor authentication. Then, they’re sent to your service to complete their journey.</p>
+      <p class="govuk-body">This option is usually best for your service if you need all your users to create a GOV.UK One Login before they can do anything.</p>
+      <h3 class="govuk-heading-s">See a detailed map of the user-facing screens</h3>
+      <p class="govuk-body">
+        <a class="govuk-link" href="/public/files/users-create-an-account-upfront-pdf-february-2023.pdf" rel="noreferrer noopener" target="_blank">View a PDF of option 1 (opens in new tab)</a><br>
+        Best if you want to view or print the journey as it is.
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.figma.com/file/SD9EyRaCaFPHJIBalbiKiH/GOV.UK-Sign-In%3A-Users-create-an-account-upfront?node-id=0%3A1" rel="noreferrer noopener" target="_blank">View option 1 in Figma (opens in new tab)</a><br>
+        Best if you want to copy the screens into your own journey maps and play around with the designs.
+      </p>
+      <h2 class="govuk-heading-m">Option 2: users create a GOV.UK One Login to save progress</h2>
+      <p class="govuk-body">This journey map shows a user creating a GOV.UK One Login in the middle of your service journey.</p>
+      <div class="govuk-!-margin-bottom-5"><img src="/public/images/User-creates-account-to-save-progress.svg" alt="" style="width: 100%; height: auto;"></div>
+      <p class="govuk-body">Users start at your service’s start page, usually on GOV.UK. They complete part of your journey, then decide they want to finish it later.</p>
+      <p class="govuk-body">To save their progress, they create a GOV.UK One Login using their email address, a password and two-factor authentication.</p>
+      <p class="govuk-body">Later, they return to your service and resume their journey by signing in to their GOV.UK One Login.</p>
+      <p class="govuk-body">This option is usually best for your service if you do not need all your users to create a GOV.UK One Login, but want to give them the option of saving their progress.</p>
+      <h3 class="govuk-heading-s">See a detailed map of the user-facing screens</h3>
+      <p class="govuk-body">
+        <a class="govuk-link" href="/public/files/users-create-an-account-to-save-progress-pdf-february-2023.pdf" rel="noreferrer noopener" target="_blank">View a PDF of option 2 (opens in new tab)</a><br>
+        Best if you want to view or print the journey as it is.
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.figma.com/file/OBjFiLWIaxTIVIFduKb1td/GOV.UK-Sign-In%3A-Users-create-an-account-to-save-progress?node-id=0%3A1" rel="noreferrer noopener" target="_blank">View option 2 in Figma (opens in new tab)</a><br>
+        Best if you want to copy the screens into your own journey maps and play around with the designs.
+      </p>
+    <!--
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <p>We have basic journey visuals and descriptions to explain the relationship and journey interactions between your service and GOV.UK One Login.</p>
+          <p>These visuals cover common user goals. We will add new ones as we develop additional user journeys.</p>
+          <p class="govuk-body govuk-!-font-weight-bold"><a href="/{{folder}}/documentation/top-level-linear-journeys" class="govuk-link">Go to the journeys</a></p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <img src="/public/images/Top-level-journeys-thumbnail.png" alt=" " style="width: 100%; height: auto;">
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+     
+      <h2 class="govuk-heading-m">Journey process maps</h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <p>We have detailed journey process maps which explain the end to end process of how your users flow through the entire GOV.UK One Login product.</p>
+          <p>The process maps are split into all the different journey stages. They are designed to give you an overview of the end to end GOV.UK One Login journey.</p>
+          <p class="govuk-body govuk-!-font-weight-bold"><a href="https://www.figma.com/file/Blgax3iTYjKDkVYCP4G9HS/PROTOTYPE%3A-GOV.UK-One-Login-process-journey-maps?type=design&node-id=0%3A1&mode=design&t=S1eLlNPhFhiKPg9L-1" 
+            class="govuk-link" rel="noreferrer noopener" target="_blank">Go to journey process maps (opens in a new tab)</a></p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <img src="/public/images/Journey-flows-thumbnail.png" alt=" " style="width: 100%; height: auto;">
+        </div>
+      </div>
+        </div>
+   --> 
+</div>
+</div>
+
+{% endblock %}
