@@ -49,7 +49,6 @@
 
 
 
-
   <div class="govuk-form-group">
     <label class="govuk-label" for="firstName">
       Your full name
@@ -59,7 +58,15 @@
       spellcheck="false" aria-describedby="firstName-hint">
 
   </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="firstName">
+      Email address
+    </label>
 
+    <input class="govuk-input govuk-!-width-full" id="firstName" name="firstName" type="text"
+      spellcheck="false" aria-describedby="firstName-hint" placeholder="your.email@digital.cabinet-office.gov.uk">
+
+  </div>
   <div class="govuk-form-group">
     <label class="govuk-label" for="role">
       Role
@@ -81,91 +88,19 @@
 
   </div>
 
-<!-- 
   <div class="govuk-form-group">
-
-    <fieldset class="govuk-fieldset">
-
-      <legend class="govuk-fieldset__legend">
-
-        Organisation type
-
-      </legend>
+    <label class="govuk-label" for="organisationName">
+      Service name
+    </label>
 
 
-      <div class="govuk-radios" id="organisationType-options" data-module="govuk-radios">
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="organisationType" name="organisationType" type="radio"
-            value="governmentDepartmentOrMinistry">
-          <label class="govuk-label govuk-radios__label" for="organisationType">
-            Government department or Ministry
-          </label>
-
-        </div>
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="organisationType-2" name="organisationType" type="radio"
-            value="executiveAgency">
-          <label class="govuk-label govuk-radios__label" for="organisationType-2">
-            Executive Agency
-          </label>
-
-        </div>
-
-
-
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="organisationType-3" name="organisationType" type="radio"
-            value="armsLengthBody">
-          <label class="govuk-label govuk-radios__label" for="organisationType-3">
-            Arms length body
-          </label>
-
-        </div>
-
-
-
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="organisationType-4" name="organisationType" type="radio"
-            value="other">
-          <label class="govuk-label govuk-radios__label" for="organisationType-4">
-            Other
-          </label>
-
-        </div>
-
-
-
-
-      </div>
-
-
-    </fieldset>
-
+    <input class="govuk-input govuk-!-width-two-thirds"id="organisationName" name="organisationName" type="text"
+      spellcheck="false" aria-describedby="organisationName-hint"  placeholder="Get a juggling licence">
 
   </div>
--->
-
-  
-
   <div class="govuk-form-group">
     <label class="govuk-label" for="serviceDescription">
-      About your service
+     Service description
     </label>
 
 
@@ -199,7 +134,7 @@
             <label class="govuk-label" for="contact-by-email">
               Add the url
             </label>
-            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+            <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
           </div>
         </div>
         <div class="govuk-checkboxes__item">
@@ -213,7 +148,7 @@
             <label class="govuk-label" for="contact-by-phone">
               Add the url
             </label>
-            <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
+            <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
           </div>
         </div>
         <div class="govuk-checkboxes__item">
