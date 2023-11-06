@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">AP-20</span>
+
+      <h1 class="govuk-heading-l">
+        Explore design options for adding ID journeys to product site
+      </h1>
+
+      <p>
+        <a href="https://govukverify.atlassian.net/browse/AP-20">View the story on Jira</a>.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What's changed
+      </h2>
+
+      <p>Enter info about what it was like and what has changed.</p>
+
+      <h2 class="govuk-heading-m">
+        What's we've done
+      </h2>
+
+      <p>Enter info about what we've done and why we've done it.</p>
+
+      <h2 class="govuk-heading-m">
+        Notes
+      </h2>
+
+      <p>Enter information about expected functionality that isn't covered in the prototype.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: ""
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -21,6 +21,9 @@ router.use('/', (req, res, next) => {
 });
 
 // Start folder specific routes
+router.use('/handovers', require('./views/design-sandbox/_routes'))
+router.use('/handovers', require('./views/handovers/_routes'))
+router.use('/admin-tool', require('./views/admin-tool/_routes'))
 router.use('/product-site', require('./views/product-site/_routes'));
 router.use('/v5', require('./views/v5/_routes'));
 router.use('/v4', require('./views/v4/_routes'));
