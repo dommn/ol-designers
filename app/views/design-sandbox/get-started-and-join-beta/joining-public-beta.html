@@ -14,12 +14,12 @@
   <li>reading and agreeing to the Memorandum of understanding </li>
   <li>setting up in our production environment</li>
   <li>agreeing a go-live date with us</li>
-  <li>giving us more information about your service, using the form below</li>
+  <li>telling us more about your service, using the form below</li>
 </ul>
 
 <p>We'll then arrange to talk more with your team about getting ready to join public beta. </p>
 
-
+<!-- 
 
 <h3 class="govuk-heading-s">
   Information we currently have
@@ -42,7 +42,8 @@
       Get a juggling licence
     </dd>
   </div>
-</dl>
+</dl> -->
+<h2 class="govuk-heading-m">Tell us more about your service</h2>
 
 <form class="form" method="post" novalidate="novalidate">
 
@@ -54,7 +55,7 @@
       Your full name
     </label>
 
-    <input class="govuk-input govuk-!-width-full" id="firstName" name="firstName" type="text"
+    <input class="govuk-input govuk-!-width-two-thirds" id="firstName" name="firstName" type="text"
       spellcheck="false" aria-describedby="firstName-hint">
 
   </div>
@@ -92,19 +93,21 @@
     <label class="govuk-label" for="organisationName">
       Service name
     </label>
-
-
     <input class="govuk-input govuk-!-width-two-thirds"id="organisationName" name="organisationName" type="text"
       spellcheck="false" aria-describedby="organisationName-hint"  placeholder="Get a juggling licence">
-
   </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="organisationName">
+      Service url, if live
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds"id="organisationName" name="organisationName" type="text"
+      spellcheck="false" aria-describedby="organisationName-hint">
+  </div>
+
   <div class="govuk-form-group">
     <label class="govuk-label" for="serviceDescription">
      Service description
     </label>
-
-
-
     <div id="serviceDescription-hint" class="govuk-hint">
      Include who uses it and what they use it for
     </div>
@@ -114,149 +117,103 @@
       aria-describedby="serviceDescription-hint"></textarea>
   </div>
 
+
   <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <label class="govuk-label" for="serviceDescription">
-          Which best describes your service
+        <label class="govuk-label" for="needeDescription">
+          How will your service use GOV.UK One Login?
         </label>
       </legend>
-  
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-checkboxes__label" for="contact">
-            It's live - and users need to sign in 
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+          <label class="govuk-label govuk-radios__label" for="signIn">
+            To sign users in
           </label>
         </div>
-        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="contact-by-email">
-              Add the url
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-          </div>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
-          <label class="govuk-label govuk-checkboxes__label" for="contact-2">
-            It's live - users do not need to sign in
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+          <label class="govuk-label govuk-radios__label" for="signIn-2">
+            To sign users in and check their identity 
           </label>
         </div>
-        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="contact-by-phone">
-              Add the url
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
-          </div>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
-          <label class="govuk-label govuk-checkboxes__label" for="contact-3">
-            It's not yet live
-          </label>
-        </div>
-      
-      </div>
+     
     </fieldset>
   </div>
-
-
-
-
-
-
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <label class="govuk-label" for="needeDescription">
+          Do you need to migrate existing user accounts?
+        </label>
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+          <label class="govuk-label govuk-radios__label" for="signIn">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+          <label class="govuk-label govuk-radios__label" for="signIn-2">
+No          </label>
+        </div>
+     
+    </fieldset>
+  </div>
 
   <div class="govuk-form-group">
 
     <fieldset class="govuk-fieldset">
 
       <legend class="govuk-fieldset__legend">
-
-       Number of users 
-
+       Number of users each year
       </legend>
-
-
       <div class="govuk-radios" id="totalAnnualNumberOfUsersOfYourService-options" data-module="govuk-radios">
-
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService"
             name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range1To1000">
           <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService">
             1 to 1,000
           </label>
-
         </div>
-
-
-
-
-
-
-
-
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-2"
             name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range1001To50000">
           <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-2">
             1,001 to 50,000
           </label>
-
         </div>
-
-
-
-
-
-
-
-
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-3"
             name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range50001To250000">
           <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-3">
             50,001 to 250,000
           </label>
-
         </div>
-
-
-
-
-
-
-
-
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-4"
             name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range250001To1Million">
           <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-4">
             250,001 to 1 million
           </label>
-
         </div>
-
-
-
-
-
-
-
-
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-5"
             name="totalAnnualNumberOfUsersOfYourService" type="radio" value="rangeOver1Million">
           <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-5">
             Over 1 million users
           </label>
-
         </div>
-
-
-
-
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="totalAnnualNumberOfUsersOfYourService-4"
+            name="totalAnnualNumberOfUsersOfYourService" type="radio" value="range250001To1Million">
+          <label class="govuk-label govuk-radios__label" for="totalAnnualNumberOfUsersOfYourService-4">
+            Not sure
+          </label>
+        </div>
       </div>
 
 
@@ -272,7 +229,7 @@
         <label class="govuk-label" for="serviceDescription">When would you like to go live with GOV.UK One Login?
         </label>
       <div id="passport-issued-hint" class="govuk-hint">
-        For example, 27 3 2007
+        For example, 12 3 2024
       </div>
       <div class="govuk-date-input" id="passport-issued">
         <div class="govuk-date-input__item">
