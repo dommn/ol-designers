@@ -1,0 +1,44 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="circus-skills-service">
+        
+        <h1 class="govuk-heading-l">Enter your service name</h1>
+        
+        <p class="govuk-body">Add the name of the service you want to test with GOV.UK One Login. </p>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="service-name-2">
+          Service name
+        </label>
+      
+      <input class="govuk-input govuk-input--width-three-quarters" id="service-name-2" name="service-name-2" type="text" spellcheck="false" autocomplete="service-name">
+      
+      </div>
+  
+          <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" id="submit">
+        Continue
+      </button>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}
