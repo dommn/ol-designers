@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">AP-20</span>
+
+      <h1 class="govuk-heading-l">
+        Explore design options for adding ID journeys to product site
+      </h1>
+
+      <p>
+        <a href="https://govukverify.atlassian.net/browse/AP-20">View the story on Jira</a>.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What's changed
+      </h2>
+
+
+      <h3 class="govuk-heading-s">Added 2 links to the 'Let users sign in' tile on the <a href="ap-20/user-journey-maps/index">landing page</a></h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>'Read more' info, which goes to About section</li>
+        <li>2. Sign in journey maps</li>
+    </ul>
+    <img src="/public/images/auth-updated-links.png" alt="" width="700">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h3 class="govuk-heading-s">Added 2 links to the 'Check the identity of your users' tile on the <a href="ap-20/user-journey-maps/index">landing page</a></h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>'Read more' info, which goes to About section</li>
+    <li>ID checking journey maps</li>
+    </ul>
+    <img src="/public/images/check-id-updated-links.png" alt="" width="700">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h3 class="govuk-heading-s">Removed 'Find out more' link in top panel on the <a href="ap-20/user-journey-maps/index">landing page</a></h3>
+  <img src="/public/images/updated-banner.png" alt="" width="700">
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <h3 class="govuk-heading-s">Reordered the side navigation elements in <a href="ap-20/user-journey-maps/about/about">About</a></h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Signing users in</li>
+    <li>Checking users’ identities</li>
+    <li>How users can prove their identity</li>
+    <li>The signed in experience</li>
+    </ul>
+</ul>
+
+
+      <h2 class="govuk-heading-m">
+        Notes
+      </h2>
+
+      <p>N/A</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: "ap-20/user-journey-maps/index"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
