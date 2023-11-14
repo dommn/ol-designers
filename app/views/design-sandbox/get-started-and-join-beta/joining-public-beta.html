@@ -11,38 +11,15 @@
 <p>There are a few steps to getting your service live with GOV.UK One Login.</p>
 <p class="govuk-body">These include:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>reading and agreeing to the Memorandum of Understanding </li>
+  <li>telling us more about your service, using the form below</li>
+  <li>agreeing to the Memorandum of Understanding - this needs to be done by a deputy director or above and may need to go to your legal department first
   <li>setting up in our production environment</li>
   <li>agreeing a go-live date with us</li>
-  <li>telling us more about your service, using the form below</li>
+  
 </ul>
 
 <p>We'll then talk more with your team about getting ready to join public beta. </p>
 
-<!-- 
-
-<h3 class="govuk-heading-s">
-  Information we currently have
-</h3>
-
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Email address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      your.email@digital.cabinet-office.gov.uk
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Service name
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Get a juggling licence
-    </dd>
-  </div>
-</dl> -->
 <h2 class="govuk-heading-m">Tell us more about your service</h2>
 
 <form class="form" method="post" novalidate="novalidate">
@@ -160,7 +137,13 @@
           <label class="govuk-label govuk-radios__label" for="signIn-2">
 No          </label>
         </div>
-     
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+          <label class="govuk-label govuk-radios__label" for="signIn">
+            Not sure
+          </label>
+        </div>
+      </div>
     </fieldset>
   </div>
 
@@ -226,7 +209,7 @@ No          </label>
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <label class="govuk-label" for="serviceDescription">When would you like to go live with GOV.UK One Login?
+        <label class="govuk-label" for="serviceDescription">What's your target date to go live with GOV.UK One Login?
         </label>
       <div id="passport-issued-hint" class="govuk-hint">
         For example, 12 3 2024
