@@ -8,6 +8,17 @@
 
 {% block govukSignInContent %}
 
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    {{data['service-name-2']}} has been added to your services
+  </h3>
+{% endset %} 
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+
 <h1 class="govuk-heading-l">
   Client details
 </h1>
