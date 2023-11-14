@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">SSE-3000</span>
+
+      <h1 class="govuk-heading-l">
+        Make changes to the Join public beta form in the admin tool
+      </h1>
+
+      <p>
+        <a href="https://govukverify.atlassian.net/browse/SSE-3000">View the story on Jira</a>.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What's changed
+      </h2>
+
+
+      <h3 class="govuk-heading-s">Changed the link txt in the side bar when user is in the <a href="/design-sandbox/get-started-and-join-beta/joining-public-beta.html">'Your services'</a> area
+      </h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Txt change from 'Joining public beta' to 'register to join public beta</li>
+    </ul>
+    <img src="/public/images/beta-sidebar.png" alt="" width="300">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h3 class="govuk-heading-s">Changed the Joining private beta form, to give more realistic expectation of what's involved, plus more RP info to onboarding</h3>
+  
+    <img src="/public/images/beta-form.png" alt="" width="700">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    
+  
+
+
+      <h2 class="govuk-heading-m">
+        Notes
+      </h2>
+
+      <p>N/A</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: ""
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
