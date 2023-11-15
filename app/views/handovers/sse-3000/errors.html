@@ -1,0 +1,130 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Joining public beta" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+{% block govukSignInContent %}
+
+
+  <h1 class="govuk-panel__title">
+    Error messages
+  </h1>
+
+<h2 class="govuk-heading-m">1. Full name</h2>
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Enter your full name</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Your full name
+      </h1>
+    </legend>
+  
+    <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Enter your full name
+    </p>
+    
+  </fieldset>
+</div>
+
+<h2 class="govuk-heading-m">2. Organisation name</h2>
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Enter your organisation name</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Your organisation name
+      </h1>
+    </legend>
+  </fieldset>
+    <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Enter your organisation name
+    </p>
+  </div>
+
+    <h2 class="govuk-heading-m">3. How will service use One Login</h2>
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Select how your service will use GOV.UK One Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        How will your service use GOV.UK One Login
+      </h1>
+    </legend>
+  
+    <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select how your service will use GOV.UK One Login
+    </p>
+  </fieldset>
+</div>
+
+<h2 class="govuk-heading-m">4. Are user accounts being migrated</h2>
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Select if you need to migrate existing user accountss</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Do you need to migrate existing user accounts?
+      </h1>
+    </legend>
+  
+    <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select if you need to migrate existing user accounts
+    </p>
+  </fieldset>
+</div>
+
+</div>
+
+{% endblock %}
