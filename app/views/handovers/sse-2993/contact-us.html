@@ -1,0 +1,80 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Contact us" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+   
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Help with an issue in a live service</h1>
+    
+      <form class="form" method="post" novalidate="novalidate">
+     
+    
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+        Full name
+          </label> 
+        <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+        </div>
+        <div class="govuk-form-group">
+      <label class="govuk-label" for="email">
+ Government email address
+      </label> 
+    <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="organisation-name">
+       Government department
+      </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="organisation-name" name="organisation-name" type="text" spellcheck="false" aria-describedby="organisation-name-hint">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="organisation-name">
+       Name of your service that has an issue
+      </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="organisation-name" name="organisation-name" type="text" spellcheck="false" aria-describedby="organisation-name-hint">
+    </div>
+
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="how-can-we-help">
+        What's the issue?
+      </label>
+      <div id="more-detail-hint" class="govuk-hint">
+        If relevant include any status or error messages you're getting.
+      </div>
+      <textarea class="govuk-textarea" id="how-can-we-help" name="how-can-we-help" rows="5" aria-describedby="how-can-we-help-hint"></textarea>
+    </div>
+
+           
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Submit form
+    </button>
+    <h2 class="govuk-heading-m">Response times</h2>
+    <p class="govuk-body">Our response, update, resolution times depend on the priority of the issue.</p>
+    <p class="govuk-body">These are:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>priority 1 - within 15 minutes</li>
+      <li>priority 2 - 1 hour</li>
+      <li>priority 3 - 3 hours</li>
+      <li>priority 4 - 1 working day</li>       
+    </ul>    
+ 
+      </form>
+    
+    
+      
+    
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
