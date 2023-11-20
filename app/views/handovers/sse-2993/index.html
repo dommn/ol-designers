@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <span class="govuk-caption-xl">SSE-2993</span>
+
+    <h1 class="govuk-heading-l">
+      Make changes to the Support and Contact us forms
+    </h1>
+
+    <p>
+      <a href="https://govukverify.atlassian.net/browse/SSE-2993">View the story on Jira</a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      What's changed
+    </h2>
+    <p>There are changes to 2 pages - the Support form and the Contact us form</p>
+        <h3 class="govuk-heading-s"> <a href="https://www.sign-in.service.gov.uk/support">Existing support form</a> </h3>
+
+      <p>Changes to existing form:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+          <li>triages users using 2 radio button options and a link - changed content for each </li>
+          <li>first radio button is for services that are live with One Login - this links to the new Contact us form (changes described below)</li>
+          <li>second button links to <a href="https://www.sign-in.service.gov.uk/contact-us-details">the contact-us-details page</a> - no changes to that page</li>
+<li>There's now a callout sentence with link to take any citizen users to the mainstream gov.uk site - this is instead of the radio button in the existing design</li>
+        </ul>
+        <p class="govuk-body-l">
+          <a href="/app/views/handovers/sse-2993/support.html">View new support page</a></p>
+
+      </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+      <h3 class="govuk-heading-s"> <a href="https://www.sign-in.service.gov.uk/support">Existing Contact us form</a> </h3>
+
+    <p>Changes to existing form:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+        <li>removes bullet list at top of page</li>
+        <li>different fields and field labels</li>
+<li>Hint text to 'What's the issue' txt area</li>
+      </ul>
+      <p class="govuk-body-l">
+        <a href="/app/views/handovers/sse-2993/contact-us.html">View new contact-us page</a></p>
+        <p>
+      
+      Note: this form is to be linked to this email: support@sign-in.service.gov.uk. See note in the jira ticket about when this will be set up.</p>
+        </p>
+
+    </div>
+  </div>
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+ 
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+  
+
+</div>
+</div>
+
+{% endblock %}
