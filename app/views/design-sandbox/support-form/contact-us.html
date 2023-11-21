@@ -13,7 +13,8 @@
     <div class="govuk-grid-column-two-thirds">
    
       <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Help with an issue in a live service</h1>
-    
+      <p class="govuk-body">Our response, update, resolution times depend on the priority of the issue.</p>
+
       <form class="form" method="post" novalidate="novalidate">
      
     
@@ -53,19 +54,23 @@
       <textarea class="govuk-textarea" id="how-can-we-help" name="how-can-we-help" rows="5" aria-describedby="how-can-we-help-hint"></textarea>
     </div>
 
-           
-    <button class="govuk-button" data-module="govuk-button" id="submit">
-      Submit form
-    </button>
-    <h2 class="govuk-heading-m">Response times</h2>
+ 
+
+    {{ govukButton({
+      text: "Send",
+      href: "contact-us-success"
+    }) }}
+    
+     <!-- <h2 class="govuk-heading-m">Response times</h2>
     <p class="govuk-body">Our response, update, resolution times depend on the priority of the issue.</p>
+   
     <p class="govuk-body">These are:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>priority 1 - within 15 minutes</li>
       <li>priority 2 - 1 hour</li>
       <li>priority 3 - 3 hours</li>
       <li>priority 4 - 1 working day</li>       
-    </ul>    
+    </ul>    -->
  
       </form>
     

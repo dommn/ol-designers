@@ -1,0 +1,19 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Contact us" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+
+{% block govukSignInContent %}
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Form sent
+  </h1>
+</div>
+
+<p>We'll be in touch soon.</p>
+
+<p>If you have any questions in the meantime, contact us on <a href="https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC">Slack</a>. </p>
+
+{% endblock %}
