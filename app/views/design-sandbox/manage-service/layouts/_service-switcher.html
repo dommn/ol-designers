@@ -1,0 +1,36 @@
+{% if multipleServices %}{# show multiple services #}
+<div class="navigation-service">
+
+
+  <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="your-services-multiple">Your services</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item govuk-!-font-weight-bold" >
+        {{data['service-name-2']}}
+      </li>
+    </ol>
+
+  </div>
+  </div>
+
+{% else %}
+
+<div class="navigation-service">
+
+
+  <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="your-services">Your services</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item govuk-!-font-weight-bold" >
+        {{data['service-name-2'] or 'Get a juggling licence'}}
+      </li>
+    </ol>
+
+  </div>
+  </div>
+
+  {% endif  %}
