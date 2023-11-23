@@ -17,6 +17,7 @@
 @import "patterns/email-prototype-rig";
 @import "patterns/details-banner";
 @import "patterns/code-snippet";
+@import "patterns/header-actions";
 
 .govuk-header__content{
   @include govuk-media-query($from: desktop) {
