@@ -1,0 +1,57 @@
+.page-header-actions {
+    font-size: 0;
+    margin-bottom: 10px;
+    min-height: 40px;
+    text-align: justify;
+}
+
+
+.page-header-actions__title {
+    display: inline-block;
+    vertical-align: middle;
+    align: right;
+}
+
+.page-header-actions__actions {
+    
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+.button-menu {
+    display: inline-block;
+    position: relative;
+}
+
+.button-menu__wrapper {
+    font-size: 0;
+}
+
+.button-menu__item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+.page-header-actions__action {
+    margin-bottom: 0;
+}
+
+.page-header-actions__action:last-child {
+    margin-bottom: 0;
+}
+
+.moj-button-menu__item:last-child {
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
