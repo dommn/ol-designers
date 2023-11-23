@@ -7,6 +7,7 @@
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "1.2.2",
     "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "13.13.5"
+    "govuk-prototype-kit": "13.13.5",
+    "hmrc-frontend": "5.58.0"
   }
 }
