@@ -1,0 +1,45 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Client details" %}
+{% extends folder + "/manage-service/layouts/_base-admin-tool.html" %}
+{% set notinService = "true" %}
+
+
+{% block govukSignInContent %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <form class="form" action="/design-sandbox/manage-service/delete-service-success" method="post">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-l">
+        Are you sure you want to delete Get a juggling licence?
+      </h1>
+    
+      <p class="govuk-body">
+        Deleting this service will:
+      </p>
+    
+      <ul class="govuk-list govuk-list--bullet">
+        <li>permanently eradicate your wonderful service</li>
+        <li>nothing else</li>
+      </ul>
+    
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+          Delete service
+        </button>
+        <a class="govuk-link" href="juggling-licence-service.html">On second thoughts, please please please let me keep it</a>
+      </div>
+    
+    </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}

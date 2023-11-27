@@ -1,0 +1,55 @@
+{# this page will show being signed in by default but also only at the account scope #}
+
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set subMenuActive = "Your services" %} {# change this to change the active subMenu menu #}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+{% block govukSignInContent %}
+
+      {% if serviceNameUpdated === 'yes' %}
+
+      {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        You have changed your service name
+      </h3>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+      }) }}
+
+      {% endif %}
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Get a juggling licence has been deleted
+          </h3>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-l govuk-!-margin-top-3">Your services</h1>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-3">
+          <a class="govuk-link govuk-link--no-visited-state" href="juggling-licence-service.html"> Get a yo-yo licence</a>
+      </h2>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  {{ govukButton({
+    text: "Add a new service",
+    href: "enter-service-name"
+  }) }}
+
+
+{% endblock %}
