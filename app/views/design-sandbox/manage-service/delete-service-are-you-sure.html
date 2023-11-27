@@ -6,6 +6,15 @@
 
 {% block govukSignInContent %}
 
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "juggling-licence-service"
+}) }}
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container">
