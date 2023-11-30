@@ -5,6 +5,21 @@
 
 {% block govukSignInContent %}
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Service name changed to ‘Get a juggling licence’
+    </h3>
+  </div>
+</div>
+
 <h1 class="govuk-heading-l">
   Manage Get a juggling licence
 </h1>
@@ -27,11 +42,11 @@
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="change-service-name.html">
-            Change name<span class="govuk-visually-hidden"> of service</span>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="enter-service-name.html">
+            Change name<span class="govuk-visually-hidden"> contact details</span>
           </a></li>
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="delete-service-are-you-sure.html">
-            Remove<span class="govuk-visually-hidden"> service</span>
+            Remove<span class="govuk-visually-hidden"> contact details</span>
           </a></li>
       </ul>
     </dd>
