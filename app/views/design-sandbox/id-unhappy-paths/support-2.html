@@ -1,0 +1,67 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "support" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+     
+      <form class="form" method="post" action="/support-request">
+
+        
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How can we support you?
+              </h1>
+            </legend>
+           
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="signIn-2">
+                  Help with an issue in a live service
+                </label>
+                <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+                 For central government service teams that are live with GOV.UK One Login
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="signIn">
+                  More information on integrating with GOV.UK One Login
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                 For central government service teams that have not joined GOV.UK One Login public beta
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-inset-text">
+          If you're a member of the public, <a href="https://signin.account.gov.uk/contact-us?supportType=PUBLIC>">use this form</a> to get help with GOV.UK One Login.
+                   </div>
+    
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Continue
+    </button>
+
+      </form>
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
