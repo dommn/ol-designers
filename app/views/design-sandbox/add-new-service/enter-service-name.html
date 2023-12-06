@@ -1,0 +1,44 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "GOV.UK One Login - Enter your email address" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Support" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "Sign in" %}
+{% set back = true %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" action="../juggling-licence-service">
+      
+      <h1 class="govuk-heading-l">Add your service name</h1>
+
+    <p>Add your service name as used on your service start page.</p>
+    <p>Your service name is shown to your users in the sign in journey. For example “Now continue to use the [service name] service."</p>
+    <p>You can change it later.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="service-name">
+          Service name
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="service-name" name="serviceName" type="text" spellcheck="false" aria-describedby="service-name-hint">
+      </div>
+
+        <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Continue
+    </button>
+          
+        </div>
+      </form>
+    
+    
+        </div>
+
+
+{% endblock %}

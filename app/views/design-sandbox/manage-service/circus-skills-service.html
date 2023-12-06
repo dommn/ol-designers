@@ -1,12 +1,26 @@
 {% set pageTitle = "Account area" %}
 {% set subMenuActive = "Client details" %}
-{% extends folder + "/manage-service/layouts/_base-admin-tool.html" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+{% set headerActive = "Your account" %} {# change this to change the active header menu #}
+{% set multipleServices = true %}
+
 
 
 {% block govukSignInContent %}
 
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+   Service name changed to {{data['service-name-2']}} 
+  </h3>
+{% endset %} 
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+
 <h1 class="govuk-heading-l">
-  Manage Get a juggling licence
+  Manage Get a circus skills licence
 </h1>
 
 <p>This page shows the information you need to make calls to the GOV.UK One Login API.</p>
@@ -23,15 +37,15 @@
       Name
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">Get a juggling licence</p>
+      <p class="govuk-body">Get a circus skills licence</p>
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
         <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="change-service-name.html">
-            Change name<span class="govuk-visually-hidden"> of service</span>
+            Change name<span class="govuk-visually-hidden"> contact details</span>
           </a></li>
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="delete-service-are-you-sure.html">
-            Remove<span class="govuk-visually-hidden"> service</span>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">
+            Remove<span class="govuk-visually-hidden"> contact details</span>
           </a></li>
       </ul>
     </dd>
