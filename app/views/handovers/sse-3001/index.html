@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <span class="govuk-caption-xl">SSE-3001</span>
+
+    <h1 class="govuk-heading-l">
+      Review and prototype existing "add another service" designs for self service
+    </h1>
+
+    <p>
+      <a href="https://govukverify.atlassian.net/browse/SSE-3001">View the story on Jira</a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      What's changed
+    </h2>
+
+        <h3 class="govuk-heading-s">1. Made changes to the <a href="juggling-licence-service.html">services/client integration</a> area</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Changed h1 - it is now 'Manage [your service name]</li>
+          <li>Changed side nav link to match h1 - it is now 'Manage [your service name]</li>
+          <li>Added new section to page titled 'Service details'</li>
+          <li>Moved 'change service name' to 'Service details' area - the existing 'change service name' flow is unchanged</li>
+          <li>Added 'Remove' link, which takes users through deleting service flow</li>
+        </ul>
+      <img src="/public/images/manage-get-a-juggling-licence.png" alt="" width="600">
+
+      <p><a href="/public/images/juggling-licence-current.png">How the page currently looks</a></p>
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h3 class="govuk-heading-s">2. Added a <a href="confirm-remove-service.html">remove service</a> flow</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Added an <a href="confirm-remove-service">'are you sure' page</a>, making sure users want to remove the service</li>
+      <li>Added a success notification banner on the <a href="remove-service-success.html">'Your services' page</a></li>
+    </ul>
+ 
+ 
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+  {{ govukButton({
+  text: "View the prototype",
+  href: "juggling-licence-service"
+  }) }}
+
+</div>
+</div>
+
+{% endblock %}
