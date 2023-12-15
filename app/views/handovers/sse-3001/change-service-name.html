@@ -1,0 +1,57 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="remove-service-success">
+        
+        <h1 class="govuk-heading-l">Change service name</h1>
+        
+        <p class="govuk-body">Add the name of the service you want to test with GOV.UK One Login. </p>
+        <p>This will be shown to your users in the sign in journey. For example,
+          "Returning you to [service name]."</p>
+<p>You can change the name again, if needed.</p>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="service-name-1">
+    Current service name
+  </label>
+
+<input class="govuk-input govuk-input--width-three-quarters" id="service-name-1" name="service-name-1" type="text" spellcheck="false" autocomplete="service-name" placeholder="Apply for a juggling licence">
+
+</div>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="service-name-2">
+          New service name
+        </label>
+      
+      <input class="govuk-input govuk-input--width-three-quarters" id="service-name-2" name="service-name-2" type="text" spellcheck="false" autocomplete="service-name">
+      
+      </div>
+  
+          <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" id="submit">
+        Continue
+      </button>
+      <a class="govuk-link" href="juggling-licence-service.html">Cancel</a>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}
