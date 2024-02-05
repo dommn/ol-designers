@@ -1,0 +1,44 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="change-service-name-success">
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="more-detail">
+                Enter back channel logout URI
+              </label>
+            </h1>
+            <div id="more-detail-hint" class="govuk-hint">
+              DO WE NEED TO ENTER ANY ADDITIONAL INFORMATION HERE?
+            </div>
+            <input class="govuk-input" id="event-name" name="eventName" type="text">
+
+          </div>
+  
+          <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" id="submit">
+        Confirm
+      </button>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}

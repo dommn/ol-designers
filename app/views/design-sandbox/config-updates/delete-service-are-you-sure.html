@@ -1,0 +1,47 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Client details" %}
+{% extends folder + "/manage-service/layouts/_base-admin-tool.html" %}
+{% set notinService = "true" %}
+
+
+{% block govukSignInContent %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "juggling-licence-service"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <form class="form" action="/design-sandbox/manage-service/delete-service-success" method="post">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-l">
+        Confirm you want to remove Get a juggling licence
+      </h1>
+    
+    
+    
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+     Yes, remove service
+        </button>
+        <a class="govuk-link" href="juggling-licence-service.html">No, keep service</a>
+      </div>
+    
+    </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}

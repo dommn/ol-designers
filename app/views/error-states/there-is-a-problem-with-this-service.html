@@ -1,0 +1,27 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="circus-skills-service">
+        
+        <h1 class="govuk-heading-l">There is a problem with the service</h1>
+        
+        <p class="govuk-body">Try again later.</p>
+        <p>If you need help urgently, contact us through our <a href="">support form</a> or <a href="">Slack channel</a></p>
+
+            
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
