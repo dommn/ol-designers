@@ -1,0 +1,52 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="change-service-name-success">
+
+          {{ govukRadios({
+            name: "claims",
+            fieldset: {
+              legend: {
+                text: "Select a claims method",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "Address",
+                text: "Address"
+              },
+              {
+                value: "ReturnCode",
+                text: "ReturnCode"
+              }
+            ]
+          }) }}
+
+          <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" id="submit">
+        Confirm
+      </button>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}
