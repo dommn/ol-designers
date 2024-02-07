@@ -12,33 +12,24 @@
   
       <div class="govuk-grid-column-two-thirds">
   
-        <form class="form" method="post" action="change-service-name-success">
-
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--l" for="more-detail">
                 Enter back channel logout URI
               </label>
             </h1>
-            <div id="more-detail-hint" class="govuk-hint">
-              DO WE NEED TO ENTER ANY ADDITIONAL INFORMATION HERE?
-            </div>
             <input class="govuk-input" id="event-name" name="eventName" type="text">
-
           </div>
   
-          <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="submit">
-        Confirm
-      </button>
-            
-          </div>
 
-  
-      </form>
+
+{{ govukButton({
+  text: "Save and continue",
+  href: "success/enter-back-channel-logout-uri"
+}) }}
       
-      
-          </div>
+    </div>
+  </div>
 
 
 {% endblock %}

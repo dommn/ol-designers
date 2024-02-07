@@ -27,10 +27,10 @@
 
           </div>
   
-          <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="submit">
-        Confirm
-      </button>
+          {{ govukButton({
+            text: "Save and continue",
+            href: "success/enter-sector-identifier-uri"
+          }) }}
             
           </div>
 
