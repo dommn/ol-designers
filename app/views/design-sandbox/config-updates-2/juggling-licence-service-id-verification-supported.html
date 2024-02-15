@@ -37,69 +37,84 @@
       </ul>
     </dd>
   </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Client ID
-    </dt>
-    <dd class="govuk-summary-list__value">
-      <div class="code-snippet">X8rnOEw0SqOdEAOnWyPQ6YsJugQ</div>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Contacts
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Not added yet
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <ul class="govuk-summary-list__actions-list">
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">
-            Change<span class="govuk-visually-hidden"> public key</span>
-          </a></li>
-      </ul>
-    </dd>
-  </div>
 </dl>
 
 <h2 class="govuk-heading-m">
-  Manage client
+  Manage integration client
 </h2>
 
 <dl class="govuk-summary-list">
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    Redirect URIs
+    Client ID
   </dt>
   <dd class="govuk-summary-list__value">
-    https://localhost/
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="change-redirect-uris">
-      Change<span class="govuk-visually-hidden"> redirect URIs</span>
-    </a>
+    <div class="code-snippet">X8rnOEw0SqOdEAOnWyPQ6YsJugQ</div>
   </dd>
 </div>
-
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    Post logout redirect URIs (optional)
+    Client name
   </dt>
   <dd class="govuk-summary-list__value">
     <p class="govuk-body">Not added yet</p>
   </dd>
   <dd class="govuk-summary-list__actions">
     <ul class="govuk-summary-list__actions-list">
-      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="change-post-logout-redirect-uris">
-          Change<span class="govuk-visually-hidden"> contact details</span>
+      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">
+          Change<span class="govuk-visually-hidden"> public key</span>
         </a></li>
     </ul>
   </dd>
 </div>
+</dl>
 
+<h2 class="govuk-heading-m">
+  Keys and secrets
+</h2>
+
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Client secret
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Not added yet</p>
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="enter-client-secret">
+          Change<span class="govuk-visually-hidden"> public key</span>
+        </a></li>
+    </ul>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Public key
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p class="govuk-body">Not added yet</p>
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="change-public-key">
+          Change<span class="govuk-visually-hidden"> public key</span>
+        </a></li>
+    </ul>
+  </dd>
+</div>
+</dl>
+
+
+<h2 class="govuk-heading-m">
+  URIs
+</h2>
+
+<dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Back channel logout URI
+      Back Channel Logout URI
     </dt>
     <dd class="govuk-summary-list__value">
       <p class="govuk-body">Not added yet</p>
@@ -113,9 +128,39 @@
     </dd>
   </div>
 
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Post logout redirect URIs (optional)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Not added yet</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="change-post-logout-redirect-uris">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a></li>
+      </ul>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Redirect URIs
+    </dt>
+    <dd class="govuk-summary-list__value">
+      https://localhost/
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="change-redirect-uris">
+        Change<span class="govuk-visually-hidden"> redirect URIs</span>
+      </a>
+    </dd>
+  </div>
+
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    Sector identifier URI
+    Sector Identifier URI
   </dt>
   <dd class="govuk-summary-list__value">
     <p class="govuk-body">Not added yet</p>
@@ -131,39 +176,18 @@
 </dl>
 
 <h2 class="govuk-heading-m">
-  User attributes
+  Other stuff
 </h2>
 
 <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Scopes
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Email
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="">
-        Change<span class="govuk-visually-hidden"> redirect URIs</span>
-      </a>
-    </dd>
-  </div>
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Identity verification enabled
-    </dt>
-    <dd class="govuk-summary-list__value">
-      <p class="govuk-body">Yes</p>
-    </dd>
-  </div>
-
+  <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Claims
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">Address<br>coreIdentityJWT</p>
+      <p class="govuk-body">Not added yet</p>
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -173,57 +197,21 @@
       </ul>
     </dd>
   </div>
-  </dl>
 
-
-  <h2 class="govuk-heading-m">
-    Client authentication
-  </h2>
-
-<dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Authentication method
+      Identity Verification Supported
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">private_key_jwt</p>
+      <p class="govuk-body">Yes</p>
     </dd>
   </div>
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Public key
-  </dt>
-  <dd class="govuk-summary-list__value">
-    <p class="govuk-body">Not added yet</p>
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <ul class="govuk-summary-list__actions-list">
-      <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="enter-public-key">
-          Change<span class="govuk-visually-hidden"> public key</span>
-        </a></li>
-    </ul>
-  </dd>
-</div>
-</dl>
-
-
-
-<h2 class="govuk-heading-m">
-  Advanced options
-</h2>
-
-<dl class="govuk-summary-list">
-
-  <dl class="govuk-summary-list">
-  
-  
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      ID token signing algorithm
+      ID Token Signing Algorithm
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">ES256</p>
+      <p class="govuk-body">Not added yet</p>
     </dd>
     <dd class="govuk-summary-list__actions">
       <ul class="govuk-summary-list__actions-list">
@@ -236,10 +224,44 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Level of confidence options
+      Scopes
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">P2</p>
+      Not added yet
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="">
+        Change<span class="govuk-visually-hidden"> redirect URIs</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Token Auth Method
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Not added yet</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="enter-token-auth-method">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a></li>
+      </ul>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      User attributes required
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Email address<br>Phone number
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="change-user-attributes">
+        Change<span class="govuk-visually-hidden"> user attributes</span>
+      </a>
     </dd>
   </div>
 </dl>
@@ -252,14 +274,9 @@
   </summary>
   <div class="govuk-details__text">
     <h3 class="govuk-heading-s">
-      Authentication method
-       </h3>
-       <p class="govuk-body">Read the <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/authenticate-your-user/#authenticate-your-user">
-         technical documents on authentication methods.</a></p>     
-    <h3 class="govuk-heading-s">
       Back channel logouts
       </h3>
-    <p class="govuk-body">Read the <a href="https://openid.net/specs/openid-connect-backchannel-1_0.html#Backchannel">technical documents on back channel logouts.</a></p>
+    <p class="govuk-body">Read the <a href="https://openid.net/specs/openid-connect-backchannel-1_0.html#Backchannel">technical documents on back channel logouts</a></p>
     <h3 class="govuk-heading-s">
       Claims
       </h3>
@@ -274,11 +291,6 @@
         </h3>
         <p class="govuk-body">Read the <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/authenticate-your-user/#receive-response-for-make-a-token-request">
           technical documents on tokens. </a></p>
-          <h3 class="govuk-heading-s">
-            Level of confidence options
-            </h3>
-            <p class="govuk-body">Read the <a href="https://docs.sign-in.service.gov.uk/before-integrating/choose-the-level-of-identity-confidence/">
-              technical documents on choosing the level of identity confidence for your service.</a></p>
           <h3 class="govuk-heading-s">
             Post logout redirect URIs  
             </h3>
@@ -302,7 +314,11 @@
                </h3>
                <p class="govuk-body">Read the <a href="https://docs.sign-in.service.gov.uk/before-integrating/set-up-your-service-s-configuration/#set-up-your-service-s-configuration-with-gov-uk-one-login">
                  technical documents on sector identifier URIs. </a></p>     
-                 
+                 <h3 class="govuk-heading-s">
+                  Token authentication method
+                   </h3>
+                   <p class="govuk-body">Read the <a href="https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/authenticate-your-user/#authenticate-your-user">
+                     technical documents on token authentication methods. </a></p>     
                   <h3 class="govuk-heading-s">
       User attributes required
       </h3>
