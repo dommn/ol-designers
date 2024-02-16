@@ -34,15 +34,82 @@ href: "javascript:window.history.back()"
     </p>
 
     <h2 class="govuk-heading-m">
-      List of screens
+      What's been added
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/design-sandbox/config-updates/enter-contacts-existing-contacts">Contacts</a></li>
+      <li><a href="/design-sandbox/config-updates/enter-back-channel-logout-uri">Back channel logout URI</a></li>
+      <li><a href="/design-sandbox/config-updates/enter-sector-identifier-uri">Sector identifier URI</a></li>
+      <li>Identity verification enabled</li>
+      <li><a href="/design-sandbox/config-updates/enter-claims">Claims</a></li>
+      <li>Authentication method</li>
+      <li><a href="/design-sandbox/config-updates/enter-public-key">Public key</a></li>
+      <li><a href="/design-sandbox/config-updates/enter-client-secret">Client secret</a></li>
+      <li><a href="/design-sandbox/config-updates/enter-id-token-signing-algorithm">ID token signing algorithm</a></li>
+      <li>Level of confidence options</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">
+      List of screens with different scenarios
     </h2>
 
         
         <ul class="govuk-list govuk-list--bullet">
           <li><a href="/design-sandbox/config-updates/juggling-licence-service-blank">Blank version with IDV disabled</a></li>
-          <li><a href="/design-sandbox/config-updates/juggling-licence-service">IDV enabled with claims</a></li>
+          <p>
+            This view has minimal information inputted.
+           </p>
+          <li><a href="/design-sandbox/config-updates/juggling-licence-service">IDV enabled with claims and multiple contacts</a></li>
+          <p>
+            This view has multiple contacts and redirect URIs entered and because the authentication method is 'private_key_jwt', public key is visible.
+           </p>
           <li><a href="/design-sandbox/config-updates/juggling-licence-service-client-secret">Authentication method: client_secret_post</a></li>
+          <p>
+            A view where the authentication method is 'private_key_jwt' so client secret hash is visible.
+           </p>
         </ul>
+
+
+
+        <h2 class="govuk-heading-m">
+          Add another item to a list
+        </h2>
+
+        <p>
+          There is a new pattern included within the prototype. This enables us to add more than one item to a list of text inputs.
+         </p>
+
+         <p>
+          The user is given the option to add an additional item, which they are then given the option to remove.
+         </p>
+
+         <p>
+          This pattern can be seen on the following pages:
+         </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/design-sandbox/config-updates/enter-contacts-existing-contacts">Enter contacts</a></li>
+          <li><a href="/design-sandbox/config-updates/enter-redirect-uri-existing">Enter redirect URIs</a></li>
+        </ul>
+
+        <h2 class="govuk-heading-m">
+          Success page pattern
+        </h2>
+
+        <p>
+          Whenever information is successfully added or changed, the user is presented with the appropriate <a href="https://design-system.service.gov.uk/components/notification-banner/">success notification banner</a>.
+         </p>
+
+         <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/design-sandbox/config-updates/success/enter-back-channel-logout-uri">Back channel logout URI success</a></li>
+          <li><a href="/design-sandbox/config-updates/success/enter-claims">Claims success</a></li>
+          <li><a href="/design-sandbox/config-updates/success/enter-client-secret">Client secret hash success</a></li>
+          <li><a href="/design-sandbox/config-updates/success/enter-id-token-signing-algorithm">ID token signing algorithm success</a></li>
+          <li><a href="/design-sandbox/config-updates/success/enter-public-key">Public key success</a></li>
+          <li><a href="/design-sandbox/config-updates/success/enter-sector-identifier-uri">Sector identifier URI success</a></li>
+        </ul>
+
 
 </div>
 </div>

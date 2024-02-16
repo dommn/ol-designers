@@ -14,7 +14,7 @@
   
         <form class="form" method="post" action="change-service-name-success">
 
-          {{ govukRadios({
+          {{ govukCheckboxes({
             name: "claims",
             fieldset: {
               legend: {
@@ -23,21 +23,25 @@
                 classes: "govuk-fieldset__legend--l"
               }
             },
+            hint: {
+              text: "Select all that apply."
+            },
             items: [
-              {
-                value: "Address",
-                text: "Address"
-              },
-              {
-                value: "coreIdentityJWT",
-                text: "coreIdentityJWT"
-              },
-              {
-                value: "ReturnCode",
-                text: "ReturnCode"
-              }
+            {
+              value: "Address",
+              text: "Address"
+            },
+            {
+              value: "coreIdentityJWT",
+              text: "coreIdentityJWT"
+            },
+            {
+              value: "ReturnCode",
+              text: "ReturnCode"
+            }
             ]
           }) }}
+
 
           {{ govukButton({
             text: "Confirm",

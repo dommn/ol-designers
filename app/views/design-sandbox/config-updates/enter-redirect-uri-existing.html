@@ -1,0 +1,75 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="change-service-name-success">
+
+          <h1 class="govuk-heading-l">Enter redirect URIs</h1>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="authentication-code">
+              Redirect URI
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" value="https://localhost/" aria-describedby="authentication-code-hint">
+          </div>
+
+          <p><a href="enter-contacts">Remove URI</a> </p><br>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="authentication-code">
+              Redirect URI
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" value="https://websiteurl.com/" aria-describedby="authentication-code-hint">
+          </div>
+
+          <p><a href="enter-contacts">Remove URI</a> </p><br>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="authentication-code">
+              Redirect URI
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" value="https://websiteurl2.com/" aria-describedby="authentication-code-hint">
+          </div>
+
+          <p><a href="enter-contacts">Remove URI</a> </p><br>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="authentication-code">
+              Redirect URI
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" value="https://websiteurl3.com/" aria-describedby="authentication-code-hint">
+          </div>
+
+          <p><a href="enter-contacts">Remove URI</a> </p><br>
+
+          {{ govukButton({
+            text: "Add another redirect URI",
+            classes: "govuk-button--secondary",
+            href: "enter-contacts-add-another"
+          }) }}
+                
+          <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" id="submit">
+        Confirm
+      </button>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}

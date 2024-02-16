@@ -14,19 +14,27 @@
   
         <form class="form" method="post" action="change-service-name-success">
 
+          <h1 class="govuk-heading-l">Enter contacts</h1>
+
           <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="more-detail">
-                Enter client secret hash
-              </label>
-            </h1>
-            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <label class="govuk-label" for="authentication-code">
+              Email address
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" aria-describedby="authentication-code-hint">
           </div>
-  
+
           {{ govukButton({
-            text: "Confirm",
-            href: "success/enter-client-secret"
+            text: "Add another contact",
+            classes: "govuk-button--secondary",
+            href: "enter-contacts-add-another"
           }) }}
+                
+          <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" id="submit">
+        Confirm
+      </button>
+            
+          </div>
 
   
       </form>
