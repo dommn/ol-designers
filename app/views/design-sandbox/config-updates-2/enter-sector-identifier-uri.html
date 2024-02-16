@@ -20,8 +20,11 @@
                 Enter sector identifier URI
               </label>
             </h1>
-            <div class="govuk-inset-text">
-              If you change your redirect URI, your users’ subject identifiers will also change.             </div>
+
+            {{ govukWarningText({
+              text: " If you change your redirect URI, your users’ subject identifiers will also change.   ",
+              iconFallbackText: "Warning"
+            }) }}
            
             <input class="govuk-input" id="event-name" name="eventName" type="text">
 
