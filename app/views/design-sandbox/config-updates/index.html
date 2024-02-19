@@ -44,7 +44,6 @@ href: "javascript:window.history.back()"
       <li>Identity verification enabled</li>
       <li><a href="/design-sandbox/config-updates/enter-claims">Claims</a></li>
       <li>Authentication method</li>
-      <li><a href="/design-sandbox/config-updates/enter-public-key">Public key</a></li>
       <li><a href="/design-sandbox/config-updates/enter-client-secret">Client secret</a></li>
       <li><a href="/design-sandbox/config-updates/enter-id-token-signing-algorithm">ID token signing algorithm</a></li>
       <li>Level of confidence options</li>
@@ -70,6 +69,27 @@ href: "javascript:window.history.back()"
            </p>
         </ul>
 
+
+        <h2 class="govuk-heading-m">
+          Logic
+        </h2>
+
+        <h3 class="govuk-heading-s">
+          Authentication method
+        </h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>When 'client_secret_post' is enabled, 'client secret hash' is shown.</li>
+          <li>When 'private_key_jwt' is enabled, 'public key' is shown.</li>
+        </ul>
+
+        <h3 class="govuk-heading-s">
+          Identity verification enabled
+        </h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>When Idenity verification enabled is 'yes', Claims and Level of confidence options is shown.</li>
+        </ul>
 
 
         <h2 class="govuk-heading-m">
