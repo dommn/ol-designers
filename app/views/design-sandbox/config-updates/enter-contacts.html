@@ -28,11 +28,15 @@
             classes: "govuk-button--secondary",
             href: "enter-contacts-add-another"
           }) }}
-                
+
           <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="submit">
-        Confirm
-      </button>
+            {{ govukButton({
+              text: "Confirm",
+              href: "success/enter-contacts"
+            }) }}
+          
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
             
           </div>
 

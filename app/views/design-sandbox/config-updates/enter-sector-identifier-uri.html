@@ -12,8 +12,6 @@
   
       <div class="govuk-grid-column-two-thirds">
   
-        <form class="form" method="post" action="change-service-name-success">
-
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--l" for="more-detail">
@@ -29,16 +27,19 @@
             <input class="govuk-input" id="event-name" name="eventName" type="text">
 
           </div>
-                
+
+
           <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" id="submit">
-        Confirm
-      </button>
+            {{ govukButton({
+              text: "Confirm",
+              href: "success/enter-sector-identifier-uri"
+            }) }}
+  
+          
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
             
           </div>
-
-  
-      </form>
       
       
           </div>

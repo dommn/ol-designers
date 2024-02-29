@@ -12,8 +12,6 @@
   
       <div class="govuk-grid-column-two-thirds">
   
-        <form class="form" method="post" action="change-service-name-success">
-
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--l" for="more-detail">
@@ -39,14 +37,17 @@
               }) }}
             </div>
           </details>
-  
-          {{ govukButton({
-            text: "Confirm",
-            href: "success/enter-public-key"
-          }) }}
 
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Confirm",
+              href: "success/enter-public-key"
+            }) }}
   
-      </form>
+          
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
       
       
           </div>

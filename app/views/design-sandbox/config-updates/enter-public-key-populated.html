@@ -12,28 +12,42 @@
   
       <div class="govuk-grid-column-two-thirds">
   
-        <form class="form" method="post" action="change-service-name-success">
-
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--l" for="more-detail">
-                Enter client secret hash
+                Enter public key
               </label>
             </h1>
-            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint" value="MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgGBpORcyK/jIoNFdCzHK7eekg/RQ kEX1HeeOgDxCkuUBlGTPdgd7UevK/x1qhJTEN8tq76ONmAq3s+imKsslIfolwuZ7 wgY3IFVAxeNeANM42ecUEpE7Vh7CbcGP+R2oX9AnkawiAnNdzrlaqbVLIsdpVsnZ wSYtt0eG2vCTS7fzAgMBAAE="></textarea>
           </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+               Upload public key
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              {{ govukFileUpload({
+                id: "file-upload-1",
+                name: "fileUpload1",
+                label: {
+                  text: "Upload a file"
+                }
+              }) }}
+            </div>
+          </details>
+
 
           <div class="govuk-button-group">
             {{ govukButton({
               text: "Confirm",
-              href: "success/enter-client-secret"
+              href: "success/enter-public-key"
             }) }}
+  
           
             <a class="govuk-link" href="#">Cancel</a>
           </div>
-          
-  
-      </form>
       
       
           </div>

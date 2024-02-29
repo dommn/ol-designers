@@ -12,34 +12,45 @@
   
       <div class="govuk-grid-column-two-thirds">
   
-          {{ govukRadios({
-            name: "tokenauthmethod",
+        <form class="form" method="post" action="change-service-name-success">
+
+          <h1 class="govuk-heading-l">Enter scopes</h1>
+
+          <p>Choose the user attributes you want your service to receive.</p>
+
+          {{ govukCheckboxes({
+            name: "claims",
             fieldset: {
               legend: {
-                text: "Select a token authentication method",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
               }
             },
+            hint: {
+              text: "Select all that apply."
+            },
             items: [
-              {
-                value: "private_key_jwt",
-                text: "private_key_jwt"
-              },
-              {
-                value: "client_secret_post",
-                text: "client_secret_post"
+            {
+              value: "Email address",
+              text: "Email address"
+            },
+            {
+              value: "Phone number",
+              text: "Phone number"
+            },
+            {
+              value: "Offline access",
+              text: "Offline access",
+              hint: {
+                text: "This gives you a refresh token so you can access the /userinfo endpoint for longer than 3 minutes"
               }
+            }
             ]
           }) }}
-
 
           <div class="govuk-button-group">
             {{ govukButton({
               text: "Confirm",
-              href: "success/success/enter-token-auth-method"
+              href: "success/enter-claims"
             }) }}
-  
           
             <a class="govuk-link" href="#">Cancel</a>
           </div>
