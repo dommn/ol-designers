@@ -1,0 +1,17 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Joining public beta" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+{% block govukSignInContent %}
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Email sent
+  </h1>
+</div>
+
+<p>For security reasons, we'll now check that you can access the prototype. We'll be in touch within x days.</p>
+
+<p>If you have any questions in the meantime, contact us using our <a href="support">support form</a> or at our <a href="https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC">Slack channel</a>. </p>
+
+{% endblock %}

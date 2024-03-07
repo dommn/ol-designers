@@ -1,0 +1,30 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs  #}
+{% set breadcrumb = "Contact us" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+
+{% block beforeContent %}
+<a href="support" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-l">
+        Check your email
+      </h1>
+    
+      <p class="govuk-body">We’ve sent you an email with the prototype link and password.</p>
+
+    
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
