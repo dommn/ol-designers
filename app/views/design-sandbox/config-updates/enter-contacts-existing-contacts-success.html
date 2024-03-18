@@ -11,6 +11,17 @@
     <div class="govuk-grid-row">
   
       <div class="govuk-grid-column-two-thirds">
+
+        {% set html %}
+          <h3 class="govuk-notification-banner__heading">
+            Contacts updated
+          </h3>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: "success"
+        }) }}
   
         <form class="form" method="post" action="success/enter-contacts">
 
@@ -24,7 +35,7 @@
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">joe.bloggs@email.com</th>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-contacts-existing-contacts-remove-check"><span class="govuk-visually-hidden"> date of birth</span></a></td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#"><span class="govuk-visually-hidden"> date of birth</span></a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">jane.doe@email.com</th>
@@ -34,8 +45,13 @@
                 <th scope="row" class="govuk-table__header">barry.white@email.com	</th>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-contacts-existing-contacts-remove-check">Remove<span class="govuk-visually-hidden"> date of birth</span></a></td>
               </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">pat.butcher@email.com	</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-contacts-existing-contacts-remove-check">Remove<span class="govuk-visually-hidden"> date of birth</span></a></td>
+              </tr>
             </tbody>
           </table>
+
 
 
           {{ govukButton({

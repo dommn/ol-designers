@@ -1,0 +1,70 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="success/enter-contacts">
+
+          <h1 class="govuk-heading-l">Enter contacts</h1>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="authentication-code">
+              Email address
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" value="joe.bloggs@email.com" aria-describedby="authentication-code-hint" disabled>
+          </div>
+
+          <p><a href="enter-contacts">Remove contact</a> </p><br>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="authentication-code">
+              Email address
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" value="jane.doe@email.com" aria-describedby="authentication-code-hint" disabled>
+          </div>
+
+          <p><a href="enter-contacts">Remove contact</a> </p><br>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="authentication-code">
+              Email address
+            </label>
+            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" value="barry.white@email.com" aria-describedby="authentication-code-hint" disabled>
+          </div>
+
+          <p><a href="enter-contacts">Remove contact</a> </p><br>
+
+          {{ govukButton({
+            text: "Add another contact",
+            classes: "govuk-button--secondary",
+            href: "enter-contacts-add-another"
+          }) }}
+                
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Confirm",
+              href: "success/enter-contacts"
+            }) }}
+          
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}
