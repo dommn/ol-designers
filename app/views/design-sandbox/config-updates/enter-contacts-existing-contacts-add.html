@@ -19,11 +19,16 @@
             </h1>
             <input class="govuk-input govuk-input--width-20" id="postcode" name="postcode" type="text" autocomplete="postal-code">
           </div>
-          {{ govukButton({
-            text: "Confirm",
-            classes: "govuk-button",
-            href: "enter-contacts-existing-contacts-success"
-          }) }}  
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Confirm",
+              classes: "govuk-button",
+              href: "enter-contacts-existing-contacts-success"
+            }) }}  
+          
+            <a class="govuk-link" href="enter-contacts-existing-contacts">Cancel</a>
+          </div>
         </form>
       </div>
     </div>

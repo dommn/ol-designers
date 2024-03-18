@@ -16,26 +16,25 @@
 
           <h1 class="govuk-heading-l">Enter contacts</h1>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="authentication-code">
-              Email address
-            </label>
-            <input class="govuk-input govuk-!-width-full-width" id="authentication-code" name="authenticationCode" type="text" spellcheck="false" aria-describedby="authentication-code-hint">
-          </div>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">joe.bloggs@email.com</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-contacts-existing-contacts-remove-check"><span class="govuk-visually-hidden"> date of birth</span></a></td>
+              </tr>
+            </tbody>
+          </table>
+
 
           {{ govukButton({
             text: "Add another contact",
-            classes: "govuk-button--secondary",
-            href: "enter-contacts-add-another"
-          }) }}
-
-          <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Confirm",
-              href: "success/enter-contacts"
-            }) }}
-          
-            <a class="govuk-link" href="#">Cancel</a>
+            classes: "govuk-button",
+            href: "enter-contacts-existing-contacts-add"
+          }) }}          
           </div>
             
           </div>
