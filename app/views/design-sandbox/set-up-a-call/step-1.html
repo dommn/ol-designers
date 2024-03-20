@@ -1,0 +1,67 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs #}
+{% set breadcrumb = "Get started" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="step-2" method="post" novalidate>
+      <h1 class="govuk-heading-l">Set up a call with GOV.UK One Login</h1>
+
+      <h2 class="govuk-heading-m">Add your details</h2>
+
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        id: "full-name",
+        name: "fullName",
+        autocomplete: "name",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        hint: {
+          text: "This must be a government email address."
+        },      
+        classes: "govuk-!-width-full",
+        id: "full",
+        name: "full"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Role"
+        },
+        classes: "govuk-!-width-full",
+        id: "full",
+        name: "full"
+      }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button" id="submit">
+          Continue
+        </button>
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

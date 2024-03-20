@@ -1,0 +1,88 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs #}
+{% set breadcrumb = "Get started" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+{% set back = "step-1" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="step-3" method="post" novalidate>
+      <h1 class="govuk-heading-l">Add details about your organisation</h1>
+
+      {% set emailHtml %}
+{{ govukInput({
+  id: "add-organisation-type",
+  name: "addOrganisationType",
+  type: "add-organisation-type",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-half",
+  label: {
+    text: "Add organisation type"
+  }
+}) }}
+{% endset -%}
+
+      {{ govukInput({
+        label: {
+          text: "Organisation name"
+        },
+        id: "organisation-name",
+        name: "organisationName",
+        autocomplete: "organisation-name",
+        spellcheck: false
+      }) }}
+
+
+      {{ govukRadios({
+        name: "organisationType",
+        fieldset: {
+          legend: {
+            text: "Organisation type"
+          }
+        },
+        items: [
+          {
+            value: "Central government department or ministry",
+            text: "Central government department or ministry"
+          },
+          {
+            value: "Executive agency",
+            text: "Executive agency"
+          },
+          {
+            value: "Arm's length body",
+            text: "Arm's length body"
+          },
+          {
+            value: "other",
+            text: "Other",
+            conditional: {
+            html: emailHtml
+          }
+        }
+        ]
+      }) }}
+
+        <button class="govuk-button" data-module="govuk-button" id="submit">
+          Continue
+        </button>
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

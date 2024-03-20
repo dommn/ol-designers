@@ -1,0 +1,97 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs #}
+{% set breadcrumb = "Get started" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+{% set back = "step-3" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="check-your-answers" method="post" novalidate>
+      <h1 class="govuk-heading-l">Add details of how your service and GOV.UK One Login [working header…]</h1>
+
+
+      {{ govukRadios({
+        name: "organisationType",
+        fieldset: {
+          legend: {
+            text: "Which aspects of GOV.UK One Login do you need?"
+          }
+        },
+        items: [
+          {
+            value: "Signing users in (authentication)",
+            text: "Signing users in (authentication)"
+          },
+          {
+            value: "Authentication and proving identity",
+            text: "Authentication and proving identity"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "organisationType",
+        fieldset: {
+          legend: {
+            text: "Will you ask or require any existing users to access your service through GOV.UK One Login?"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "go-live-date",
+        namePrefix: "go-live-date",
+        fieldset: {
+          legend: {
+            text: "Estimated date for your service to go live with GOV.UK One Login"
+          }
+        },
+        hint: {
+          text: "Give a day and month, if known"
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "meetingRequests",
+        id: "meeting-requests",
+        label: {
+          text: "Meeting requests and additional context (optional)"
+        },
+        hint: {
+          text: "For example, tell us if there are any particular aspects of GOV.UK One Login you want to discuss, or specific things about your own service."
+        }
+      }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button" id="submit">
+          Continue
+        </button>
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

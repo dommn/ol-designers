@@ -1,0 +1,64 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs #}
+{% set breadcrumb = "Get started" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+{% set back = "step-2" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <form action="step-4" method="post" novalidate>
+      <h1 class="govuk-heading-l">Add details about your service</h1>
+
+      {{ govukInput({
+        label: {
+          text: "Service name"
+        },
+        id: "service-name",
+        name: "serviceName",
+        autocomplete: "name",
+        spellcheck: false
+      }) }}
+
+      {{ govukTextarea({
+        name: "serviceDescription",
+        id: "service-description",
+        label: {
+          text: "Service description"
+        },
+        hint: {
+          text: " Include its stage of development, for example alpha or beta."
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Link to your service (optional)"
+        },
+        classes: "govuk-!-width-full",
+        id: "link-to-service",
+        name: "link-to-service"
+      }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button" id="submit">
+          Continue
+        </button>
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

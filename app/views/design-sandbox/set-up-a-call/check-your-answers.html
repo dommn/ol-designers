@@ -1,0 +1,265 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = false %} {# show breadscrumbs #}
+{% set breadcrumb = "Get started" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+{% set back = "step-4" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check your answers before sending your request</h1>
+
+    <h2 class="govuk-heading-m">Your details</h2>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: "Full name"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-1",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Email address"
+          },
+          value: {
+            text: "sarah.philips@government-dept.gov.uk"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-1",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Role"
+          },
+          value: {
+            text: "Product manager"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-1",
+                text: "Change",
+                visuallyHiddenText: "customer reference"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Organisation details</h2>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: "Organisation name"
+          },
+          value: {
+            text: "Made up government department"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-2",
+                text: "Change",
+                visuallyHiddenText: "previous application number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Organisation type"
+          },
+          value: {
+            text: "Central government department or ministry"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-2",
+                text: "Change",
+                visuallyHiddenText: "licence type"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Service details</h2>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: "Service name"
+          },
+          value: {
+            text: "Made up government department"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-3",
+                text: "Change",
+                visuallyHiddenText: "previous application number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Service description"
+          },
+          value: {
+            text: "A great service that helps citizens do what they need to do"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-3",
+                text: "Change",
+                visuallyHiddenText: "licence type"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Link to your service"
+          },
+          value: {
+            text: "Not provided"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-3",
+                text: "Change",
+                visuallyHiddenText: "previous application number"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">[Working title]</h2>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: "Aspects needed"
+          },
+          value: {
+            text: "Authentication and proving identity"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-4",
+                text: "Change",
+                visuallyHiddenText: "previous application number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Existing users"
+          },
+          value: {
+            text: "No"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-4",
+                text: "Change",
+                visuallyHiddenText: "licence type"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Go live date"
+          },
+          value: {
+            text: "01 January 2025"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-4",
+                text: "Change",
+                visuallyHiddenText: "previous application number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Meeting requests"
+          },
+          value: {
+            text: "Not provided"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-4",
+                text: "Change",
+                visuallyHiddenText: "previous application number"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Send"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
