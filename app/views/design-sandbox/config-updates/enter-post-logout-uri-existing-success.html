@@ -1,0 +1,72 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+
+        {% set html %}
+          <h3 class="govuk-notification-banner__heading">
+            Post logout redirect URI updated
+          </h3>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: "success"
+        }) }}
+  
+        <form class="form" method="post" action="success/enter-contacts">
+
+          <h1 class="govuk-heading-l">Enter post logout redirect URIs</h1>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">https://localhost/</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-redirect-uri-existing-remove-check"><span class="govuk-visually-hidden"> date of birth</span>Remove</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">https://websiteurl.com/</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-redirect-uri-existing-remove-check"><span class="govuk-visually-hidden"> date of birth</span>Remove</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">https://websiteurl2.com/</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-redirect-uri-existing-remove-check"><span class="govuk-visually-hidden"> date of birth</span>Remove</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">https://websiteurl3.com/</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-redirect-uri-existing-remove-check"><span class="govuk-visually-hidden"> date of birth</span>Remove</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          {{ govukButton({
+            text: "Add another post logout redirect URI",
+            classes: "govuk-button",
+            href: "enter-redirect-uri-existing-add"
+          }) }} 
+          </div>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}

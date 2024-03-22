@@ -1,0 +1,46 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="success/enter-contacts">
+
+          <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="more-detail">
+              Enter post logout redirect URIs
+            </label>
+          </h1>
+          <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div>
+
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm",
+          href: "success/enter-post-logout-uri"
+        }) }}
+      
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>
+          </div>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}
