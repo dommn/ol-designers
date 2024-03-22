@@ -11,6 +11,17 @@
     <div class="govuk-grid-row">
   
       <div class="govuk-grid-column-two-thirds">
+
+        {% set html %}
+          <h3 class="govuk-notification-banner__heading">
+            Redirect URIs updated
+          </h3>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: "success"
+        }) }}
   
         <form class="form" method="post" action="success/enter-contacts">
 
@@ -46,7 +57,7 @@
             text: "Add another redirect URI",
             classes: "govuk-button",
             href: "enter-redirect-uri-existing-add"
-          }) }}          
+          }) }} 
           </div>
             
           </div>

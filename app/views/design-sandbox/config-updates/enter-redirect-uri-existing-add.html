@@ -1,0 +1,38 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/form-handler" method="post" novalidate>
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="postcode">
+                Enter redirect URI
+              </label>
+            </h1>
+            <input class="govuk-input govuk-input" id="postcode" name="postcode" type="text" autocomplete="postal-code">
+          </div>
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Confirm",
+              classes: "govuk-button",
+              href: "enter-redirect-uri-existing-success"
+            }) }}  
+          
+            <a class="govuk-link" href="enter-redirect-uri-existing">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

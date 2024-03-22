@@ -11,6 +11,17 @@
     <div class="govuk-grid-row">
   
       <div class="govuk-grid-column-two-thirds">
+
+        {% set html %}
+          <h3 class="govuk-notification-banner__heading">
+            Redirect URIs updated
+          </h3>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: "success"
+        }) }}
   
         <form class="form" method="post" action="success/enter-contacts">
 
@@ -22,10 +33,6 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">https://localhost/</th>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-redirect-uri-existing-remove-check"><span class="govuk-visually-hidden"> date of birth</span>Remove</a></td>
-              </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">https://websiteurl.com/</th>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="enter-redirect-uri-existing-remove-check"><span class="govuk-visually-hidden"> date of birth</span>Remove</a></td>
