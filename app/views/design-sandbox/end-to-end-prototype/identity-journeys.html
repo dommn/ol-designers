@@ -58,9 +58,14 @@
       <h1 class="govuk-heading-l">GOV.UK One Login prototype</h1>
 
           <p class="govuk-body">We've created an HTML prototype for government service teams to use to explore journeys within GOV.UK One Login.</p>
-          <p class="govuk-body">We'll update the prototype regularly to reflect live journeys, but it's not an exact copy. It's also not production code.
           </p>
+          <p class="govuk-body">You'll need to have an email address from a UK public body to get access. If you do not have one, email x@gov.uk, including who you work for and why you want access to the prototype.</p>
+           
+            {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
+            {{ govukInsetText({
+              text: "We'll update the prototype regularly to reflect live journeys, but it's not an exact copy. It's also not production code."
+            }) }}
               {{ govukButton({
                 text: "Get access",
                 href: "enter-email-address"
