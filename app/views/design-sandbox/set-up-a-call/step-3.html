@@ -14,7 +14,7 @@
 
     <div class="govuk-grid-column-two-thirds">
       <form action="step-4" method="post" novalidate>
-      <h1 class="govuk-heading-l">Add details about your service</h1>
+      <h1 class="govuk-heading-l">Your service</h1>
 
       {{ govukInput({
         label: {
@@ -36,6 +36,27 @@
           text: " Include its stage of development, for example alpha or beta."
         }
       }) }}
+
+      
+
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Approximate number of users each year"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width20"
+      }) }}
+      
+
+
+
+
+
+
 
       {{ govukInput({
         label: {

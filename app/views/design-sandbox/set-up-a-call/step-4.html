@@ -14,7 +14,7 @@
 
     <div class="govuk-grid-column-two-thirds">
       <form action="check-your-answers" method="post" novalidate>
-      <h1 class="govuk-heading-l">Add details of how your service and GOV.UK One Login [working header…]</h1>
+      <h1 class="govuk-heading-l">Your service and GOV.UK One Login</h1>
 
 
       {{ govukRadios({
@@ -40,7 +40,7 @@
         name: "organisationType",
         fieldset: {
           legend: {
-            text: "Will you ask or require any existing users to access your service through GOV.UK One Login?"
+            text: "Will existing users of your service be asked to use GOV.UK One Login?"
           }
         },
         items: [
@@ -72,10 +72,9 @@
         name: "meetingRequests",
         id: "meeting-requests",
         label: {
-          text: "Meeting requests and additional context (optional)"
+          text: "Additional context or specific questions (optional)"
         },
         hint: {
-          text: "For example, tell us if there are any particular aspects of GOV.UK One Login you want to discuss, or specific things about your own service."
         }
       }) }}
 
