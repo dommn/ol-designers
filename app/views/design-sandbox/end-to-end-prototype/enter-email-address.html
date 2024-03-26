@@ -23,7 +23,7 @@
         },
           
         hint: {
-          text: "This must be an email address of a UK governement department, organisation or arm's length body."
+          text: "This should be an email address of a UK public body, for example a governement department or organisation, or an arm's length body."
         },
         id: "email-address",
         name: "emailAddress"
@@ -32,7 +32,7 @@
       {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {{ govukDetails({
-  summaryText: "I do not have a UK government email address",
+  summaryText: "I do not have a UK public body email address",
   text: "Contact us at x@gov.uk. Include who you work for and why you want access to the prototype."
 }) }}
 
