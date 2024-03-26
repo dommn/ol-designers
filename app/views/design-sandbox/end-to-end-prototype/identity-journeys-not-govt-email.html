@@ -10,6 +10,17 @@
 
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Enter a government email address",
+          href: "#"
+        }
+      ]
+    }) }}
+  </div>
 
     <div class="govuk-grid-column-one-third">
       <nav class="sub-navigation">
@@ -58,13 +69,22 @@
       <h1 class="govuk-heading-l">GOV.UK One Login prototype</h1>
 
           <p class="govuk-body">There's now an HTML prototype that lets you explore journeys within GOV.UK One Login, so you understand where and how it will form part of your service.
-            <p class="govuk-body">It's for use by central government service teams only. Enter your work email address below to get access.</p>
-
-              {{ govukButton({
-                text: "Get access",
-                href: "enter-email-address"
-              }) }} 
-              
+            <p class="govuk-body">It's for use by central government service teams only. Enter your work email address below to get access.
+              <div class="govuk-form-group govuk-form-group--error">
+                <label class="govuk-label" for="width-20">
+                  Email address
+                </label>
+                <p id="passport-issued-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Enter a government email address
+                </p>
+                <input class="govuk-input govuk-input--width-full govuk-input--error" id="width-full" name="width20" type="text">
+              </div>
+                  {{ govukButton({
+                    text: "Continue",
+                    href: "check-email"
+                  }) }} 
+               
+       
       </div>
         </div>
    
