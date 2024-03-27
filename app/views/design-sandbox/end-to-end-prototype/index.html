@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">N/A</span>
+
+      <h1 class="govuk-heading-l">
+        Allow users to access the HTML prototype from the product site
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        What we've added
+      </h2>
+
+      <p>We have added a new item to the <a href="https://www.sign-in.service.gov.uk/documentation">Documentation</a> side bar, labelled 'GOV.UK One Login prototype'</p>
+
+
+
+
+      <h3 class="govuk-heading-s">Included pages</a></h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://ol-design-196ce5b3c3c7.herokuapp.com/design-sandbox/end-to-end-prototype/identity-journeys">GOV.UK One Login prototype documentation page</a></li>
+        <li><a href="https://ol-design-196ce5b3c3c7.herokuapp.com/design-sandbox/end-to-end-prototype/enter-email-address">Enter email address</a></li>
+        <li><a href="https://ol-design-196ce5b3c3c7.herokuapp.com/design-sandbox/end-to-end-prototype/invalid-email">Email address validation</a></li>
+        <li><a href="https://ol-design-196ce5b3c3c7.herokuapp.com/design-sandbox/end-to-end-prototype/check-email">Check your work email confirmation</a></li>
+    </ul>
+  
+
+    
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <h2 class="govuk-heading-m">
+        Notes
+      </h2>
+
+      <p><a href="https://app.mural.co/t/governmentdigitalservice1334/m/governmentdigitalservice1334/1710249497334/89ce0cbd8219ecf6be794796355c25e60655ab0c?wid=0-1711457240380" target="_blank">Mural flows (opens in a new tab)</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: "ap-20/user-journey-maps/documentation/index"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
