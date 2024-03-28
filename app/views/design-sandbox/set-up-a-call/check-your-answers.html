@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check your answers before sending your request</h1>
+    <h1 class="govuk-heading-l">Check your answers </h1>
 
     <h2 class="govuk-heading-m">Your details</h2>
 
@@ -73,7 +73,7 @@
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">Organisation details</h2>
+    <h2 class="govuk-heading-m">Your organisation</h2>
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
@@ -115,7 +115,7 @@
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">Service details</h2>
+    <h2 class="govuk-heading-m">Your service</h2>
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
@@ -156,6 +156,23 @@
         },
         {
           key: {
+            text: "Approximate number of users each year"
+          },
+          value: {
+            text: "700,000"
+          },
+          actions: {
+            items: [
+              {
+                href: "step-3",
+                text: "Change",
+                visuallyHiddenText: "licence type"
+              }
+            ]
+          }
+        },
+        {
+          key: {
             text: "Link to your service"
           },
           value: {
@@ -174,14 +191,14 @@
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">[Working title]</h2>
+    <h2 class="govuk-heading-m">Your service and GOV.UK One Login</h2>
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
       rows: [
         {
           key: {
-            text: "Aspects needed"
+            text: "Which aspects of GOV.UK One Login do you need?"
           },
           value: {
             text: "Authentication and proving identity"
@@ -198,7 +215,7 @@
         },
         {
           key: {
-            text: "Existing users"
+            text: "Will existing users of your service be asked to use GOV.UK One Login?"
           },
           value: {
             text: "No"
@@ -215,7 +232,7 @@
         },
         {
           key: {
-            text: "Go live date"
+            text: "Estimated date for your service to go live with GOV.UK One Login"
           },
           value: {
             text: "01 January 2025"
@@ -232,7 +249,7 @@
         },
         {
           key: {
-            text: "Meeting requests"
+            text: "Additional context or specific questions"
           },
           value: {
             text: "Not provided"
