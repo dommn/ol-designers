@@ -1,5 +1,5 @@
 {% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
-{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set pageTitle = "Set up a call with GOV.UK One Login" %}
 {% set showBreadcrumbs = false %} {# show breadscrumbs #}
 {% set breadcrumb = "Get started" %} {# breadcrumb #}
 {% extends folder + "/layouts/_base-alt.html" %}
@@ -252,7 +252,8 @@
 
 
       {{ govukButton({
-        text: "Send"
+        text: "Send",
+        href: "confirmation"
       }) }}
 
     </form>
