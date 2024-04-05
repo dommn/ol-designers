@@ -1,0 +1,158 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Technical documentation - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Documentation" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+        <ul class="govuk-list">
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="technical-documentation">Technical documentation</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-in-journeys.html">
+              Sign in journey maps</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="identity-journeys">
+              Proving identity journey maps</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="identity-journeys">
+              GOV.UK One Login prototype</a>
+          </li>
+          
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="design-documentation">Design recommendations</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state " href="save-progress">
+              Let users create a GOV.UK One Login to save progress</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-out-easily">
+              Let users navigate to their GOV.UK One Login and sign out easily</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+              Show users where to change their GOV.UK One Login credentials</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child sub-navigation__item--active">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+            Moving to GOV.UK Login if your service already proves users identities </a>
+          </li>
+
+        </ul>
+    
+    
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Moving to GOV.UK Login if your service already proves users identities</h1>
+
+      <p>How to move your users to GOV.UK One Login if you're already proving their identity with another identity provider.</p>
+
+         <p>
+          We’ve created this design pattern to help your service migrate (or move) your users to GOV.UK One Login to prove their identity. This pattern assumes your service already proves users' identities using an existing identity service.
+         </p>
+
+         <p>
+          All of these migrations are initiated by the user when they sign in to your service. GOV.UK One Login does not currently migrate users in bulk uploads. 
+         </p>
+
+         <p>
+          These design patterns are diagrams that set out the steps GOV.UK One Login, or your service should take. The design pattern you need to use depends on the specific circumstances for your users or service.
+         </p>
+
+         <p><a href="https://www.sign-in.service.gov.uk/support">Contact us</a> if:</p>
+
+         <ul class="govuk-list govuk-list--bullet">
+          <li>the following design patterns do not cover your circumstances</li>
+          <li>you need the patterns in a different format (they’re Mural files)</li>
+          <li>you need more help</li>
+        </ul>
+
+        <h2 class="govuk-heading-m"> Design pattern 1: when new users come to your service</h2>
+
+        <p><a href="https://app.mural.co/t/governmentdigitalservice1334/m/governmentdigitalservice1334/1701600706448/d53b940d7fdcb9ea924acc0e05ef99188633f5de?wid=101-1701601230551&sender=2abd6865-efa1-4a6d-81ac-22556e15930a">Pattern to use when new users come to your service</a></p>
+
+        <ol class="govuk-list govuk-list--number">
+
+        <li>Your service sends the user to GOV.UK One Login.</li>
+        <li>The user signs in or creates a GOV.UK One Login. This is the authentication stage.</li>
+        <li>When the user has signed in to GOV.UK One Login, we’ll send your service a unique identifier code so you can check if the user is new to your service, or is a returning user.</li>
+        <li>If they are a new user, they’ll have to prove their identity using GOV.UK One Login.</li>
+      </ol>
+
+      <h2 class="govuk-heading-m">Design pattern 2: when existing users have already proved their identity with your service</h2>
+
+        <p><a href="https://app.mural.co/t/governmentdigitalservice1334/m/governmentdigitalservice1334/1701600706448/d53b940d7fdcb9ea924acc0e05ef99188633f5de?wid=101-1701601230551&sender=2abd6865-efa1-4a6d-81ac-22556e15930a">Pattern to use when existing users have already proved their identity with your service
+        </a></p>
+
+        <ol class="govuk-list govuk-list--number">
+
+        <li>Your service sends the user to GOV.UK One Login.</li>
+        <li>The user signs in or creates a GOV.UK One Login. This is the authentication stage.</li>
+        <li>When the user has signed in to GOV.UK One Login, we’ll send your service a unique identifier code so you can check if the user is new to your service, or is a returning user.</li>
+        <li>If the user is signing in to GOV.UK One Login for the first time, and they match a record in your service, then you can connect (‘bind’) them to your service. This means the user will not need to prove their identity again with GOV.UK One Login. You’ll need to use the identity record they created with your legacy identity service provider.</li>
+      </ol>
+
+      <h2 class="govuk-heading-m">Design pattern 3: when users return to your service</h2>
+
+        <p><a href="https://app.mural.co/t/governmentdigitalservice1334/m/governmentdigitalservice1334/1701600706448/d53b940d7fdcb9ea924acc0e05ef99188633f5de?wid=101-1701601230551&sender=2abd6865-efa1-4a6d-81ac-22556e15930a">Pattern to use when users return to your service </a></p>
+
+        <ol class="govuk-list govuk-list--number">
+
+        <li>When a user returns to your service, you’ll need to check their proof of identity using either:</li>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your legacy identity service</li>
+          <li>GOV.UK One Login</li>
+        </ul>
+        <li>You’ll need to decide when you want to retire your legacy identity service. When you do this your existing users will also need to sign in to GOV.UK One Login and use that to prove their identity. Once all your users are on GOV.UK One Login, you’ll be able to stop using your legacy identity service.</li>
+      </ol>
+
+      <h2 class="govuk-heading-m">When to use this design pattern</h2>
+
+      <p>Use this design pattern if all of the following circumstances apply:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your service’s existing users have already proved their identities</li>
+        <li>the existing identity service provider holds these users’ data, and you’d like to reuse the data so they do not need to prove their identity again with GOV.UK One Login</li>
+        <li>for new users, you’ll stop using your existing identity service provider and start using GOV.UK One Login to prove their identity </li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">What to consider when using this design pattern</h2>
+
+      <p>This pattern will mean:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>existing users do not need to prove their identities again</li>
+        <li>you can decide when you start allowing existing users to move to GOV.UK One Login for identity proving</li>
+        <li>you’ll need to keep records about your existing users who’ve already proved their identity until they’ve all moved over to GOV.UK One Login, which will mean continuing to run your legacy identity proving solution for some time</li>
+        <li>you’ll need the ability to build new functionality, for example to check if a user proved their identity with GOV.UK One Login or your existing identity service</li>
+
+      </ul>
+
+
+
+              
+      </div>
+        </div>
+   
+</div>
+</div>
+
+{% endblock %}

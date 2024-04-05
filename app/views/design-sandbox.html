@@ -4,21 +4,35 @@
   GOV.UK One Login admin tool prototype
 {% endblock %}
 
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }}
+
+{% endblock %}
+
 {% block content %}
+
+
 <div class="govuk-grid-row">
+  
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">GOV.UK One Login: Self-service experience prototype</h1>
-
-      <p><a href="/product-site/index">Product site</a></p>
-      <p><a href="/admin-tool/sign-in/enter-email-address">Admin tool</a></p>
+      <h1 class="govuk-heading-l">What we're currently working on</h1>
 
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-m">Design sandbox</h2>
+      <h2 class="govuk-heading-m">In progress</h2>
 
       <ul class="govuk-list">
+        <p><a href="/design-sandbox/end-to-end-prototype/index">Allowing users to access the HTML prototype</a></p>
         <p><a href="/design-sandbox/set-up-a-call/step-1">Set up a call with GOV.UK One Login</a></p>
+        
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Design complete</h2>
+
+      <ul class="govuk-list">
         <p>Get access to the html prototype' options</p>
         <ul class="govuk-list govuk-list--bullet">
         <li><p><a href="/design-sandbox/end-to-end-prototype/identity-journeys.html">'Option 1 - email address validated on screen, proto details auto sent in an email.</a></li>
@@ -37,18 +51,6 @@
         <p><a href="./design-sandbox/support-form/support.html">Support triage form,  </a></p>
         <p><a href="./design-sandbox/support-form/contact-us.html">Tech help desk support form </a></p>
         <p><a href="./design-sandbox/id-unhappy-paths/documentation/identity-journeys.html">ID unhappy paths </a></p>
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-m">Quick start user journeys</h2>
-
-      <ul class="govuk-list">
-        <li>
-          <a href="/admin-tool/create-account/enter-email-address">Sign up to the GOV.UK One Login Admin Tool</a>
-        </li>
-        <li>
-          <a href="/admin-tool/sign-in/enter-email-address">Sign in to the GOV.UK One Login Admin Tool</a>
-        </li>
-      </ul>
     </div>
   </div>
 {% endblock %}

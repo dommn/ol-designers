@@ -18,6 +18,8 @@
 @import "patterns/details-banner";
 @import "patterns/code-snippet";
 @import "patterns/header-actions";
+@import "patterns/masthead";
+@import "patterns/index-card";
 
 .govuk-header__content{
   @include govuk-media-query($from: desktop) {
@@ -271,4 +273,30 @@ $email-width: 650px;
 
 .sub-navigation__item:last-child {
   border-bottom: 1px $govuk-border-colour solid;
+}
+
+.govuk-header__container {
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  border-bottom: 10px solid #1d70b8;
+}
+
+.govuk-header__container1 {
+  border-bottom: 10px solid #1d70b8;
+}
+
+.govuk-width-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.app-header--no-border {
+  border-bottom: 0;
+}
+
+.govuk-header__logo:last-child {
+  width: auto;
+  padding-right: 0;
+  float: none;
 }
