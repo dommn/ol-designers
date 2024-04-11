@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Design documentation about migrating users from existing IDV services
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        What we've added
+      </h2>
+
+      <p>We have added a new item to the <a href="https://www.sign-in.service.gov.uk/documentation/design-recommendations">design recommendations</a> side bar, labelled 'Moving to GOV.UK Login if your service already proves users identities'</p>
+
+
+
+
+      <h3 class="govuk-heading-s">Included pages</a></h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="design-documentation">GOV.UK One Login prototype documentation page</a> - additional content labelled 'Moving to GOV.UK Login if your service already proves users identities' below 'list of recommendations' header</li>
+        <li><a href="migrating-users">Moving to GOV.UK Login if your service already proves users identities page</a></li>
+    </ul>
+  
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: "design-documentation"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
