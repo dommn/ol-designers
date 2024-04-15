@@ -20,6 +20,7 @@
 @import "patterns/header-actions";
 @import "patterns/masthead";
 @import "patterns/index-card";
+@import "patterns/gray-background-container";
 
 .govuk-header__content{
   @include govuk-media-query($from: desktop) {
