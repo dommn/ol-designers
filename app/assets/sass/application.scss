@@ -21,6 +21,7 @@
 @import "patterns/masthead";
 @import "patterns/index-card";
 @import "patterns/gray-background-container";
+@import "patterns/gray-border-container";
 
 .govuk-header__content{
   @include govuk-media-query($from: desktop) {
