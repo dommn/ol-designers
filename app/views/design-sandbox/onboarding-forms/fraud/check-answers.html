@@ -1,0 +1,131 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="change-service-name-success">
+
+          <h1 class="govuk-heading-l">
+            Check your answers
+          </h1>
+
+          <h2 class="govuk-heading-m">Personal details</h2>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "Does your service process and transfer government grants or payments?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Has your service seen fraudulent activity in the past?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Provide more details"
+            },
+            value: {
+              text: "Curabitur tincidunt nisi non tellus porta feugiat. Ut in neque a orci varius dignissim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed commodo id lectus et iaculis. "
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "customer reference"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does your service have a dedicated fraud team?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "How do you manage or assess the risk of insider fraud?"
+            },
+            value: {
+              html: 'Pellentesque leo sem, tempus sed tortor eu, ultrices tincidunt felis. Quisque id mauris dapibus, euismod lorem a, egestas tortor. Suspendisse malesuada libero nec pulvinar ultricies.'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Confirm",
+              href: "register-to-go-live-success"
+            }) }}
+          
+          </div>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}

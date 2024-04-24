@@ -1,0 +1,198 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "Technical documentation - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Documentation" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base.html" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <nav class="sub-navigation">
+
+        <ul class="govuk-list">
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="technical-documentation">Technical documentation</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-in-journeys.html">
+              Sign in journey maps</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="identity-journeys">
+              Proving identity journey maps</a>
+          </li>
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="identity-journeys">
+              GOV.UK One Login prototype</a>
+          </li>
+          
+          <li class="sub-navigation__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="design-documentation">Design recommendations</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state " href="save-progress">
+              Let users create a GOV.UK One Login to save progress</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="sign-out-easily">
+              Let users navigate to their GOV.UK One Login and sign out easily</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+              Show users where to change their GOV.UK One Login credentials</a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child">
+            <a class="govuk-link govuk-link--no-visited-state" href="change-credentials">
+            Moving to GOV.UK Login if your service already proves users identities </a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--child sub-navigation__item--active">
+            <a class="govuk-link govuk-link--no-visited-state" href="start-page">
+              What to say about GOV.UK One Login on start pages
+            </a>
+          </li>
+
+        </ul>
+    
+    
+
+      </nav>
+    </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">What to say about GOV.UK One Login on start pages</h1>
+
+         <p>You’ll need to update your service's start page to tell your users to use GOV.UK One Login to sign in to your service and, if your service needs them to, prove their identity.</p>
+
+         <h2 class="govuk-heading-m">Moving your users to GOV.UK One Login</h2>
+
+         <p>If your service already has a sign in or identity capability, you’ll need to tell your users to create, or sign in, using GOV.UK One Login instead. </p>
+
+         <p>What you need to tell your users depends on how you decide to use GOV.UK One Login. For example, you may move:</p>
+
+         <ul class="govuk-list govuk-list--bullet">
+          <li>different groups of users at different times</li>
+          <li>all of your users at the same time</li>
+        </ul>
+
+        <p>Any messaging on your start page needs to work for all of your users as, until they sign in, you won’t know which group they fall into.</p>
+
+      <h2 class="govuk-heading-m">Content on start pages</h2>
+
+        <p>Some users find it helpful to know that they’ll either need their GOV.UK One login details, or that they’ll need to create one as part of your service.</p>
+
+        <p>It can also help to reiterate what a user may need before they can create a GOV.UK One Login, for example an identity document.</p>
+
+        <p>However, bear in mind that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>you can use other parts of the journey to explain what GOV.UK One Login is - for example within your service at the point where the user has to take action</li>
+          <li>we’ve seen in research that a large proportion of users are drawn straight to the green start button</li>
+          <li>there’s often a lot of information on start pages competing for a user’s attention</li>
+          <li>you risk sending users off trying to find out what GOV.UK One Login is and whether they already have one or not</li>
+        </ul>
+
+        <p>We recommend testing to see what approach works best for your users.</p>
+
+      <h2 class="govuk-heading-m">Messaging throughout the journey</h2>
+
+      <p>It can also be useful to include consistent and repeated messaging about GOV.UK One Login throughout the user journey.</p>
+
+      <p>We found that having the same information about GOV.UK One Login in multiple parts of the journey was helpful, for example on the create and sign in page or in a welcome email. For example, you could you use the following content:</p>
+
+      <div class="gray-border-container">
+
+      <p><b>About GOV.UK One Login</b></p>
+
+      <p>You need a GOV.UK One Login to access this service. </p>
+
+      <p>You can use your GOV.UK One Login to access some other government services.</p>
+
+    </div>
+
+      <h2 class="govuk-heading-m">Start page patterns</h2>
+
+      <h3 class="govuk-heading-s">1. Service with an existing account</h3>
+
+      <div class="govuk-inset-text">
+        <p>You’ll need a GOV.UK One Login to use this service. </p>
+
+      <p>If you haven't used GOV.UK One Login to access this service before, sign in using your existing sign in details. You’ll then be asked to create or sign in to GOV.UK One Login. </p>
+
+      <p>In future, you should then always use your GOV.UK One Login to sign in to this service.</p>
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+      </div>
+
+      <div class="gray-border-container">
+
+      <p>You’ll need a GOV.UK One Login to use this service. </p>
+
+      <p>If you haven't used GOV.UK One Login to access this service before, sign in using your existing sign in details. You’ll then be asked to create or sign in to GOV.UK One Login. </p>
+
+      <p>In future, you should then always use your GOV.UK One Login to sign in to this service.</p>
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+
+      </div>
+
+      <p>If your service is currently using, for example, Government Gateway it may be useful to mention this in the content. So, change this sentence to read:
+      </p>
+
+      <div class="gray-border-container">
+        <p>Sign in using your Government Gateway sign in details for this service. You’ll then be asked to create or sign in to your GOV.UK One Login.</p>
+      </div>
+
+      <h3 class="govuk-heading-s">Sign in (‘authentication’) service</h3>
+      <div class="gray-border-container">
+      
+        <p>You need a GOV.UK One Login to sign in to this service. You can create one if you do not already have one.</p>
+
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+
+      </div>
+
+      <h3 class="govuk-heading-s">Identity service</h3>
+
+      <div class="gray-border-container">
+        <p>You’ll need a GOV.UK One Login to use this service. You’ll be able to create a GOV.UK One Login if you do not already have one.</p>
+        <p>You’ll be told when you sign in if you need to prove your identity. This is to keep your details safe and normally involves using photo ID like a passport or driving licence. </p>
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+      </div>
+
+      <h2 class="govuk-heading-m">Feedback</h2>
+
+      <p>We’re still working on these patterns, so <a href="https://www.sign-in.service.gov.uk/contact-us">please get in touch</a> to let us know what works for your users. </p>
+
+      </div>
+        </div>
+   
+</div>
+</div>
+
+{% endblock %}

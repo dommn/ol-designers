@@ -1,0 +1,118 @@
+{% set headerActive = "" %} {# change this to change the active header menu #}
+{% set notinService = true %} {# this sets the submenu to show account scope menus, not service ones #}
+{% set pageTitle = "Your services" %}  {# change this to change what's shown on the tab title in the browser #}
+{% set back = "your-services" %}
+{% extends folder + "/layouts/_base-admin-tool.html" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+  
+      <div class="govuk-grid-column-two-thirds">
+  
+        <form class="form" method="post" action="change-service-name-success">
+
+          <h1 class="govuk-heading-l">
+            Fraud
+          </h1>
+
+          {{ govukRadios({
+            name: "whereDoYouLive",
+            fieldset: {
+              legend: {
+                text: "Does your service process and transfer government grants or payments?"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+          {% set yesHtml %}
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "Can you provide more detail?"
+            }
+          }) }}
+          {% endset -%}
+
+          {{ govukRadios({
+            name: "transfer-rights-or-payments",
+            fieldset: {
+              legend: {
+                text: "Has your service seen fraudulent activity in the past?"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: yesHtml
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+          {{ govukRadios({
+            name: "whereDoYouLive",
+            fieldset: {
+              legend: {
+                text: "Does your service have a dedicated fraud team?"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "How do you manage or assess the risk of insider fraud?"
+            }
+          }) }}
+
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue",
+              href: "check-answers"
+            }) }}
+          
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
+            
+          </div>
+
+  
+      </form>
+      
+      
+          </div>
+
+
+{% endblock %}

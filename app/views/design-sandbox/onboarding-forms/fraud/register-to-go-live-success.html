@@ -1,0 +1,91 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Register to go live" %}
+{% extends folder + "/onboarding-forms/layouts/_base-admin-tool.html" %}
+{% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+{% block govukSignInContent %}
+
+{% set html %}
+<h3 class="govuk-notification-banner__heading">
+  Fraud details submitted
+</h3>
+{% endset %}
+
+{{ govukNotificationBanner({
+html: html,
+type: "success"
+}) }}
+
+      <h1 class="govuk-heading-l">
+        Get ready to go live
+      </h1>
+      
+      <p>This page shows the information you need to send to us so that your service can go live using GOV.UK One Login.</p>      
+
+      <ol class="govuk-prototype-kit-task-list">
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">1. </span> Onboarding to GOV.UK One Login
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  About you
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  About your service
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Your service and GOV.UK One Login
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+          
+          <li class="govuk-prototype-kit-task-list__item">
+            <span class="govuk-prototype-kit-task-list__task-name">
+              <a href="#" aria-describedby="read-declaration-status">
+                Fraud
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--green govuk-prototype-kit-task-list__tag" id="list-convictions-status">Completed</strong>
+          </li>
+        </li>
+      </ul>
+
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Technical onboarding checklist
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Integration environment
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Production environment
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+{% endblock %}
+
