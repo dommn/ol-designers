@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Design documentation about product site metadata
+      </h1>
+      <a href="https://govukverify.atlassian.net/browse/AP-231">View on JIRA</a>
+
+      <h2 class="govuk-heading-m">
+        What we've changed
+      </h2>
+
+      <p>We have changed the title tag and metadescription for the product homepage and support page <a href="https://docs.google.com/spreadsheets/d/1Z64hEDIU2_sJS6_HqI4SOKRGRTHFEb4gwrD-60iNprk/edit?usp=sharing">Meta content</a></p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Homepage title tag: Integrate GOV.UK One Login - GOV.UK One Login</li>
+        <li>Homepage metadescription: Information for government service teams to find out about and integrate with GOV.UK One Login</li>
+        <li>Support page title tag: Get help with integrating GOV.UK One Login into your service - GOV.UK One Login </li>
+        <li>Support page metadescription: Support for government service teams integrating and using GOV.UK One Login</li>
+        </ul>
+
+
+
+      <h3 class="govuk-heading-s">Included pages</a></h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="product-homepage">product home page</a> - H1 change: Integrate GOV.UK One Login with your service</li> 
+        <li><a href="product-homepage">product home page</a> - leading paragraph change: Information and onboarding support for government services about GOV.UK One Login</li>
+    </ul>
+  
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: "product-homepage"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
