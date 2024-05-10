@@ -198,26 +198,10 @@
     Public key
   </dt>
   <dd class="govuk-summary-list__value">
-
-    <div id="publicKeyContainer" class="govuk-body">
-      <div class="code-snippet">
-      <div id="publicKeyShort" aria-labelledby="public-key"><code>MFwwDQYJKoZIhvcNAQEBBQAD ...</code></div>
-      <div id="publicKeyLong"><code>MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKj34GkxFhD90vcNLYLInFEX6Ppy1tPf9Cnzj4p4WGeKLs1Pt8QuKUpRKfFLfRYC9AIKjbJTWit+CqvjWYzvQwECAwEAAQ==</code></div>
-      </div>
-      
-      <button type="button" id="togglePublicKey" class="govuk-accordion__show-all" aria-expanded="false" style="float: left;">
-
-            <span id="toggleTextChevron" class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"></span>
-            <span id="buttonText" class="govuk-accordion__section-toggle-text">Show the full public key</span>
-            
-            <button type="button" id="togglePublicKeyHide" class="govuk-accordion__show-all" aria-expanded="true">
-                <span id="toggleTextChevron" class="govuk-accordion-nav__chevron"></span>
-                <span id="buttonText" class="govuk-accordion__section-toggle-text">Hide the full public key</span>
-              </span>
-          </button>
-
-      </button>
-  </div>
+      <div class="code-snippet">MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgGBpORcyK/jIoNFdCzHK7eekg/RQ
+        kEX1HeeOgDxCkuUBlGTPdgd7UevK/x1qhJTEN8tq76ONmAq3s+imKsslIfolwuZ7
+        wgY3IFVAxeNeANM42ecUEpE7Vh7CbcGP+R2oX9AnkawiAnNdzrlaqbVLIsdpVsnZ
+        wSYtt0eG2vCTS7fzAgMBAAE=</div>
   </dd>
   <dd class="govuk-summary-list__actions">
     <ul class="govuk-summary-list__actions-list">
@@ -228,37 +212,6 @@
   </dd>
 </div>
 </dl>
-
-<script>
-
-  const toggleTo2 = document.getElementById("togglePublicKey");
-  const toggleTo1 = document.getElementById("togglePublicKeyHide");
-  
-  const div1 = document.getElementById("publicKeyShort");
-  const div2 = document.getElementById("publicKeyLong");
-  
-  const hide = el => el.style.setProperty("display", "none");
-  const show = el => el.style.setProperty("display", "block");
-  
-  hide(div2);
-  hide(toggleTo1);
-  
-  toggleTo2.addEventListener("click", () => {
-    hide(div1);
-    hide(toggleTo2);
-    show(toggleTo1);
-    show(div2);
-  });
-  
-  toggleTo1.addEventListener("click", () => {
-    hide(div2);
-    hide(toggleTo1);
-    show(toggleTo2);
-    show(div1);
-  });
-  
-  
-    </script>
 
 
 
@@ -376,5 +329,4 @@
 
 <h2 class="govuk-heading-m">Production client</h2>
 <p>You can add a production client if you <a href="">join our public beta</a>.</p>
-
 {% endblock %}

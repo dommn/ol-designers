@@ -1,0 +1,63 @@
+{% set pageTitle = "Account area" %}
+{% set subMenuActive = "Team members" %}
+{% extends folder + "/multiple-users/layouts/_base-admin-tool.html" %}
+
+
+{% block govukSignInContent %}
+
+<h1 class="govuk-heading-l">
+  Team members
+</h1>
+
+<h2 class="govuk-heading-m">
+  Joe Bloggs (you)
+</h2>
+
+<p>joe.bloggs@digital.cabinet-office-gov.uk</p>
+
+<h3 class="govuk-heading-s">Permissions</p>
+
+<ul class="govuk-list">
+  <li>
+    <span class="tick-cross__icon">
+    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 128 128" height="19" width="19" aria-hidden="true" focusable="false">
+  <g fill="#00703c">
+  <path d="m103.5 21 24.4 24.4-81.5 81.5L22 94.5 103.5 21z"></path>
+  <path d="M24.4 56 0 80.4 43.6 124 68 99.6 24.4 56z"></path>
+</g>
+</svg>
+  </span>
+  Manage team members</li>
+  <li>
+    <span class="tick-cross__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 128 128" height="19" width="19" aria-hidden="true" focusable="false">
+    <g fill="#00703c">
+    <path d="m103.5 21 24.4 24.4-81.5 81.5L22 94.5 103.5 21z"></path>
+    <path d="M24.4 56 0 80.4 43.6 124 68 99.6 24.4 56z"></path>
+  </g>
+  </svg>
+    </span>
+    Change integration client details</li>
+  <li>
+    <span class="tick-cross__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 128 128" height="19" width="19" aria-hidden="true" focusable="false">
+    <g fill="#00703c">
+    <path d="m103.5 21 24.4 24.4-81.5 81.5L22 94.5 103.5 21z"></path>
+    <path d="M24.4 56 0 80.4 43.6 124 68 99.6 24.4 56z"></path>
+  </g>
+  </svg>
+    </span>
+    Change service name</li>
+</ul>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+{{ govukButton({
+  text: "Invite a team member",
+  href: "invite-team-member"
+}) }}
+
+
+
+{% endblock %}
