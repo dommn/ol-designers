@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Design documentation about public roadmap page
+      </h1>
+     <p> <a href="https://govukverify.atlassian.net/browse/SSE-3383">View on JIRA</a></p>
+
+      <h2 class="govuk-heading-m">
+        What we've changed
+      </h2>
+
+      <p>We have changed the content in the what we're working on now and recently released sections. Changes to content:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Last updated changed from November 2023 to May 2024</li>
+        <li>added Users can prove their identity without photo ID IDENTITY</li>
+        <li>added Users can keep their details up to date after proving their identity IDENTITY
+        </li>
+        <li>added Maintaining trust in users who have already proved their identity IDENTITY
+        </li>
+        <li>added New data sources for security questions IDENTITY
+        </li>
+        <li>removed An admin tool for self-service testing</li>
+        <li>added More configuration controls in the self-service admin tool SERVICE TEAM ONBOARDING
+        </li>
+        <li>added Users have other options to prove their identity if they’re not successful first time IDENTITY
+        </li>
+        <li>removed Proving a user's identity at a Post Office</li>
+        <li>removed Browser based UK driving licence checks</li>
+        <li>removed More documents accepted by GOV.UK ID Check app</li>
+        <li>removed Identity checks will be saved for reused</li>
+        <li>removed App-based identity checks for NFC chipped passports</li>
+        <li>removed Welsh</li>
+        </ul>
+
+
+
+      <h3 class="govuk-heading-s">Included pages</a></h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="May-2024-roadmap">Roadmap</a></li> 
+        </ul>
+  
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: "product-homepage"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
