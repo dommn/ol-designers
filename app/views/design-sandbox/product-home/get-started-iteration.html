@@ -1,0 +1,56 @@
+{% set notSignedIn = true %} {# sets up _base.html to only show what pages look like when not signed in #}
+{% set pageTitle = "About GOV.UK One Login - GOV.UK One Login" %}
+{% set showBreadcrumbs = true %} {# show breadscrumbs  #}
+{% set breadcrumb = "Get started" %} {# breadcrumb #}
+{% extends folder + "/layouts/_base-alt.html" %}
+{% set headerNavigationActiveItem = "get-started" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-l">Get started</h1>
+      <p class="govuk-body">
+        You can use GOV.UK One Login if you’re from a central government service and need to sign in your users. We’ll add more features over time.
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.sign-in.service.gov.uk/about">Read more about GOV.UK One Login</a>.
+      </p>
+      
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">Get in touch or try GOV.UK One Login</h2>
+      <p class="govuk-body">Register your interest if you think GOV.UK One Login is right for your service. We’ll get in touch to talk more about your service’s needs and then give you access to our integration environment.</p>
+    
+      {{ govukButton({
+        text: "Register your interest",
+        href: "https://www.sign-in.service.gov.uk/register"
+      }) }}
+    
+      <h2 class="govuk-heading-m govuk-!-padding-top-2">Try GOV.UK One Login</h2>
+      <p class="govuk-body">Set up an admin tool account to try GOV.UK One Login to in our integration environment. You'll need a:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>government email address</li>
+        <li>mobile phone number</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Create admin tool account",
+        href: "https://admin.sign-in.service.gov.uk/register/enter-email-address"
+      }) }}
+      
+        <p class="govuk-body">
+          or <a href="https://admin.sign-in.service.gov.uk/sign-in/enter-email-address">sign in</a></p>
+         
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">Contact us</h2>
+      <p class="govuk-body">
+        Use our <a class="govuk-link" href="https://www.sign-in.service.gov.uk/support">online form</a> to report problems, ask questions or suggest improvements.</p>
+
+        <p>You can also get in touch using our <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC">Slack channel</a> if you’re from a government service team.
+      </p>
+    
+      </div>
+
+{% endblock %}
