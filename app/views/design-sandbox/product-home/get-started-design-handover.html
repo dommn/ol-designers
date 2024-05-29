@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design handovers
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Design documentation about content changes to the Get started page
+      </h1>
+     <p> <a href="https://govukverify.atlassian.net/browse/SSE-3419">View on JIRA</a></p>
+
+      <h2 class="govuk-heading-m">
+        What we've changed
+      </h2>
+
+      <p>We have changed the priority of information and content structure on the Get started screen so all RP users have a clear call to action to create an admin account. This supports the changes to the Config controls, where users can decide if they need the identity verification feature and supports the CDDO mandate for all government services using GOV.UK One Login, rather than it being a choice.</p>
+<p>This is a high level description of the content iteration:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>removed the numbered H2/li>
+        <li>Changed the paragraph content to standard body text, not bold</li>
+        <li>Removed 'You can' from link text sentence</li>
+        <li>Removed numbered list format from H2</li>
+        <li>Changed sentence structure to front load it with the action we want users to take next</li>
+        <li>Added an H3 to support scan reading/navigation by headings</li>
+        <li>Removed "if" clause in sentence and restructured sentence to front load using active, action-linked phrasing</li>
+        <li>Reformatted second sentece into a bullet list for scannability</li>
+      <li>changed position of sign in link to communicate hierarchy of actions</li>
+    </ul>
+
+
+
+      <h3 class="govuk-heading-s">Included pages</a></h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="get-started-iteration.html">Get started with GOV.UK One Login</a></li>></ul>
+  
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      {{ govukButton({
+        text: "View the prototype",
+        href: "get-started-iteration"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
